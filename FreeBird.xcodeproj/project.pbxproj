@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B89C313E142759E400CCFF15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C313D142759E400CCFF15 /* UIKit.framework */; };
+		B89C3140142759E400CCFF15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C313F142759E400CCFF15 /* Foundation.framework */; };
+		B89C3142142759E400CCFF15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C3141142759E400CCFF15 /* CoreGraphics.framework */; };
+		B89C3148142759E400CCFF15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89C3146142759E400CCFF15 /* InfoPlist.strings */; };
+		B89C314A142759E400CCFF15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C3149142759E400CCFF15 /* main.m */; };
+		B89C314E142759E400CCFF15 /* FreeBirdAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */; };
+		B89C3151142759E400CCFF15 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89C314F142759E400CCFF15 /* MainWindow.xib */; };
+		B89C3154142759E400CCFF15 /* FreeBirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C3153142759E400CCFF15 /* FreeBirdViewController.m */; };
+		B89C3157142759E400CCFF15 /* FreeBirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B89C3155142759E400CCFF15 /* FreeBirdViewController.xib */; };
+		B89C315F142759E400CCFF15 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C315E142759E400CCFF15 /* SenTestingKit.framework */; };
+		B89C3160142759E400CCFF15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C313D142759E400CCFF15 /* UIKit.framework */; };
+		B89C3161142759E400CCFF15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C313F142759E400CCFF15 /* Foundation.framework */; };
+		B89C3162142759E400CCFF15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C3141142759E400CCFF15 /* CoreGraphics.framework */; };
+		B89C316A142759E400CCFF15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89C3168142759E400CCFF15 /* InfoPlist.strings */; };
+		B89C316C142759E400CCFF15 /* FreeBirdTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B89C316B142759E400CCFF15 /* FreeBirdTests.h */; };
+		B89C316E142759E400CCFF15 /* FreeBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C316D142759E400CCFF15 /* FreeBirdTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B89C3163142759E400CCFF15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B89C3130142759E400CCFF15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B89C3138142759E400CCFF15;
+			remoteInfo = FreeBird;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B89C3139142759E400CCFF15 /* FreeBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B89C313D142759E400CCFF15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B89C313F142759E400CCFF15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B89C3141142759E400CCFF15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B89C3145142759E400CCFF15 /* FreeBird-Info.plist */ = {isa = PBXFileReference; path = "FreeBird-Info.plist"; sourceTree = "<group>"; };
+		B89C3147142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B89C3149142759E400CCFF15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B89C314B142759E400CCFF15 /* FreeBird-Prefix.pch */ = {isa = PBXFileReference; path = "FreeBird-Prefix.pch"; sourceTree = "<group>"; };
+		B89C314C142759E400CCFF15 /* FreeBirdAppDelegate.h */ = {isa = PBXFileReference; path = FreeBirdAppDelegate.h; sourceTree = "<group>"; };
+		B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdAppDelegate.m; sourceTree = "<group>"; };
+		B89C3150142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		B89C3152142759E400CCFF15 /* FreeBirdViewController.h */ = {isa = PBXFileReference; path = FreeBirdViewController.h; sourceTree = "<group>"; };
+		B89C3153142759E400CCFF15 /* FreeBirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdViewController.m; sourceTree = "<group>"; };
+		B89C3156142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FreeBirdViewController.xib; sourceTree = "<group>"; };
+		B89C315D142759E400CCFF15 /* FreeBirdTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeBirdTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B89C315E142759E400CCFF15 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B89C3167142759E400CCFF15 /* FreeBirdTests-Info.plist */ = {isa = PBXFileReference; path = "FreeBirdTests-Info.plist"; sourceTree = "<group>"; };
+		B89C3169142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B89C316B142759E400CCFF15 /* FreeBirdTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeBirdTests.h; sourceTree = "<group>"; };
+		B89C316D142759E400CCFF15 /* FreeBirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B89C3136142759E400CCFF15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89C313E142759E400CCFF15 /* UIKit.framework in Frameworks */,
+				B89C3140142759E400CCFF15 /* Foundation.framework in Frameworks */,
+				B89C3142142759E400CCFF15 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89C3159142759E400CCFF15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89C315F142759E400CCFF15 /* SenTestingKit.framework in Frameworks */,
+				B89C3160142759E400CCFF15 /* UIKit.framework in Frameworks */,
+				B89C3161142759E400CCFF15 /* Foundation.framework in Frameworks */,
+				B89C3162142759E400CCFF15 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B89C312E142759E400CCFF15 = {
+			isa = PBXGroup;
+			children = (
+				B89C3143142759E400CCFF15 /* FreeBird */,
+				B89C3165142759E400CCFF15 /* FreeBirdTests */,
+				B89C313C142759E400CCFF15 /* Frameworks */,
+				B89C313A142759E400CCFF15 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B89C313A142759E400CCFF15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B89C3139142759E400CCFF15 /* FreeBird.app */,
+				B89C315D142759E400CCFF15 /* FreeBirdTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B89C313C142759E400CCFF15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B89C313D142759E400CCFF15 /* UIKit.framework */,
+				B89C313F142759E400CCFF15 /* Foundation.framework */,
+				B89C3141142759E400CCFF15 /* CoreGraphics.framework */,
+				B89C315E142759E400CCFF15 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B89C3143142759E400CCFF15 /* FreeBird */ = {
+			isa = PBXGroup;
+			children = (
+				B89C314C142759E400CCFF15 /* FreeBirdAppDelegate.h */,
+				B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */,
+				B89C314F142759E400CCFF15 /* MainWindow.xib */,
+				B89C3152142759E400CCFF15 /* FreeBirdViewController.h */,
+				B89C3153142759E400CCFF15 /* FreeBirdViewController.m */,
+				B89C3155142759E400CCFF15 /* FreeBirdViewController.xib */,
+				B89C3144142759E400CCFF15 /* Supporting Files */,
+			);
+			path = FreeBird;
+			sourceTree = "<group>";
+		};
+		B89C3144142759E400CCFF15 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B89C3145142759E400CCFF15 /* FreeBird-Info.plist */,
+				B89C3146142759E400CCFF15 /* InfoPlist.strings */,
+				B89C3149142759E400CCFF15 /* main.m */,
+				B89C314B142759E400CCFF15 /* FreeBird-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B89C3165142759E400CCFF15 /* FreeBirdTests */ = {
+			isa = PBXGroup;
+			children = (
+				B89C316B142759E400CCFF15 /* FreeBirdTests.h */,
+				B89C316D142759E400CCFF15 /* FreeBirdTests.m */,
+				B89C3166142759E400CCFF15 /* Supporting Files */,
+			);
+			path = FreeBirdTests;
+			sourceTree = "<group>";
+		};
+		B89C3166142759E400CCFF15 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B89C3167142759E400CCFF15 /* FreeBirdTests-Info.plist */,
+				B89C3168142759E400CCFF15 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B89C3138142759E400CCFF15 /* FreeBird */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B89C3171142759E400CCFF15 /* Build configuration list for PBXNativeTarget "FreeBird" */;
+			buildPhases = (
+				B89C3135142759E400CCFF15 /* Sources */,
+				B89C3136142759E400CCFF15 /* Frameworks */,
+				B89C3137142759E400CCFF15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FreeBird;
+			productName = FreeBird;
+			productReference = B89C3139142759E400CCFF15 /* FreeBird.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B89C315C142759E400CCFF15 /* FreeBirdTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B89C3174142759E400CCFF15 /* Build configuration list for PBXNativeTarget "FreeBirdTests" */;
+			buildPhases = (
+				B89C3158142759E400CCFF15 /* Sources */,
+				B89C3159142759E400CCFF15 /* Frameworks */,
+				B89C315A142759E400CCFF15 /* Resources */,
+				B89C315B142759E400CCFF15 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B89C3164142759E400CCFF15 /* PBXTargetDependency */,
+			);
+			name = FreeBirdTests;
+			productName = FreeBirdTests;
+			productReference = B89C315D142759E400CCFF15 /* FreeBirdTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B89C3130142759E400CCFF15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "University of Victoria";
+			};
+			buildConfigurationList = B89C3133142759E400CCFF15 /* Build configuration list for PBXProject "FreeBird" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B89C312E142759E400CCFF15;
+			productRefGroup = B89C313A142759E400CCFF15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B89C3138142759E400CCFF15 /* FreeBird */,
+				B89C315C142759E400CCFF15 /* FreeBirdTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B89C3137142759E400CCFF15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89C3148142759E400CCFF15 /* InfoPlist.strings in Resources */,
+				B89C3151142759E400CCFF15 /* MainWindow.xib in Resources */,
+				B89C3157142759E400CCFF15 /* FreeBirdViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89C315A142759E400CCFF15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89C316A142759E400CCFF15 /* InfoPlist.strings in Resources */,
+				B89C316C142759E400CCFF15 /* FreeBirdTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B89C315B142759E400CCFF15 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B89C3135142759E400CCFF15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89C314A142759E400CCFF15 /* main.m in Sources */,
+				B89C314E142759E400CCFF15 /* FreeBirdAppDelegate.m in Sources */,
+				B89C3154142759E400CCFF15 /* FreeBirdViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89C3158142759E400CCFF15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89C316E142759E400CCFF15 /* FreeBirdTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B89C3164142759E400CCFF15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B89C3138142759E400CCFF15 /* FreeBird */;
+			targetProxy = B89C3163142759E400CCFF15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B89C3146142759E400CCFF15 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B89C3147142759E400CCFF15 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B89C314F142759E400CCFF15 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B89C3150142759E400CCFF15 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		B89C3155142759E400CCFF15 /* FreeBirdViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B89C3156142759E400CCFF15 /* en */,
+			);
+			name = FreeBirdViewController.xib;
+			sourceTree = "<group>";
+		};
+		B89C3168142759E400CCFF15 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B89C3169142759E400CCFF15 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B89C316F142759E400CCFF15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		B89C3170142759E400CCFF15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B89C3172142759E400CCFF15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FreeBird/FreeBird-Prefix.pch";
+				INFOPLIST_FILE = "FreeBird/FreeBird-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B89C3173142759E400CCFF15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FreeBird/FreeBird-Prefix.pch";
+				INFOPLIST_FILE = "FreeBird/FreeBird-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B89C3175142759E400CCFF15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FreeBird.app/FreeBird";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FreeBird/FreeBird-Prefix.pch";
+				INFOPLIST_FILE = "FreeBirdTests/FreeBirdTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B89C3176142759E400CCFF15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FreeBird.app/FreeBird";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FreeBird/FreeBird-Prefix.pch";
+				INFOPLIST_FILE = "FreeBirdTests/FreeBirdTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B89C3133142759E400CCFF15 /* Build configuration list for PBXProject "FreeBird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B89C316F142759E400CCFF15 /* Debug */,
+				B89C3170142759E400CCFF15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B89C3171142759E400CCFF15 /* Build configuration list for PBXNativeTarget "FreeBird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B89C3172142759E400CCFF15 /* Debug */,
+				B89C3173142759E400CCFF15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B89C3174142759E400CCFF15 /* Build configuration list for PBXNativeTarget "FreeBirdTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B89C3175142759E400CCFF15 /* Debug */,
+				B89C3176142759E400CCFF15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B89C3130142759E400CCFF15 /* Project object */;
+}
