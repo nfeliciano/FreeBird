@@ -23,6 +23,7 @@
 		B89C316A142759E400CCFF15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89C3168142759E400CCFF15 /* InfoPlist.strings */; };
 		B89C316C142759E400CCFF15 /* FreeBirdTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B89C316B142759E400CCFF15 /* FreeBirdTests.h */; };
 		B89C316E142759E400CCFF15 /* FreeBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C316D142759E400CCFF15 /* FreeBirdTests.m */; };
+		B8B8EB1814275C1B00D81938 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B8B8EB1714275C1B00D81938 /* README.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,22 +41,23 @@
 		B89C313D142759E400CCFF15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B89C313F142759E400CCFF15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B89C3141142759E400CCFF15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B89C3145142759E400CCFF15 /* FreeBird-Info.plist */ = {isa = PBXFileReference; path = "FreeBird-Info.plist"; sourceTree = "<group>"; };
+		B89C3145142759E400CCFF15 /* FreeBird-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FreeBird-Info.plist"; sourceTree = "<group>"; };
 		B89C3147142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B89C3149142759E400CCFF15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B89C314B142759E400CCFF15 /* FreeBird-Prefix.pch */ = {isa = PBXFileReference; path = "FreeBird-Prefix.pch"; sourceTree = "<group>"; };
-		B89C314C142759E400CCFF15 /* FreeBirdAppDelegate.h */ = {isa = PBXFileReference; path = FreeBirdAppDelegate.h; sourceTree = "<group>"; };
+		B89C314B142759E400CCFF15 /* FreeBird-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FreeBird-Prefix.pch"; sourceTree = "<group>"; };
+		B89C314C142759E400CCFF15 /* FreeBirdAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeBirdAppDelegate.h; sourceTree = "<group>"; };
 		B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdAppDelegate.m; sourceTree = "<group>"; };
 		B89C3150142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		B89C3152142759E400CCFF15 /* FreeBirdViewController.h */ = {isa = PBXFileReference; path = FreeBirdViewController.h; sourceTree = "<group>"; };
+		B89C3152142759E400CCFF15 /* FreeBirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeBirdViewController.h; sourceTree = "<group>"; };
 		B89C3153142759E400CCFF15 /* FreeBirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdViewController.m; sourceTree = "<group>"; };
 		B89C3156142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FreeBirdViewController.xib; sourceTree = "<group>"; };
 		B89C315D142759E400CCFF15 /* FreeBirdTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeBirdTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89C315E142759E400CCFF15 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B89C3167142759E400CCFF15 /* FreeBirdTests-Info.plist */ = {isa = PBXFileReference; path = "FreeBirdTests-Info.plist"; sourceTree = "<group>"; };
+		B89C3167142759E400CCFF15 /* FreeBirdTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FreeBirdTests-Info.plist"; sourceTree = "<group>"; };
 		B89C3169142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B89C316B142759E400CCFF15 /* FreeBirdTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeBirdTests.h; sourceTree = "<group>"; };
 		B89C316D142759E400CCFF15 /* FreeBirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdTests.m; sourceTree = "<group>"; };
+		B8B8EB1714275C1B00D81938 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		B89C312E142759E400CCFF15 = {
 			isa = PBXGroup;
 			children = (
+				B8B8EB1714275C1B00D81938 /* README.rtf */,
 				B89C3143142759E400CCFF15 /* FreeBird */,
 				B89C3165142759E400CCFF15 /* FreeBirdTests */,
 				B89C313C142759E400CCFF15 /* Frameworks */,
@@ -230,6 +233,7 @@
 				B89C3148142759E400CCFF15 /* InfoPlist.strings in Resources */,
 				B89C3151142759E400CCFF15 /* MainWindow.xib in Resources */,
 				B89C3157142759E400CCFF15 /* FreeBirdViewController.xib in Resources */,
+				B8B8EB1814275C1B00D81938 /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +451,7 @@
 				B89C3173142759E400CCFF15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B89C3174142759E400CCFF15 /* Build configuration list for PBXNativeTarget "FreeBirdTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +460,7 @@
 				B89C3176142759E400CCFF15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
