@@ -23,7 +23,10 @@
 		B89C316A142759E400CCFF15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89C3168142759E400CCFF15 /* InfoPlist.strings */; };
 		B89C316C142759E400CCFF15 /* FreeBirdTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B89C316B142759E400CCFF15 /* FreeBirdTests.h */; };
 		B89C316E142759E400CCFF15 /* FreeBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C316D142759E400CCFF15 /* FreeBirdTests.m */; };
+		B8B13E551430EFD400DF4104 /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B13E541430EFD400DF4104 /* Bird.m */; };
 		B8B8EB1814275C1B00D81938 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B8B8EB1714275C1B00D81938 /* README.rtf */; };
+		B8F353B714312D9A004A9593 /* cardBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F353B614312D9A004A9593 /* cardBG.png */; };
+		B8F353BA14312DF7004A9593 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F353B914312DF7004A9593 /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +60,12 @@
 		B89C3169142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B89C316B142759E400CCFF15 /* FreeBirdTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeBirdTests.h; sourceTree = "<group>"; };
 		B89C316D142759E400CCFF15 /* FreeBirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdTests.m; sourceTree = "<group>"; };
+		B8B13E531430EFD400DF4104 /* Bird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bird.h; sourceTree = "<group>"; };
+		B8B13E541430EFD400DF4104 /* Bird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bird.m; sourceTree = "<group>"; };
 		B8B8EB1714275C1B00D81938 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		B8F353B614312D9A004A9593 /* cardBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardBG.png; path = images/cardBG.png; sourceTree = "<group>"; };
+		B8F353B814312DF7004A9593 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		B8F353B914312DF7004A9593 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B826FFAA142EA2FA0013A3E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8F353B414312D8B004A9593 /* images */,
+				B826FFAC142EA3150013A3E6 /* xib Files */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B826FFAC142EA3150013A3E6 /* xib Files */ = {
+			isa = PBXGroup;
+			children = (
+				B89C314F142759E400CCFF15 /* MainWindow.xib */,
+				B89C3155142759E400CCFF15 /* FreeBirdViewController.xib */,
+			);
+			name = "xib Files";
+			sourceTree = "<group>";
+		};
 		B89C312E142759E400CCFF15 = {
 			isa = PBXGroup;
 			children = (
@@ -121,10 +147,13 @@
 			children = (
 				B89C314C142759E400CCFF15 /* FreeBirdAppDelegate.h */,
 				B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */,
-				B89C314F142759E400CCFF15 /* MainWindow.xib */,
 				B89C3152142759E400CCFF15 /* FreeBirdViewController.h */,
 				B89C3153142759E400CCFF15 /* FreeBirdViewController.m */,
-				B89C3155142759E400CCFF15 /* FreeBirdViewController.xib */,
+				B8B13E531430EFD400DF4104 /* Bird.h */,
+				B8B13E541430EFD400DF4104 /* Bird.m */,
+				B8F353B814312DF7004A9593 /* Card.h */,
+				B8F353B914312DF7004A9593 /* Card.m */,
+				B826FFAA142EA2FA0013A3E6 /* Resources */,
 				B89C3144142759E400CCFF15 /* Supporting Files */,
 			);
 			path = FreeBird;
@@ -158,6 +187,14 @@
 				B89C3168142759E400CCFF15 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8F353B414312D8B004A9593 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B8F353B614312D9A004A9593 /* cardBG.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +271,7 @@
 				B89C3151142759E400CCFF15 /* MainWindow.xib in Resources */,
 				B89C3157142759E400CCFF15 /* FreeBirdViewController.xib in Resources */,
 				B8B8EB1814275C1B00D81938 /* README.rtf in Resources */,
+				B8F353B714312D9A004A9593 /* cardBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +310,8 @@
 				B89C314A142759E400CCFF15 /* main.m in Sources */,
 				B89C314E142759E400CCFF15 /* FreeBirdAppDelegate.m in Sources */,
 				B89C3154142759E400CCFF15 /* FreeBirdViewController.m in Sources */,
+				B8B13E551430EFD400DF4104 /* Bird.m in Sources */,
+				B8F353BA14312DF7004A9593 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+ 
 @class FreeBirdViewController;
 
-@interface FreeBirdAppDelegate : NSObject <UIApplicationDelegate>
+@interface FreeBirdAppDelegate : NSObject <UIApplicationDelegate> {
+    UIWindow *window;
+    FreeBirdViewController *viewController;
+}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 

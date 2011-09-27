@@ -7,6 +7,7 @@
 //
 
 #import "FreeBirdViewController.h"
+#import "Bird.h"
 
 @implementation FreeBirdViewController
 
@@ -20,13 +21,23 @@
 
 #pragma mark - View lifecycle
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    Bird *altamiraOrioleSetA = [[Bird alloc] initWithSpecies:AltamiraOriole andSet:setA];
+    NSLog(@"%@", altamiraOrioleSetA);
+    Bird *altamiraOrioleSetB = [[Bird alloc] initWithSpecies:AltamiraOriole andSet:setB];
+    Bird *baltimoreOrioleSetA = [[Bird alloc] initWithSpecies:BaltimoreOriole andSet:setA];
+    
+    
+    [altamiraOrioleSetA release];
+    [altamiraOrioleSetB release];
+    [baltimoreOrioleSetA release];
 }
-*/
+
 
 - (void)viewDidUnload
 {
@@ -39,6 +50,10 @@
 {
     // Return YES for supported orientations
     return YES;
+}
+
+-(void)dealloc {
+    [super dealloc];
 }
 
 @end
