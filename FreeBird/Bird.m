@@ -8,10 +8,6 @@
 
 #import "Bird.h"
 
-@interface Bird(Private)
-    -(NSString *) speciesAsString;
-@end
-
 @implementation Bird
 
 @synthesize family;
@@ -66,7 +62,7 @@
 }
 
 /*Set the properties, that's the family string and the imagepath
- *Imagepath string has format familySpeciesSet*/
+ *Imagepath string has format familySpeciesSet, eg. icteridaeAltamiraOrioleSetA*/
 
 -(void) setProperties {
     switch (self.species) {
@@ -94,16 +90,16 @@
     
     switch (self.set) {
         case setA:
-            self.imagePath = [self.imagePath stringByAppendingString:@"setA"];
+            self.imagePath = [self.imagePath stringByAppendingString:@"SetA"];
             break;
         case setB:
-            self.imagePath = [self.imagePath stringByAppendingString:@"setB"];
+            self.imagePath = [self.imagePath stringByAppendingString:@"SetB"];
             break;
         case setC:
-            self.imagePath = [self.imagePath stringByAppendingString:@"setC"];
+            self.imagePath = [self.imagePath stringByAppendingString:@"SetC"];
             break;
         case setD:
-            self.imagePath = [self.imagePath stringByAppendingString:@"setD"];
+            self.imagePath = [self.imagePath stringByAppendingString:@"SetD"];
             break;
         default:
             self.imagePath = [self.imagePath stringByAppendingString:@"noSet"];

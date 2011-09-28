@@ -40,6 +40,7 @@ typedef enum {
 @property (nonatomic, assign) Species species;
 
 -(id) initWithSpecies:(Species)species andSet:(Set)set;
+-(NSString *) speciesAsString;
 -(void) setProperties;
 
 @end

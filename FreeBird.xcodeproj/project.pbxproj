@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B898FE3314328D100056887D /* icteridaeAltamiraOrioleSetA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE3214328D100056887D /* icteridaeAltamiraOrioleSetA.jpg */; };
+		B898FE36143292080056887D /* icteridaeAltamiraOrioleSetB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE35143292080056887D /* icteridaeAltamiraOrioleSetB.jpg */; };
+		B898FE3C1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE3B1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg */; };
 		B89C313E142759E400CCFF15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C313D142759E400CCFF15 /* UIKit.framework */; };
 		B89C3140142759E400CCFF15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C313F142759E400CCFF15 /* Foundation.framework */; };
 		B89C3142142759E400CCFF15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C3141142759E400CCFF15 /* CoreGraphics.framework */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B898FE3214328D100056887D /* icteridaeAltamiraOrioleSetA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeAltamiraOrioleSetA.jpg; path = images/icteridaeAltamiraOrioleSetA.jpg; sourceTree = "<group>"; };
+		B898FE35143292080056887D /* icteridaeAltamiraOrioleSetB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeAltamiraOrioleSetB.jpg; path = images/icteridaeAltamiraOrioleSetB.jpg; sourceTree = "<group>"; };
+		B898FE3B1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeBaltimoreOrioleSetA.jpg; path = images/icteridaeBaltimoreOrioleSetA.jpg; sourceTree = "<group>"; };
 		B89C3139142759E400CCFF15 /* FreeBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89C313D142759E400CCFF15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B89C313F142759E400CCFF15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -192,6 +198,9 @@
 		B8F353B414312D8B004A9593 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B898FE3214328D100056887D /* icteridaeAltamiraOrioleSetA.jpg */,
+				B898FE35143292080056887D /* icteridaeAltamiraOrioleSetB.jpg */,
+				B898FE3B1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg */,
 				B8F353B614312D9A004A9593 /* cardBG.png */,
 			);
 			name = images;
@@ -272,6 +281,9 @@
 				B89C3157142759E400CCFF15 /* FreeBirdViewController.xib in Resources */,
 				B8B8EB1814275C1B00D81938 /* README.rtf in Resources */,
 				B8F353B714312D9A004A9593 /* cardBG.png in Resources */,
+				B898FE3314328D100056887D /* icteridaeAltamiraOrioleSetA.jpg in Resources */,
+				B898FE36143292080056887D /* icteridaeAltamiraOrioleSetB.jpg in Resources */,
+				B898FE3C1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
