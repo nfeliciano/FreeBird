@@ -62,16 +62,16 @@
 {
     // Drawing code
     [backgroundImage drawAtPoint:CGPointMake(0, 0)];
-    [displaySpecies drawAtPoint:CGPointMake(rect.size.width / 5, 160) withFont:[UIFont systemFontOfSize:14.0f]];
+    [displaySpecies drawAtPoint:CGPointMake(rect.size.width / 8, 10) withFont:[UIFont systemFontOfSize:14.0f]];
     
-    UIImageView *birdImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, displayImage.size.width, displayImage.size.height)];
+    UIImageView *birdImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15, displayImage.size.width, displayImage.size.height)];
     [birdImageView setImage:displayImage];
     birdImageView.contentMode = UIViewContentModeScaleAspectFit;
     CGRect temp = birdImageView.frame;
-    temp.size.width = 140;
+    temp.size.width = 110;
     birdImageView.frame = temp;
     birdImageView.opaque = NO;
-    birdImageView.center = CGPointMake(birdImageView.center.x + 6, birdImageView.center.y - 140);
+    birdImageView.center = CGPointMake(birdImageView.center.x + 6, birdImageView.center.y - 155);
     [self addSubview:birdImageView];
     
     
