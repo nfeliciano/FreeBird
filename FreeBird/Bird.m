@@ -10,7 +10,9 @@
 
 @implementation Bird
 
+@synthesize mainDictionary;
 @synthesize family;
+@synthesize speciesString;
 @synthesize imagePath;
 @synthesize species;
 @synthesize set;
@@ -34,7 +36,50 @@
     if (self) {
         self.set = birdSet;
         self.species = birdSpecies;
-        [self setProperties];
+        
+        NSString *path = [[NSBundle mainBundle] bundlePath];
+        NSString *dictPath = [path stringByAppendingPathComponent:@"BirdInfoPlist.plist"];
+        mainDictionary = [NSDictionary dictionaryWithContentsOfFile:dictPath];
+        
+        NSDictionary *birdDictionary = [mainDictionary objectForKey:@"birdDictionary"];
+        
+        NSDictionary *thisBird;
+        
+        switch (self.species) {
+            case AltamiraOriole:
+                thisBird = [birdDictionary objectForKey:@"altamiraOriole"];
+                break;
+            case AudubonsOriole:
+                thisBird = [birdDictionary objectForKey:@"audubonsOriole"];
+                break;
+            case BaltimoreOriole:
+                thisBird = [birdDictionary objectForKey:@"baltimoreOriole"];
+                break;
+            default:
+                break;
+        }
+        
+        family = [thisBird objectForKey:@"family"];
+        speciesString = [thisBird objectForKey:@"species"];
+        NSArray *pose = [thisBird objectForKey:@"imagePath"];
+        switch (self.set) {
+            case setA:
+                imagePath = [pose objectAtIndex:0];
+                break;
+            case setB:
+                imagePath = [pose objectAtIndex:1];
+                break;
+            case setC:
+                imagePath = [pose objectAtIndex:2];
+                break;
+            case setD:
+                imagePath = [pose objectAtIndex:3];
+                break;
+            default:
+                break;
+        }
+        
+        //[self setProperties];
     }
     
     return self;
@@ -42,74 +87,19 @@
 
 //Returns the species as a string for display on cards, again, the issue is that we will need to check all the species
 -(NSString *) speciesAsString {
-    switch (self.species) {
-        case AltamiraOriole:
-            return @"Altamira Oriole";
-            break;
-        case BaltimoreOriole:
-            return @"Baltimore Oriole";
-            break;
-        case BlueJay:
-            return @"Blue Jay";
-            break;
-        case GrayJay:
-            return @"Gray Jay";
-            break;
-        default:
-            return @"No species";
-            break;
-    }
+    return speciesString;
 }
 
-/*Set the properties, that's the family string and the imagepath
- *Imagepath string has format familySpeciesSet, eg. icteridaeAltamiraOrioleSetA*/
+-(NSString *) familyAsString {
+    return family;
+}
 
--(void) setProperties {
-    switch (self.species) {
-        case AltamiraOriole:
-            self.family = @"Blackbirds and Orioles (Icteridae)";
-            self.imagePath = [NSString stringWithFormat:@"icteridaeAltamiraOriole"];
-            break;
-        case BaltimoreOriole:
-            self.family = @"Blackbirds and Orioles (Icteridae)";
-            self.imagePath = [NSString stringWithFormat:@"icteridaeBaltimoreOriole"];
-            break;
-        case BlueJay:
-            self.family = @"Crows, Jays and Magpies (Corvidae)";
-            self.imagePath = [NSString stringWithFormat:@"corvidaeBlueJay"];
-            break;
-        case GrayJay:
-            self.family = @"Crows, Jays and Magpies (Corvidae)";
-            self.imagePath = [NSString stringWithFormat:@"corvidaeGrayJay"];
-            break;
-        default:
-            self.family = @"No Family";
-            self.imagePath = [NSString stringWithFormat:@"noSpecies"];
-            break;
-    }
-    
-    switch (self.set) {
-        case setA:
-            self.imagePath = [self.imagePath stringByAppendingString:@"SetA"];
-            break;
-        case setB:
-            self.imagePath = [self.imagePath stringByAppendingString:@"SetB"];
-            break;
-        case setC:
-            self.imagePath = [self.imagePath stringByAppendingString:@"SetC"];
-            break;
-        case setD:
-            self.imagePath = [self.imagePath stringByAppendingString:@"SetD"];
-            break;
-        default:
-            self.imagePath = [self.imagePath stringByAppendingString:@"noSet"];
-            break;
-            
-    }
+-(NSString *) theImagePath {
+    return imagePath;
 }
 
 -(NSString *) description {
-    return [NSString stringWithFormat:@"%@ of %@ Family", [self speciesAsString], self.family];
+    return [NSString stringWithFormat:@"%@ of %@ Family.\nImage Path: %@", [self speciesAsString], [self familyAsString], [self theImagePath]];
 }
 
 @end

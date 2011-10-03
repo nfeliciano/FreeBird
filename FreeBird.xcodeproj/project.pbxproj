@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B897FEE9143A557A00248D86 /* BirdInfoPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = B897FEE8143A557A00248D86 /* BirdInfoPlist.plist */; };
 		B898FE3314328D100056887D /* icteridaeAltamiraOrioleSetA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE3214328D100056887D /* icteridaeAltamiraOrioleSetA.jpg */; };
 		B898FE36143292080056887D /* icteridaeAltamiraOrioleSetB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE35143292080056887D /* icteridaeAltamiraOrioleSetB.jpg */; };
 		B898FE3C1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE3B1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B897FEE8143A557A00248D86 /* BirdInfoPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BirdInfoPlist.plist; path = Resources/BirdInfoPlist.plist; sourceTree = "<group>"; };
 		B898FE3214328D100056887D /* icteridaeAltamiraOrioleSetA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeAltamiraOrioleSetA.jpg; path = images/icteridaeAltamiraOrioleSetA.jpg; sourceTree = "<group>"; };
 		B898FE35143292080056887D /* icteridaeAltamiraOrioleSetB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeAltamiraOrioleSetB.jpg; path = images/icteridaeAltamiraOrioleSetB.jpg; sourceTree = "<group>"; };
 		B898FE3B1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeBaltimoreOrioleSetA.jpg; path = images/icteridaeBaltimoreOrioleSetA.jpg; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B89C3145142759E400CCFF15 /* FreeBird-Info.plist */,
+				B897FEE8143A557A00248D86 /* BirdInfoPlist.plist */,
 				B89C3146142759E400CCFF15 /* InfoPlist.strings */,
 				B89C3149142759E400CCFF15 /* main.m */,
 				B89C314B142759E400CCFF15 /* FreeBird-Prefix.pch */,
@@ -284,6 +287,7 @@
 				B898FE3314328D100056887D /* icteridaeAltamiraOrioleSetA.jpg in Resources */,
 				B898FE36143292080056887D /* icteridaeAltamiraOrioleSetB.jpg in Resources */,
 				B898FE3C1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg in Resources */,
+				B897FEE9143A557A00248D86 /* BirdInfoPlist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

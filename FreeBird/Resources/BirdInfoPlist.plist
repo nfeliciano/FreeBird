@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>birdDictionary</key>
+	<dict>
+		<key>altamiraOriole</key>
+		<dict>
+			<key>family</key>
+			<string>Blackbirds and Orioles (Icteridae)</string>
+			<key>species</key>
+			<string>Altamira Oriole</string>
+			<key>imagePath</key>
+			<array>
+				<string>icteridaeAltamiraOrioleSetA</string>
+				<string>icteridaeAltamiraOrioleSetB</string>
+				<string>icteridaeAltamiraOrioleSetC</string>
+				<string>icteridaeAltamiraOrioleSetD</string>
+			</array>
+		</dict>
+		<key>audubonsOriole</key>
+		<dict>
+			<key>family</key>
+			<string>Blackbirds and Orioles (Icteridae)</string>
+			<key>species</key>
+			<string>Audubon&apos;s Oriole</string>
+			<key>imagePath</key>
+			<array>
+				<string>icteridaeAudubonsOrioleSetA</string>
+				<string>icteridaeAudubonsOrioleSetB</string>
+				<string>icteridaeAudubonsOrioleSetC</string>
+				<string>icteridaeAudubonsOrioleSetD</string>
+			</array>
+		</dict>
+		<key>baltimoreOriole</key>
+		<dict>
+			<key>family</key>
+			<string>Blackbirds and Orioles (Icteridae)</string>
+			<key>species</key>
+			<string>Baltimore Oriole</string>
+			<key>imagePath</key>
+			<array>
+				<string>icteridaeBaltimoreOrioleSetA</string>
+				<string>icteridaeBaltimoreOrioleSetB</string>
+				<string>icteridaeBaltimoreOrioleSetC</string>
+				<string>icteridaeBaltimoreOrioleSetD</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

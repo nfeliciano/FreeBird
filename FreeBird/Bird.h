@@ -13,6 +13,7 @@
 //Consider after card display
 typedef enum {
     AltamiraOriole,
+    AudubonsOriole,
     BaltimoreOriole,
     BlueJay,
     GrayJay
@@ -28,19 +29,24 @@ typedef enum {
 
 
 @interface Bird : NSObject {
+    NSDictionary *mainDictionary;
     NSString *family;
+    NSString *speciesString;
     NSString *imagePath;
     Set set;
     Species species;
 }
 
+@property (nonatomic, assign) NSDictionary *mainDictionary;
 @property (nonatomic, assign) NSString *family;
+@property (nonatomic, assign) NSString *speciesString;
 @property (nonatomic, assign) NSString *imagePath;
 @property (nonatomic, assign) Set set;
 @property (nonatomic, assign) Species species;
 
 -(id) initWithSpecies:(Species)species andSet:(Set)set;
+-(NSString *) familyAsString;
 -(NSString *) speciesAsString;
--(void) setProperties;
+-(NSString *) theImagePath;
 
 @end
