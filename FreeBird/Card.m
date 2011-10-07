@@ -21,8 +21,8 @@
  *It isn't drawn itself until drawRect - not sure if this is the right thing to do, performance-wise*/
 - (id)initWithImagePath:(NSString *)imagePath withSpecies:(NSString *)speciesString withFamily:(NSString *)familyString {
     NSString *path = imagePath;
-    path = [path stringByAppendingFormat:@".jpg"];                          //these will be .pngs in the future
-    UIImage *image = [UIImage imageNamed:@"cardBG.png"];
+    path = [path stringByAppendingFormat:@".png"];                          //these will be .pngs in the future
+    UIImage *image = [UIImage imageNamed:@"cardFront.png"];
     CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
     
     self = [self initWithFrame:frame];
@@ -62,7 +62,8 @@
 {
     // Drawing code
     [backgroundImage drawAtPoint:CGPointMake(0, 0)];
-    [displaySpecies drawAtPoint:CGPointMake(rect.size.width / 8, 10) withFont:[UIFont systemFontOfSize:14.0f]];
+    [[UIColor whiteColor] set];
+    [displaySpecies drawAtPoint:CGPointMake(rect.size.width / 7, 13) withFont:[UIFont systemFontOfSize:11.0f]];
     
     UIImageView *birdImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15, displayImage.size.width, displayImage.size.height)];
     [birdImageView setImage:displayImage];
@@ -71,11 +72,15 @@
     temp.size.width = 110;
     birdImageView.frame = temp;
     birdImageView.opaque = NO;
-    birdImageView.center = CGPointMake(birdImageView.center.x + 6, birdImageView.center.y - 155);
+    birdImageView.center = CGPointMake(birdImageView.center.x + 6, birdImageView.center.y + 18);
     [self addSubview:birdImageView];
     
     
     [birdImageView release];
+}
+
+-(NSString *)speciesAsString {
+    return displaySpecies;
 }
 
 @end

@@ -10,12 +10,12 @@
 
 @implementation Bird
 
-@synthesize mainDictionary;
-@synthesize family;
+/*@synthesize mainDictionary;
+@synthesize familyString;
 @synthesize speciesString;
 @synthesize imagePath;
 @synthesize species;
-@synthesize set;
+@synthesize set;*/
 
 - (id)init
 {
@@ -31,7 +31,7 @@
  *Everything else, i.e. family and the imagepath, is set in the setProperties
  *Again, this might be better off as a plist
  *Also, not sure if set is necessary, as we will likely be loading from all four sets*/
--(id)initWithSpecies:(Species)birdSpecies andSet:(Set)birdSet {
+/*-(id)initWithSpecies:(Species)birdSpecies andSet:(Set)birdSet {
     self = [super init];
     if (self) {
         self.set = birdSet;
@@ -59,7 +59,7 @@
                 break;
         }
         
-        family = [thisBird objectForKey:@"family"];
+        familyString = [thisBird objectForKey:@"family"];
         speciesString = [thisBird objectForKey:@"species"];
         NSArray *pose = [thisBird objectForKey:@"imagePath"];
         switch (self.set) {
@@ -91,7 +91,7 @@
 }
 
 -(NSString *) familyAsString {
-    return family;
+    return familyString;
 }
 
 -(NSString *) theImagePath {
@@ -100,6 +100,6 @@
 
 -(NSString *) description {
     return [NSString stringWithFormat:@"%@ of %@ Family.\nImage Path: %@", [self speciesAsString], [self familyAsString], [self theImagePath]];
-}
+}*/
 
 @end

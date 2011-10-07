@@ -1,14 +1,16 @@
 //
-//  Bird.h
+//  Deck.h
 //  FreeBird
 //
-//  Created by Noel Feliciano on 11-09-26.
+//  Created by Noel Feliciano on 11-10-06.
 //  Copyright 2011 University of Victoria. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "Card.h"
+#import "Bird.h"
 
-/*typedef enum {
+typedef enum {
     Icteridae,      //Blackbirds and Orioles
     Cardinalidae,   //Cardinals and Grosbeaks
     Corvidae,       //Crows, Jays, and Magpies
@@ -29,7 +31,7 @@
 //Will need to list ALL the species. Is there a better way?
 //Idea: plist, with a string property for family type returned, will seek dictionary objectForKey:species
 //Consider after card display
-typedef enum {
+/*typedef enum {
     //Icteridae: Blackbirds and Orioles
     AltamiraOriole, //in
     AudubonsOriole,
@@ -228,7 +230,7 @@ typedef enum {
     RockWren,
     SedgeWren,
     WinterWren
-} Species;
+} Species;*/
 
 //This figures out which of the four sets this bird is
 typedef enum {
@@ -236,28 +238,26 @@ typedef enum {
     setB,
     setC,
     setD
-} Set;*/
+} Set;
 
-
-@interface Bird : NSObject {
-    /*NSDictionary *mainDictionary;
-    NSString *familyString;
-    NSString *speciesString;
-    NSString *imagePath;
-    Set set;
-    Species species;*/
+@interface Deck : NSObject {
+    
+    NSDictionary *mainDictionary;
+    int cardsLeft;
+    NSMutableArray *cards;
+    int arrayCounter;
+    
 }
 
-/*@property (nonatomic, assign) NSDictionary *mainDictionary;
-@property (nonatomic, assign) NSString *familyString;
-@property (nonatomic, assign) NSString *speciesString;
-@property (nonatomic, assign) NSString *imagePath;
-@property (nonatomic, assign) Set set;
-@property (nonatomic, assign) Species species;
+@property (nonatomic, assign) NSDictionary *mainDictionary;
+@property (nonatomic, assign) int cardsLeft;
+@property (nonatomic, assign) NSMutableArray *cards;
+@property (nonatomic, assign) int arrayCounter;
 
--(id) initWithSpecies:(Species)species andSet:(Set)set;
--(NSString *) familyAsString;
--(NSString *) speciesAsString;
--(NSString *) theImagePath;*/
+-(id)initWithFamilyOne:(Family)familyOne FamilyTwo:(Family)familyTwo andFamilyThree:(Family)familyThree;
+-(void)getRandomSpeciesFromDictionary:(NSDictionary *)familyDictionary;
+-(NSMutableArray *)populateCardArray;
+-(void)shuffleDeck;
 
+NSInteger randomSort(id obj1, id obj2, void *context);
 @end

@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString *displayFamily;
 
 -(id) initWithImagePath:(NSString *)imagePath withSpecies:(NSString *)speciesString withFamily:(NSString *)familyString;
+-(NSString *)speciesAsString;
 
 
 @end

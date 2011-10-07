@@ -7,10 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B81AEF7A143EF9E90024F192 /* gameplayBackgroundOne.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */; };
+		B81AEF7C143EFAA20024F192 /* gameplayBackgroundTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */; };
+		B81AEF7F143EFF810024F192 /* cardFront.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7E143EFF810024F192 /* cardFront.png */; };
+		B81AEF8D143F04370024F192 /* cardinalidaeBlackHeadedGrosbeakSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF81143F04370024F192 /* cardinalidaeBlackHeadedGrosbeakSetA.png */; };
+		B81AEF8E143F04370024F192 /* cardinalidaeBlueBuntingSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF82143F04370024F192 /* cardinalidaeBlueBuntingSetA.png */; };
+		B81AEF8F143F04370024F192 /* cardinalidaeBlueGrosbeakSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF83143F04370024F192 /* cardinalidaeBlueGrosbeakSetA.png */; };
+		B81AEF90143F04370024F192 /* cardinalidaeDickcisselSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF84143F04370024F192 /* cardinalidaeDickcisselSetA.png */; };
+		B81AEF91143F04370024F192 /* cardinalidaeIndigoBuntingSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF85143F04370024F192 /* cardinalidaeIndigoBuntingSetA.png */; };
+		B81AEF92143F04370024F192 /* cardinalidaeLazuliBuntingSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF86143F04370024F192 /* cardinalidaeLazuliBuntingSetA.png */; };
+		B81AEF93143F04370024F192 /* cardinalidaeNorthernCardinalSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF87143F04370024F192 /* cardinalidaeNorthernCardinalSetA.png */; };
+		B81AEF94143F04370024F192 /* cardinalidaePaintedBuntingSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF88143F04370024F192 /* cardinalidaePaintedBuntingSetA.png */; };
+		B81AEF95143F04370024F192 /* cardinalidaePyrrhuloxiaSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF89143F04370024F192 /* cardinalidaePyrrhuloxiaSetA.png */; };
+		B81AEF96143F04370024F192 /* cardinalidaeRoseBreastedGrosbeakSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF8A143F04370024F192 /* cardinalidaeRoseBreastedGrosbeakSetA.png */; };
+		B81AEF97143F04370024F192 /* cardinalidaeVariedBuntingSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF8B143F04370024F192 /* cardinalidaeVariedBuntingSetA.png */; };
+		B81AEF98143F04370024F192 /* cardinalidaeYellowGrosbeakSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF8C143F04370024F192 /* cardinalidaeYellowGrosbeakSetA.png */; };
+		B81AEFB3143F04420024F192 /* corvidaeBlueJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF9A143F04420024F192 /* corvidaeBlueJaySetA.png */; };
+		B81AEFB4143F04420024F192 /* corvidaeBrownJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF9B143F04420024F192 /* corvidaeBrownJaySetA.png */; };
+		B81AEFB5143F04420024F192 /* corvidaeClarksNutcrackerSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF9C143F04420024F192 /* corvidaeClarksNutcrackerSetA.png */; };
+		B81AEFB6143F04420024F192 /* corvidaeFishCrowSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF9D143F04420024F192 /* corvidaeFishCrowSetA.png */; };
+		B81AEFB7143F04420024F192 /* corvidaeFloridaScrubJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF9E143F04420024F192 /* corvidaeFloridaScrubJaySetA.png */; };
+		B81AEFB8143F04420024F192 /* corvidaeGrayJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF9F143F04420024F192 /* corvidaeGrayJaySetA.png */; };
+		B81AEFB9143F04420024F192 /* corvidaeGreenJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA0143F04420024F192 /* corvidaeGreenJaySetA.png */; };
+		B81AEFBA143F04420024F192 /* corvidaeIslandScrubJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA1143F04420024F192 /* corvidaeIslandScrubJaySetA.png */; };
+		B81AEFBB143F04420024F192 /* corvidaeMexicanJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA2143F04420024F192 /* corvidaeMexicanJaySetA.png */; };
+		B81AEFBC143F04420024F192 /* corvidaePinyonJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA3143F04420024F192 /* corvidaePinyonJaySetA.png */; };
+		B81AEFBD143F04420024F192 /* corvidaeStellarsJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA4143F04420024F192 /* corvidaeStellarsJaySetA.png */; };
+		B81AEFBE143F04420024F192 /* corvidaeWesternScrubJaySetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA5143F04420024F192 /* corvidaeWesternScrubJaySetA.png */; };
+		B81AEFBF143F04420024F192 /* icteridaeAltamiraOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA7143F04420024F192 /* icteridaeAltamiraOrioleSetA.png */; };
+		B81AEFC0143F04420024F192 /* icteridaeAudubonsOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA8143F04420024F192 /* icteridaeAudubonsOrioleSetA.png */; };
+		B81AEFC1143F04420024F192 /* icteridaeBaltimoreOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFA9143F04420024F192 /* icteridaeBaltimoreOrioleSetA.png */; };
+		B81AEFC2143F04420024F192 /* icteridaeBlackVentedOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFAA143F04420024F192 /* icteridaeBlackVentedOrioleSetA.png */; };
+		B81AEFC3143F04420024F192 /* icteridaeBullocksOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFAB143F04420024F192 /* icteridaeBullocksOrioleSetA.png */; };
+		B81AEFC4143F04420024F192 /* icteridaeHoodedOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFAC143F04420024F192 /* icteridaeHoodedOrioleSetA.png */; };
+		B81AEFC5143F04420024F192 /* icteridaeOrchardOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFAD143F04420024F192 /* icteridaeOrchardOrioleSetA.png */; };
+		B81AEFC6143F04420024F192 /* icteridaeRedWingedBlackbirdSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFAE143F04420024F192 /* icteridaeRedWingedBlackbirdSetA.png */; };
+		B81AEFC7143F04420024F192 /* icteridaeScottsOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFAF143F04420024F192 /* icteridaeScottsOrioleSetA.png */; };
+		B81AEFC8143F04420024F192 /* icteridaeSpotBreastedOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFB0143F04420024F192 /* icteridaeSpotBreastedOrioleSetA.png */; };
+		B81AEFC9143F04420024F192 /* icteridaeStreakBackedOrioleSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFB1143F04420024F192 /* icteridaeStreakBackedOrioleSetA.png */; };
+		B81AEFCA143F04420024F192 /* icteridaeYellowHeadedBlackbirdSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFB2143F04420024F192 /* icteridaeYellowHeadedBlackbirdSetA.png */; };
+		B81AEFD0143F142B0024F192 /* freeCell.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFCF143F142B0024F192 /* freeCell.png */; };
+		B81AEFD2143F14330024F192 /* cardBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEFD1143F14330024F192 /* cardBack.png */; };
 		B897FEE9143A557A00248D86 /* BirdInfoPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = B897FEE8143A557A00248D86 /* BirdInfoPlist.plist */; };
-		B898FE3314328D100056887D /* icteridaeAltamiraOrioleSetA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE3214328D100056887D /* icteridaeAltamiraOrioleSetA.jpg */; };
-		B898FE36143292080056887D /* icteridaeAltamiraOrioleSetB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE35143292080056887D /* icteridaeAltamiraOrioleSetB.jpg */; };
-		B898FE3C1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B898FE3B1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg */; };
 		B89C313E142759E400CCFF15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C313D142759E400CCFF15 /* UIKit.framework */; };
 		B89C3140142759E400CCFF15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C313F142759E400CCFF15 /* Foundation.framework */; };
 		B89C3142142759E400CCFF15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89C3141142759E400CCFF15 /* CoreGraphics.framework */; };
@@ -29,7 +67,7 @@
 		B89C316E142759E400CCFF15 /* FreeBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C316D142759E400CCFF15 /* FreeBirdTests.m */; };
 		B8B13E551430EFD400DF4104 /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B13E541430EFD400DF4104 /* Bird.m */; };
 		B8B8EB1814275C1B00D81938 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B8B8EB1714275C1B00D81938 /* README.rtf */; };
-		B8F353B714312D9A004A9593 /* cardBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F353B614312D9A004A9593 /* cardBG.png */; };
+		B8BEC375143E6AF5005D6800 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BEC374143E6AF5005D6800 /* Deck.m */; };
 		B8F353BA14312DF7004A9593 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F353B914312DF7004A9593 /* Card.m */; };
 /* End PBXBuildFile section */
 
@@ -44,10 +82,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundOne.png; path = images/gameplayBackgroundOne.png; sourceTree = "<group>"; };
+		B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundTwo.png; path = images/gameplayBackgroundTwo.png; sourceTree = "<group>"; };
+		B81AEF7E143EFF810024F192 /* cardFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardFront.png; path = images/cardFront.png; sourceTree = "<group>"; };
+		B81AEF81143F04370024F192 /* cardinalidaeBlackHeadedGrosbeakSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeBlackHeadedGrosbeakSetA.png; sourceTree = "<group>"; };
+		B81AEF82143F04370024F192 /* cardinalidaeBlueBuntingSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeBlueBuntingSetA.png; sourceTree = "<group>"; };
+		B81AEF83143F04370024F192 /* cardinalidaeBlueGrosbeakSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeBlueGrosbeakSetA.png; sourceTree = "<group>"; };
+		B81AEF84143F04370024F192 /* cardinalidaeDickcisselSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeDickcisselSetA.png; sourceTree = "<group>"; };
+		B81AEF85143F04370024F192 /* cardinalidaeIndigoBuntingSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeIndigoBuntingSetA.png; sourceTree = "<group>"; };
+		B81AEF86143F04370024F192 /* cardinalidaeLazuliBuntingSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeLazuliBuntingSetA.png; sourceTree = "<group>"; };
+		B81AEF87143F04370024F192 /* cardinalidaeNorthernCardinalSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeNorthernCardinalSetA.png; sourceTree = "<group>"; };
+		B81AEF88143F04370024F192 /* cardinalidaePaintedBuntingSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaePaintedBuntingSetA.png; sourceTree = "<group>"; };
+		B81AEF89143F04370024F192 /* cardinalidaePyrrhuloxiaSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaePyrrhuloxiaSetA.png; sourceTree = "<group>"; };
+		B81AEF8A143F04370024F192 /* cardinalidaeRoseBreastedGrosbeakSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeRoseBreastedGrosbeakSetA.png; sourceTree = "<group>"; };
+		B81AEF8B143F04370024F192 /* cardinalidaeVariedBuntingSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeVariedBuntingSetA.png; sourceTree = "<group>"; };
+		B81AEF8C143F04370024F192 /* cardinalidaeYellowGrosbeakSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardinalidaeYellowGrosbeakSetA.png; sourceTree = "<group>"; };
+		B81AEF9A143F04420024F192 /* corvidaeBlueJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeBlueJaySetA.png; sourceTree = "<group>"; };
+		B81AEF9B143F04420024F192 /* corvidaeBrownJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeBrownJaySetA.png; sourceTree = "<group>"; };
+		B81AEF9C143F04420024F192 /* corvidaeClarksNutcrackerSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeClarksNutcrackerSetA.png; sourceTree = "<group>"; };
+		B81AEF9D143F04420024F192 /* corvidaeFishCrowSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeFishCrowSetA.png; sourceTree = "<group>"; };
+		B81AEF9E143F04420024F192 /* corvidaeFloridaScrubJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeFloridaScrubJaySetA.png; sourceTree = "<group>"; };
+		B81AEF9F143F04420024F192 /* corvidaeGrayJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeGrayJaySetA.png; sourceTree = "<group>"; };
+		B81AEFA0143F04420024F192 /* corvidaeGreenJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeGreenJaySetA.png; sourceTree = "<group>"; };
+		B81AEFA1143F04420024F192 /* corvidaeIslandScrubJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeIslandScrubJaySetA.png; sourceTree = "<group>"; };
+		B81AEFA2143F04420024F192 /* corvidaeMexicanJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeMexicanJaySetA.png; sourceTree = "<group>"; };
+		B81AEFA3143F04420024F192 /* corvidaePinyonJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaePinyonJaySetA.png; sourceTree = "<group>"; };
+		B81AEFA4143F04420024F192 /* corvidaeStellarsJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeStellarsJaySetA.png; sourceTree = "<group>"; };
+		B81AEFA5143F04420024F192 /* corvidaeWesternScrubJaySetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corvidaeWesternScrubJaySetA.png; sourceTree = "<group>"; };
+		B81AEFA7143F04420024F192 /* icteridaeAltamiraOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeAltamiraOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFA8143F04420024F192 /* icteridaeAudubonsOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeAudubonsOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFA9143F04420024F192 /* icteridaeBaltimoreOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeBaltimoreOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFAA143F04420024F192 /* icteridaeBlackVentedOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeBlackVentedOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFAB143F04420024F192 /* icteridaeBullocksOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeBullocksOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFAC143F04420024F192 /* icteridaeHoodedOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeHoodedOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFAD143F04420024F192 /* icteridaeOrchardOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeOrchardOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFAE143F04420024F192 /* icteridaeRedWingedBlackbirdSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeRedWingedBlackbirdSetA.png; sourceTree = "<group>"; };
+		B81AEFAF143F04420024F192 /* icteridaeScottsOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeScottsOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFB0143F04420024F192 /* icteridaeSpotBreastedOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeSpotBreastedOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFB1143F04420024F192 /* icteridaeStreakBackedOrioleSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeStreakBackedOrioleSetA.png; sourceTree = "<group>"; };
+		B81AEFB2143F04420024F192 /* icteridaeYellowHeadedBlackbirdSetA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeYellowHeadedBlackbirdSetA.png; sourceTree = "<group>"; };
+		B81AEFCF143F142B0024F192 /* freeCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = freeCell.png; path = images/freeCell.png; sourceTree = "<group>"; };
+		B81AEFD1143F14330024F192 /* cardBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardBack.png; path = images/cardBack.png; sourceTree = "<group>"; };
 		B897FEE8143A557A00248D86 /* BirdInfoPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BirdInfoPlist.plist; path = Resources/BirdInfoPlist.plist; sourceTree = "<group>"; };
-		B898FE3214328D100056887D /* icteridaeAltamiraOrioleSetA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeAltamiraOrioleSetA.jpg; path = images/icteridaeAltamiraOrioleSetA.jpg; sourceTree = "<group>"; };
-		B898FE35143292080056887D /* icteridaeAltamiraOrioleSetB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeAltamiraOrioleSetB.jpg; path = images/icteridaeAltamiraOrioleSetB.jpg; sourceTree = "<group>"; };
-		B898FE3B1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icteridaeBaltimoreOrioleSetA.jpg; path = images/icteridaeBaltimoreOrioleSetA.jpg; sourceTree = "<group>"; };
 		B89C3139142759E400CCFF15 /* FreeBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89C313D142759E400CCFF15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B89C313F142759E400CCFF15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,7 +147,8 @@
 		B8B13E531430EFD400DF4104 /* Bird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bird.h; sourceTree = "<group>"; };
 		B8B13E541430EFD400DF4104 /* Bird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bird.m; sourceTree = "<group>"; };
 		B8B8EB1714275C1B00D81938 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
-		B8F353B614312D9A004A9593 /* cardBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardBG.png; path = images/cardBG.png; sourceTree = "<group>"; };
+		B8BEC373143E6AF5005D6800 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		B8BEC374143E6AF5005D6800 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		B8F353B814312DF7004A9593 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		B8F353B914312DF7004A9593 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +178,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B81AEF7D143EFF140024F192 /* Temp Bird Images */ = {
+			isa = PBXGroup;
+			children = (
+				B81AEF80143F04370024F192 /* cardinalidae */,
+				B81AEF99143F04420024F192 /* corvidae */,
+				B81AEFA6143F04420024F192 /* icteridae */,
+			);
+			name = "Temp Bird Images";
+			sourceTree = "<group>";
+		};
+		B81AEF80143F04370024F192 /* cardinalidae */ = {
+			isa = PBXGroup;
+			children = (
+				B81AEF81143F04370024F192 /* cardinalidaeBlackHeadedGrosbeakSetA.png */,
+				B81AEF82143F04370024F192 /* cardinalidaeBlueBuntingSetA.png */,
+				B81AEF83143F04370024F192 /* cardinalidaeBlueGrosbeakSetA.png */,
+				B81AEF84143F04370024F192 /* cardinalidaeDickcisselSetA.png */,
+				B81AEF85143F04370024F192 /* cardinalidaeIndigoBuntingSetA.png */,
+				B81AEF86143F04370024F192 /* cardinalidaeLazuliBuntingSetA.png */,
+				B81AEF87143F04370024F192 /* cardinalidaeNorthernCardinalSetA.png */,
+				B81AEF88143F04370024F192 /* cardinalidaePaintedBuntingSetA.png */,
+				B81AEF89143F04370024F192 /* cardinalidaePyrrhuloxiaSetA.png */,
+				B81AEF8A143F04370024F192 /* cardinalidaeRoseBreastedGrosbeakSetA.png */,
+				B81AEF8B143F04370024F192 /* cardinalidaeVariedBuntingSetA.png */,
+				B81AEF8C143F04370024F192 /* cardinalidaeYellowGrosbeakSetA.png */,
+			);
+			name = cardinalidae;
+			path = images/cardinalidae;
+			sourceTree = "<group>";
+		};
+		B81AEF99143F04420024F192 /* corvidae */ = {
+			isa = PBXGroup;
+			children = (
+				B81AEF9A143F04420024F192 /* corvidaeBlueJaySetA.png */,
+				B81AEF9B143F04420024F192 /* corvidaeBrownJaySetA.png */,
+				B81AEF9C143F04420024F192 /* corvidaeClarksNutcrackerSetA.png */,
+				B81AEF9D143F04420024F192 /* corvidaeFishCrowSetA.png */,
+				B81AEF9E143F04420024F192 /* corvidaeFloridaScrubJaySetA.png */,
+				B81AEF9F143F04420024F192 /* corvidaeGrayJaySetA.png */,
+				B81AEFA0143F04420024F192 /* corvidaeGreenJaySetA.png */,
+				B81AEFA1143F04420024F192 /* corvidaeIslandScrubJaySetA.png */,
+				B81AEFA2143F04420024F192 /* corvidaeMexicanJaySetA.png */,
+				B81AEFA3143F04420024F192 /* corvidaePinyonJaySetA.png */,
+				B81AEFA4143F04420024F192 /* corvidaeStellarsJaySetA.png */,
+				B81AEFA5143F04420024F192 /* corvidaeWesternScrubJaySetA.png */,
+			);
+			name = corvidae;
+			path = images/corvidae;
+			sourceTree = "<group>";
+		};
+		B81AEFA6143F04420024F192 /* icteridae */ = {
+			isa = PBXGroup;
+			children = (
+				B81AEFA7143F04420024F192 /* icteridaeAltamiraOrioleSetA.png */,
+				B81AEFA8143F04420024F192 /* icteridaeAudubonsOrioleSetA.png */,
+				B81AEFA9143F04420024F192 /* icteridaeBaltimoreOrioleSetA.png */,
+				B81AEFAA143F04420024F192 /* icteridaeBlackVentedOrioleSetA.png */,
+				B81AEFAB143F04420024F192 /* icteridaeBullocksOrioleSetA.png */,
+				B81AEFAC143F04420024F192 /* icteridaeHoodedOrioleSetA.png */,
+				B81AEFAD143F04420024F192 /* icteridaeOrchardOrioleSetA.png */,
+				B81AEFAE143F04420024F192 /* icteridaeRedWingedBlackbirdSetA.png */,
+				B81AEFAF143F04420024F192 /* icteridaeScottsOrioleSetA.png */,
+				B81AEFB0143F04420024F192 /* icteridaeSpotBreastedOrioleSetA.png */,
+				B81AEFB1143F04420024F192 /* icteridaeStreakBackedOrioleSetA.png */,
+				B81AEFB2143F04420024F192 /* icteridaeYellowHeadedBlackbirdSetA.png */,
+			);
+			name = icteridae;
+			path = images/icteridae;
+			sourceTree = "<group>";
+		};
 		B826FFAA142EA2FA0013A3E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +308,8 @@
 				B8B13E541430EFD400DF4104 /* Bird.m */,
 				B8F353B814312DF7004A9593 /* Card.h */,
 				B8F353B914312DF7004A9593 /* Card.m */,
+				B8BEC373143E6AF5005D6800 /* Deck.h */,
+				B8BEC374143E6AF5005D6800 /* Deck.m */,
 				B826FFAA142EA2FA0013A3E6 /* Resources */,
 				B89C3144142759E400CCFF15 /* Supporting Files */,
 			);
@@ -201,10 +350,12 @@
 		B8F353B414312D8B004A9593 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				B898FE3214328D100056887D /* icteridaeAltamiraOrioleSetA.jpg */,
-				B898FE35143292080056887D /* icteridaeAltamiraOrioleSetB.jpg */,
-				B898FE3B1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg */,
-				B8F353B614312D9A004A9593 /* cardBG.png */,
+				B81AEF7D143EFF140024F192 /* Temp Bird Images */,
+				B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */,
+				B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */,
+				B81AEF7E143EFF810024F192 /* cardFront.png */,
+				B81AEFD1143F14330024F192 /* cardBack.png */,
+				B81AEFCF143F142B0024F192 /* freeCell.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -283,11 +434,48 @@
 				B89C3151142759E400CCFF15 /* MainWindow.xib in Resources */,
 				B89C3157142759E400CCFF15 /* FreeBirdViewController.xib in Resources */,
 				B8B8EB1814275C1B00D81938 /* README.rtf in Resources */,
-				B8F353B714312D9A004A9593 /* cardBG.png in Resources */,
-				B898FE3314328D100056887D /* icteridaeAltamiraOrioleSetA.jpg in Resources */,
-				B898FE36143292080056887D /* icteridaeAltamiraOrioleSetB.jpg in Resources */,
-				B898FE3C1432AA0F0056887D /* icteridaeBaltimoreOrioleSetA.jpg in Resources */,
 				B897FEE9143A557A00248D86 /* BirdInfoPlist.plist in Resources */,
+				B81AEF7A143EF9E90024F192 /* gameplayBackgroundOne.png in Resources */,
+				B81AEF7C143EFAA20024F192 /* gameplayBackgroundTwo.png in Resources */,
+				B81AEF7F143EFF810024F192 /* cardFront.png in Resources */,
+				B81AEF8D143F04370024F192 /* cardinalidaeBlackHeadedGrosbeakSetA.png in Resources */,
+				B81AEF8E143F04370024F192 /* cardinalidaeBlueBuntingSetA.png in Resources */,
+				B81AEF8F143F04370024F192 /* cardinalidaeBlueGrosbeakSetA.png in Resources */,
+				B81AEF90143F04370024F192 /* cardinalidaeDickcisselSetA.png in Resources */,
+				B81AEF91143F04370024F192 /* cardinalidaeIndigoBuntingSetA.png in Resources */,
+				B81AEF92143F04370024F192 /* cardinalidaeLazuliBuntingSetA.png in Resources */,
+				B81AEF93143F04370024F192 /* cardinalidaeNorthernCardinalSetA.png in Resources */,
+				B81AEF94143F04370024F192 /* cardinalidaePaintedBuntingSetA.png in Resources */,
+				B81AEF95143F04370024F192 /* cardinalidaePyrrhuloxiaSetA.png in Resources */,
+				B81AEF96143F04370024F192 /* cardinalidaeRoseBreastedGrosbeakSetA.png in Resources */,
+				B81AEF97143F04370024F192 /* cardinalidaeVariedBuntingSetA.png in Resources */,
+				B81AEF98143F04370024F192 /* cardinalidaeYellowGrosbeakSetA.png in Resources */,
+				B81AEFB3143F04420024F192 /* corvidaeBlueJaySetA.png in Resources */,
+				B81AEFB4143F04420024F192 /* corvidaeBrownJaySetA.png in Resources */,
+				B81AEFB5143F04420024F192 /* corvidaeClarksNutcrackerSetA.png in Resources */,
+				B81AEFB6143F04420024F192 /* corvidaeFishCrowSetA.png in Resources */,
+				B81AEFB7143F04420024F192 /* corvidaeFloridaScrubJaySetA.png in Resources */,
+				B81AEFB8143F04420024F192 /* corvidaeGrayJaySetA.png in Resources */,
+				B81AEFB9143F04420024F192 /* corvidaeGreenJaySetA.png in Resources */,
+				B81AEFBA143F04420024F192 /* corvidaeIslandScrubJaySetA.png in Resources */,
+				B81AEFBB143F04420024F192 /* corvidaeMexicanJaySetA.png in Resources */,
+				B81AEFBC143F04420024F192 /* corvidaePinyonJaySetA.png in Resources */,
+				B81AEFBD143F04420024F192 /* corvidaeStellarsJaySetA.png in Resources */,
+				B81AEFBE143F04420024F192 /* corvidaeWesternScrubJaySetA.png in Resources */,
+				B81AEFBF143F04420024F192 /* icteridaeAltamiraOrioleSetA.png in Resources */,
+				B81AEFC0143F04420024F192 /* icteridaeAudubonsOrioleSetA.png in Resources */,
+				B81AEFC1143F04420024F192 /* icteridaeBaltimoreOrioleSetA.png in Resources */,
+				B81AEFC2143F04420024F192 /* icteridaeBlackVentedOrioleSetA.png in Resources */,
+				B81AEFC3143F04420024F192 /* icteridaeBullocksOrioleSetA.png in Resources */,
+				B81AEFC4143F04420024F192 /* icteridaeHoodedOrioleSetA.png in Resources */,
+				B81AEFC5143F04420024F192 /* icteridaeOrchardOrioleSetA.png in Resources */,
+				B81AEFC6143F04420024F192 /* icteridaeRedWingedBlackbirdSetA.png in Resources */,
+				B81AEFC7143F04420024F192 /* icteridaeScottsOrioleSetA.png in Resources */,
+				B81AEFC8143F04420024F192 /* icteridaeSpotBreastedOrioleSetA.png in Resources */,
+				B81AEFC9143F04420024F192 /* icteridaeStreakBackedOrioleSetA.png in Resources */,
+				B81AEFCA143F04420024F192 /* icteridaeYellowHeadedBlackbirdSetA.png in Resources */,
+				B81AEFD0143F142B0024F192 /* freeCell.png in Resources */,
+				B81AEFD2143F14330024F192 /* cardBack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +516,7 @@
 				B89C3154142759E400CCFF15 /* FreeBirdViewController.m in Sources */,
 				B8B13E551430EFD400DF4104 /* Bird.m in Sources */,
 				B8F353BA14312DF7004A9593 /* Card.m in Sources */,
+				B8BEC375143E6AF5005D6800 /* Deck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

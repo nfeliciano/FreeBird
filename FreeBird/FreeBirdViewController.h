@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FreeBirdViewController : UIViewController
+@interface FreeBirdViewController : UIViewController {
+    
+}
+
+-(void)setUpGameBoard;
 
 @end

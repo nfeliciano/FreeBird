@@ -4,47 +4,518 @@
 <dict>
 	<key>birdDictionary</key>
 	<dict>
-		<key>altamiraOriole</key>
+		<key>icteridae</key>
 		<dict>
-			<key>family</key>
-			<string>Blackbirds and Orioles (Icteridae)</string>
-			<key>species</key>
-			<string>Altamira Oriole</string>
-			<key>imagePath</key>
-			<array>
-				<string>icteridaeAltamiraOrioleSetA</string>
-				<string>icteridaeAltamiraOrioleSetB</string>
-				<string>icteridaeAltamiraOrioleSetC</string>
-				<string>icteridaeAltamiraOrioleSetD</string>
-			</array>
+			<key>altamiraOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Altamira Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeAltamiraOrioleSetA</string>
+					<string>icteridaeAltamiraOrioleSetB</string>
+					<string>icteridaeAltamiraOrioleSetC</string>
+					<string>icteridaeAltamiraOrioleSetD</string>
+				</array>
+			</dict>
+			<key>audubonsOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Audubon&apos;s Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeAudubonsOrioleSetA</string>
+					<string>icteridaeAudubonsOrioleSetB</string>
+					<string>icteridaeAudubonsOrioleSetC</string>
+					<string>icteridaeAudubonsOrioleSetD</string>
+				</array>
+			</dict>
+			<key>baltimoreOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Baltimore Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeBaltimoreOrioleSetA</string>
+					<string>icteridaeBaltimoreOrioleSetB</string>
+					<string>icteridaeBaltimoreOrioleSetC</string>
+					<string>icteridaeBaltimoreOrioleSetD</string>
+				</array>
+			</dict>
+			<key>blackVentedOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Black-vented Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeBlackVentedOrioleSetA</string>
+					<string>icteridaeBlackVentedOrioleSetB</string>
+					<string>icteridaeBlackVentedOrioleSetC</string>
+					<string>icteridaeBlackVentedOrioleSetD</string>
+				</array>
+			</dict>
+			<key>bullocksOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Bullock&apos;s Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeBullocksOrioleSetA</string>
+					<string>icteridaeBullocksOrioleSetB</string>
+					<string>icteridaeBullocksOrioleSetC</string>
+					<string>icteridaeBullocksOrioleSetD</string>
+				</array>
+			</dict>
+			<key>hoodedOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Hooded Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeHoodedOrioleSetA</string>
+					<string>icteridaeHoodedOrioleSetB</string>
+					<string>icteridaeHoodedOrioleSetC</string>
+					<string>icteridaeHoodedOrioleSetD</string>
+				</array>
+			</dict>
+			<key>orchardOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Orchard Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeOrchardOrioleSetA</string>
+					<string>icteridaeOrchardOrioleSetB</string>
+					<string>icteridaeOrchardOrioleSetC</string>
+					<string>icteridaeOrchardOrioleSetD</string>
+				</array>
+			</dict>
+			<key>redWingedBlackbird</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Red-winged Blackbird</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeRedWingedBlackbirdSetA</string>
+					<string>icteridaeRedWingedBlackbirdSetB</string>
+					<string>icteridaeRedWingedBlackbirdSetC</string>
+					<string>icteridaeRedWingedBlackbirdSetD</string>
+				</array>
+			</dict>
+			<key>scottsOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Scott&apos;s Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeScottsOrioleSetA</string>
+					<string>icteridaeScottsOrioleSetB</string>
+					<string>icteridaeScottsOrioleSetC</string>
+					<string>icteridaeScottsOrioleSetD</string>
+				</array>
+			</dict>
+			<key>spotBreastedOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Spot-breasted Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeSpotBreastedOrioleSetA</string>
+					<string>icteridaeSpotBreastedOrioleSetB</string>
+					<string>icteridaeSpotBreastedOrioleSetC</string>
+					<string>icteridaeSpotBreastedOrioleSetD</string>
+				</array>
+			</dict>
+			<key>streakBackedOriole</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Streak-backed Oriole</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeStreakBackedOrioleSetA</string>
+					<string>icteridaeStreakBackedOrioleSetB</string>
+					<string>icteridaeStreakBackedOrioleSetC</string>
+					<string>icteridaeStreakBackedOrioleSetD</string>
+				</array>
+			</dict>
+			<key>yellowHeadedBlackbird</key>
+			<dict>
+				<key>family</key>
+				<string>Blackbirds and Orioles (Icteridae)</string>
+				<key>species</key>
+				<string>Yellow-headed Blackbird</string>
+				<key>imagePath</key>
+				<array>
+					<string>icteridaeYellowHeadedBlackbirdSetA</string>
+					<string>icteridaeYellowHeadedBlackbirdSetB</string>
+					<string>icteridaeYellowHeadedBlackbirdSetC</string>
+					<string>icteridaeYellowHeadedBlackbirdSetD</string>
+				</array>
+			</dict>
 		</dict>
-		<key>audubonsOriole</key>
+		<key>cardinalidae</key>
 		<dict>
-			<key>family</key>
-			<string>Blackbirds and Orioles (Icteridae)</string>
-			<key>species</key>
-			<string>Audubon&apos;s Oriole</string>
-			<key>imagePath</key>
-			<array>
-				<string>icteridaeAudubonsOrioleSetA</string>
-				<string>icteridaeAudubonsOrioleSetB</string>
-				<string>icteridaeAudubonsOrioleSetC</string>
-				<string>icteridaeAudubonsOrioleSetD</string>
-			</array>
+			<key>blackHeadedGrosbeak</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Black-headed Grosbeak</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeBlackHeadedGrosbeakSetA</string>
+					<string>cardinalidaeBlackHeadedGrosbeakSetB</string>
+					<string>cardinalidaeBlackHeadedGrosbeakSetC</string>
+					<string>cardinalidaeBlackHeadedGrosbeakSetD</string>
+				</array>
+			</dict>
+			<key>blueBunting</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Blue Bunting</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeBlueBuntingSetA</string>
+					<string>cardinalidaeBlueBuntingSetB</string>
+					<string>cardinalidaeBlueBuntingSetC</string>
+					<string>cardinalidaeBlueBuntingSetD</string>
+				</array>
+			</dict>
+			<key>blueGrosbeak</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Blue Grosbeak</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeBlueGrosbeakSetA</string>
+					<string>cardinalidaeBlueGrosbeakSetB</string>
+					<string>cardinalidaeBlueGrosbeakSetC</string>
+					<string>cardinalidaeBlueGrosbeakSetD</string>
+				</array>
+			</dict>
+			<key>dickcissel</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Dickcissel</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeDickcisselSetA</string>
+					<string>cardinalidaeDickcisselSetB</string>
+					<string>cardinalidaeDickcisselSetC</string>
+					<string>cardinalidaeDickcisselSetD</string>
+				</array>
+			</dict>
+			<key>indigoBunting</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Indigo Bunting</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeIndigoBuntingSetA</string>
+					<string>cardinalidaeIndigoBuntingSetB</string>
+					<string>cardinalidaeIndigoBuntingSetC</string>
+					<string>cardinalidaeIndigoBuntingSetD</string>
+				</array>
+			</dict>
+			<key>lazuliBunting</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Lazuli Bunting</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeLazuliBuntingSetA</string>
+					<string>cardinalidaeLazuliBuntingSetB</string>
+					<string>cardinalidaeLazuliBuntingSetC</string>
+					<string>cardinalidaeLazuliBuntingSetD</string>
+				</array>
+			</dict>
+			<key>northernCardinal</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Northern Cardinal</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeNorthernCardinalSetA</string>
+					<string>cardinalidaeNorthernCardinalSetB</string>
+					<string>cardinalidaeNorthernCardinalSetC</string>
+					<string>cardinalidaeNorthernCardinalSetD</string>
+				</array>
+			</dict>
+			<key>paintedBunting</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Painted Bunting</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaePaintedBuntingSetA</string>
+					<string>cardinalidaePaintedBuntingSetB</string>
+					<string>cardinalidaePaintedBuntingSetC</string>
+					<string>cardinalidaePaintedBuntingSetD</string>
+				</array>
+			</dict>
+			<key>pyrrhuloxia</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Pyrrhuloxia</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaePyrrhuloxiaSetA</string>
+					<string>cardinalidaePyrrhuloxiaSetB</string>
+					<string>cardinalidaePyrrhuloxiaSetC</string>
+					<string>cardinalidaePyrrhuloxiaSetD</string>
+				</array>
+			</dict>
+			<key>roseBreastedGrosbeak</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Rose-breasted Grosbeak</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeRoseBreastedGrosbeakSetA</string>
+					<string>cardinalidaeRoseBreastedGrosbeakSetB</string>
+					<string>cardinalidaeRoseBreastedGrosbeakSetC</string>
+					<string>cardinalidaeRoseBreastedGrosbeakSetD</string>
+				</array>
+			</dict>
+			<key>variedBunting</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Varied Bunting</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeVariedBuntingSetA</string>
+					<string>cardinalidaeVariedBuntingSetB</string>
+					<string>cardinalidaeVariedBuntingSetC</string>
+					<string>cardinalidaeVariedBuntingSetD</string>
+				</array>
+			</dict>
+			<key>yellowGrosbeak</key>
+			<dict>
+				<key>family</key>
+				<string>Cardinals and Grosbeaks (Cardinalidae)</string>
+				<key>species</key>
+				<string>Yellow Grosbeak</string>
+				<key>imagePath</key>
+				<array>
+					<string>cardinalidaeYellowGrosbeakSetA</string>
+					<string>cardinalidaeYellowGrosbeakSetB</string>
+					<string>cardinalidaeYellowGrosbeakSetC</string>
+					<string>cardinalidaeYellowGrosbeakSetD</string>
+				</array>
+			</dict>
 		</dict>
-		<key>baltimoreOriole</key>
+		<key>corvidae</key>
 		<dict>
-			<key>family</key>
-			<string>Blackbirds and Orioles (Icteridae)</string>
-			<key>species</key>
-			<string>Baltimore Oriole</string>
-			<key>imagePath</key>
-			<array>
-				<string>icteridaeBaltimoreOrioleSetA</string>
-				<string>icteridaeBaltimoreOrioleSetB</string>
-				<string>icteridaeBaltimoreOrioleSetC</string>
-				<string>icteridaeBaltimoreOrioleSetD</string>
-			</array>
+			<key>blueJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Blue Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeBlueJaySetA</string>
+					<string>corvidaeBlueJaySetB</string>
+					<string>corvidaeBlueJaySetC</string>
+					<string>corvidaeBlueJaySetD</string>
+				</array>
+			</dict>
+			<key>brownJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Brown Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeBrownJaySetA</string>
+					<string>corvidaeBrownJaySetB</string>
+					<string>corvidaeBrownJaySetC</string>
+					<string>corvidaeBrownJaySetD</string>
+				</array>
+			</dict>
+			<key>clarksNutcracker</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Clark&apos;s Nutcracker</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeClarksNutcrackerSetA</string>
+					<string>corvidaeClarksNutcrackerSetB</string>
+					<string>corvidaeClarksNutcrackerSetC</string>
+					<string>corvidaeClarksNutcrackerSetD</string>
+				</array>
+			</dict>
+			<key>fishCrow</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Fish Crow</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeFishCrowSetA</string>
+					<string>corvidaeFishCrowSetB</string>
+					<string>corvidaeFishCrowSetC</string>
+					<string>corvidaeFishCrowSetD</string>
+				</array>
+			</dict>
+			<key>floridaScrubJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Florida Scrub Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeFloridaScrubJaySetA</string>
+					<string>corvidaeFloridaScrubJaySetB</string>
+					<string>corvidaeFloridaScrubJaySetC</string>
+					<string>corvidaeFloridaScrubJaySetD</string>
+				</array>
+			</dict>
+			<key>grayJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Gray Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeGrayJaySetA</string>
+					<string>corvidaeGrayJaySetB</string>
+					<string>corvidaeGrayJaySetC</string>
+					<string>corvidaeGrayJaySetD</string>
+				</array>
+			</dict>
+			<key>greenJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Green Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeGreenJaySetA</string>
+					<string>corvidaeGreenJaySetB</string>
+					<string>corvidaeGreenJaySetC</string>
+					<string>corvidaeGreenJaySetD</string>
+				</array>
+			</dict>
+			<key>islandScrubJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Island Scrub Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeIslandScrubJaySetA</string>
+					<string>corvidaeIslandScrubJaySetB</string>
+					<string>corvidaeIslandScrubJaySetC</string>
+					<string>corvidaeIslandScrubJaySetD</string>
+				</array>
+			</dict>
+			<key>mexicanJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Mexican Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeMexicanJaySetA</string>
+					<string>corvidaeMexicanJaySetB</string>
+					<string>corvidaeMexicanJaySetC</string>
+					<string>corvidaeMexicanJaySetD</string>
+				</array>
+			</dict>
+			<key>pinyonJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Pinyon Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaePinyonJaySetA</string>
+					<string>corvidaePinyonJaySetB</string>
+					<string>corvidaePinyonJaySetC</string>
+					<string>corvidaePinyonJaySetD</string>
+				</array>
+			</dict>
+			<key>stellarsJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Stellar&apos;s Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeStellarsJaySetA</string>
+					<string>corvidaeStellarsJaySetB</string>
+					<string>corvidaeStellarsJaySetC</string>
+					<string>corvidaeStellarsJaySetD</string>
+				</array>
+			</dict>
+			<key>westernScrubJay</key>
+			<dict>
+				<key>family</key>
+				<string>Crows, Jays and Magpies (Corvidae)</string>
+				<key>species</key>
+				<string>Western Scrub Jay</string>
+				<key>imagePath</key>
+				<array>
+					<string>corvidaeWesternScrubJaySetA</string>
+					<string>corvidaeWesternScrubJaySetB</string>
+					<string>corvidaeWesternScrubJaySetC</string>
+					<string>corvidaeWesternScrubJaySetD</string>
+				</array>
+			</dict>
 		</dict>
 	</dict>
 </dict>
