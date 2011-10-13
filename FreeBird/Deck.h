@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Card.h"
-#import "Bird.h"
 
 typedef enum {
     Icteridae,      //Blackbirds and Orioles
@@ -233,12 +232,12 @@ typedef enum {
 } Species;*/
 
 //This figures out which of the four sets this bird is
-typedef enum {
+/*typedef enum {
     setA,
     setB,
     setC,
     setD
-} Set;
+} Set;*/
 
 @interface Deck : NSObject {
     

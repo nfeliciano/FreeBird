@@ -65,9 +65,9 @@
 		B89C316A142759E400CCFF15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89C3168142759E400CCFF15 /* InfoPlist.strings */; };
 		B89C316C142759E400CCFF15 /* FreeBirdTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B89C316B142759E400CCFF15 /* FreeBirdTests.h */; };
 		B89C316E142759E400CCFF15 /* FreeBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C316D142759E400CCFF15 /* FreeBirdTests.m */; };
-		B8B13E551430EFD400DF4104 /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B13E541430EFD400DF4104 /* Bird.m */; };
 		B8B8EB1814275C1B00D81938 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B8B8EB1714275C1B00D81938 /* README.rtf */; };
 		B8BEC375143E6AF5005D6800 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BEC374143E6AF5005D6800 /* Deck.m */; };
+		B8E6AF871440FD4F0016771C /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6AF861440FD4F0016771C /* Column.m */; };
 		B8F353BA14312DF7004A9593 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F353B914312DF7004A9593 /* Card.m */; };
 /* End PBXBuildFile section */
 
@@ -144,11 +144,11 @@
 		B89C3169142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B89C316B142759E400CCFF15 /* FreeBirdTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeBirdTests.h; sourceTree = "<group>"; };
 		B89C316D142759E400CCFF15 /* FreeBirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdTests.m; sourceTree = "<group>"; };
-		B8B13E531430EFD400DF4104 /* Bird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bird.h; sourceTree = "<group>"; };
-		B8B13E541430EFD400DF4104 /* Bird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bird.m; sourceTree = "<group>"; };
 		B8B8EB1714275C1B00D81938 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		B8BEC373143E6AF5005D6800 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
 		B8BEC374143E6AF5005D6800 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		B8E6AF851440FD4F0016771C /* Column.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Column.h; sourceTree = "<group>"; };
+		B8E6AF861440FD4F0016771C /* Column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Column.m; sourceTree = "<group>"; };
 		B8F353B814312DF7004A9593 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		B8F353B914312DF7004A9593 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,12 +304,12 @@
 				B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */,
 				B89C3152142759E400CCFF15 /* FreeBirdViewController.h */,
 				B89C3153142759E400CCFF15 /* FreeBirdViewController.m */,
-				B8B13E531430EFD400DF4104 /* Bird.h */,
-				B8B13E541430EFD400DF4104 /* Bird.m */,
 				B8F353B814312DF7004A9593 /* Card.h */,
 				B8F353B914312DF7004A9593 /* Card.m */,
 				B8BEC373143E6AF5005D6800 /* Deck.h */,
 				B8BEC374143E6AF5005D6800 /* Deck.m */,
+				B8E6AF851440FD4F0016771C /* Column.h */,
+				B8E6AF861440FD4F0016771C /* Column.m */,
 				B826FFAA142EA2FA0013A3E6 /* Resources */,
 				B89C3144142759E400CCFF15 /* Supporting Files */,
 			);
@@ -514,9 +514,9 @@
 				B89C314A142759E400CCFF15 /* main.m in Sources */,
 				B89C314E142759E400CCFF15 /* FreeBirdAppDelegate.m in Sources */,
 				B89C3154142759E400CCFF15 /* FreeBirdViewController.m in Sources */,
-				B8B13E551430EFD400DF4104 /* Bird.m in Sources */,
 				B8F353BA14312DF7004A9593 /* Card.m in Sources */,
 				B8BEC375143E6AF5005D6800 /* Deck.m in Sources */,
+				B8E6AF871440FD4F0016771C /* Column.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

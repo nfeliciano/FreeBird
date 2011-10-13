@@ -10,8 +10,8 @@
 
 #import "FreeBirdViewController.h"
 #import "Deck.h"
-#import "Bird.h"
 #import "Card.h"
+#import "Column.h"
 
 @implementation FreeBirdViewController
 
@@ -36,7 +36,35 @@
     Deck *deck = [[Deck alloc] initWithFamilyOne:Icteridae FamilyTwo:Cardinalidae andFamilyThree:Corvidae];
     NSMutableArray *cards = [deck populateCardArray];
     
-    Card *cardDeck[48];
+    Column *columns[6];
+    int xPos = 110;
+    for (int i =0; i < 6; i++) {
+        columns[i] = [[Column alloc] initWithXPosition:xPos];
+        xPos += 160;
+    }
+    
+    [columns[0] addCardToColumn:[cards objectAtIndex:0]];
+    Card *aCard = [columns[0] bottomCard];
+    aCard.center = [columns[0] getPositionOfCard];
+    [self.view addSubview:aCard];
+    
+    [columns[0] addCardToColumn:[cards objectAtIndex:1]];
+    Card *aCardB = [columns[0] bottomCard];
+    aCardB.center = [columns[0] getPositionOfCard];
+    [self.view addSubview:aCardB];
+    
+    for (int i = 0; i < 6; i++) {
+        Column *col = columns[i];
+        NSLog(@"%d", [col numberOfCardsInColumn]);
+    }
+    
+    /*for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 6; j++) {
+            
+        }
+    }*/
+    
+    /*Card *cardDeck[48];
     for (int i = 0; i < 48; i++) {
         cardDeck[i] = [cards objectAtIndex:i];
     }
@@ -84,64 +112,8 @@
     [self.view addSubview:cardDeck[12]];
     
     cardDeck[13].center = CGPointMake(270, 460);
-    [self.view addSubview:cardDeck[13]];
+    [self.view addSubview:cardDeck[13]];*/
     
-    
-    /*All temporary code until released down there
-     *Order: initialize bird -> initialize card using bird object descriptions -> position card ->add card to view -> release -> release -> release
-     *This will get more complex when we get plists up. This was strictly to check if the bird model works*/
-    
-    /*Bird *altamiraOrioleSetA = [[Bird alloc] initWithSpecies:AltamiraOriole andSet:setA];
-    NSLog(@"%@", altamiraOrioleSetA);
-    Bird *altamiraOrioleSetB = [[Bird alloc] initWithSpecies:AltamiraOriole andSet:setB];
-    Bird *baltimoreOrioleSetA = [[Bird alloc] initWithSpecies:BaltimoreOriole andSet:setA];
-    
-    Card *aCardF = [[Card alloc] initWithImagePath:altamiraOrioleSetB.imagePath withSpecies:[altamiraOrioleSetB speciesAsString] withFamily:altamiraOrioleSetB.familyString];
-    aCardF.center = CGPointMake(512, 200);
-    [self.view addSubview:aCardF];
-    [aCardF release];
-    
-    Card *aCardG = [[Card alloc] initWithImagePath:altamiraOrioleSetB.imagePath withSpecies:[altamiraOrioleSetB speciesAsString] withFamily:altamiraOrioleSetB.familyString];
-    aCardG.center = CGPointMake(512, 270);
-    [self.view addSubview:aCardG];
-    [aCardG release];
-    
-    Card *aCardH = [[Card alloc] initWithImagePath:altamiraOrioleSetB.imagePath withSpecies:[altamiraOrioleSetB speciesAsString] withFamily:altamiraOrioleSetB.familyString];
-    aCardH.center = CGPointMake(512, 340);
-    [self.view addSubview:aCardH];
-    [aCardH release];
-    
-    Card *aCard = [[Card alloc] initWithImagePath:altamiraOrioleSetA.imagePath withSpecies:[altamiraOrioleSetA speciesAsString] withFamily:altamiraOrioleSetA.familyString];
-    aCard.center = CGPointMake(512, 410);
-    [self.view addSubview:aCard];
-    [aCard release];
-    
-    Card *aCardB = [[Card alloc] initWithImagePath:altamiraOrioleSetB.imagePath withSpecies:[altamiraOrioleSetB speciesAsString] withFamily:altamiraOrioleSetB.familyString];
-    aCardB.center = CGPointMake(512, 480);
-    [self.view addSubview:aCardB];
-    [aCardB release];
-    
-    Card *aCardC = [[Card alloc] initWithImagePath:altamiraOrioleSetB.imagePath withSpecies:[altamiraOrioleSetB speciesAsString] withFamily:altamiraOrioleSetB.familyString];
-    aCardC.center = CGPointMake(512, 550);
-    [self.view addSubview:aCardC];
-    [aCardC release];
-    
-    Card *aCardD = [[Card alloc] initWithImagePath:altamiraOrioleSetB.imagePath withSpecies:[altamiraOrioleSetB speciesAsString] withFamily:altamiraOrioleSetB.familyString];
-    aCardD.center = CGPointMake(512, 620);
-    [self.view addSubview:aCardD];
-    [aCardD release];
-    
-    
-
-    
-    Card *anotherCard = [[Card alloc] initWithImagePath:baltimoreOrioleSetA.imagePath withSpecies:[baltimoreOrioleSetA speciesAsString] withFamily:baltimoreOrioleSetA.familyString];
-    anotherCard.center = CGPointMake(700, 384);
-    [self.view addSubview:anotherCard];
-    [anotherCard release];
-    
-    [altamiraOrioleSetA release];
-    [altamiraOrioleSetB release];
-    [baltimoreOrioleSetA release];*/
 }
 
 
