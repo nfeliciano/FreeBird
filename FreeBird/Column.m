@@ -45,6 +45,7 @@
 
 -(void)addCardToColumn:(Card *)aCard {
     [column addObject:aCard];
+    [aCard setCoordinatesWithXPosition:xPosition andYPosition:yPosition];
     cardsInColumn++;
     yPosition += 80;
 }
@@ -56,11 +57,6 @@
 -(Card *)removeCardFromColumn {
     Card *lol;
     return lol;
-}
-
--(CGPoint)getPositionOfCard {
-    CGPoint bottomCardCenter = CGPointMake(xPosition, yPosition-80);
-    return bottomCardCenter;
 }
 
 -(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB {

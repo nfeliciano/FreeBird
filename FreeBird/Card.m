@@ -16,7 +16,7 @@
 @synthesize displaySpecies;
 @synthesize displayFamily;
 @synthesize backgroundImage;
-@synthesize column;
+@synthesize cardPosition;
 
 /*In this initialization, the card itself is initialized, that's the image being shown, the family, and the species
  *It isn't drawn itself until drawRect - not sure if this is the right thing to do, performance-wise*/
@@ -33,7 +33,7 @@
         backgroundImage = image;
         displayFamily = familyString;
         displaySpecies = speciesString;
-        column = 7;
+        cardPosition = CGPointMake(0, 0);
     }
     
     return self;
@@ -86,6 +86,14 @@
 
 -(NSString *)familyAsString {
     return displayFamily;
+}
+
+-(void)setCoordinatesWithXPosition:(int)xPosition andYPosition:(int)yPosition {
+    cardPosition = CGPointMake(xPosition, yPosition);
+}
+
+-(CGPoint)getCardPosition {
+    return cardPosition;
 }
 
 @end

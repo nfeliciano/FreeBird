@@ -27,7 +27,6 @@
 -(void)addCardToColumn:(Card *)aCard;
 -(Card *)bottomCard;
 -(Card *)removeCardFromColumn;
--(CGPoint)getPositionOfCard;
 -(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(int)numberOfCardsInColumn;

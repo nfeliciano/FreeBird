@@ -43,7 +43,15 @@
         xPos += 160;
     }
     
-    [columns[0] addCardToColumn:[cards objectAtIndex:0]];
+    [columns[3] addCardToColumn:[cards objectAtIndex:0]];
+    Card *aCard = [columns[3] bottomCard];
+    aCard.center = [aCard getCardPosition];
+    [self.view addSubview:aCard];
+    
+    
+    
+    
+    /*[columns[0] addCardToColumn:[cards objectAtIndex:0]];
     Card *aCard = [columns[0] bottomCard];
     aCard.center = [columns[0] getPositionOfCard];
     [self.view addSubview:aCard];
@@ -51,12 +59,19 @@
     [columns[0] addCardToColumn:[cards objectAtIndex:1]];
     Card *aCardB = [columns[0] bottomCard];
     aCardB.center = [columns[0] getPositionOfCard];
-    [self.view addSubview:aCardB];
+    [self.view addSubview:aCardB];*/
     
-    for (int i = 0; i < 6; i++) {
+    /*
+     for (int i = 0; i < 6; i++) {
+        //init Card *aCard;
+        
+     
+     */
+    
+    /*for (int i = 0; i < 6; i++) {
         Column *col = columns[i];
         NSLog(@"%d", [col numberOfCardsInColumn]);
-    }
+    }*/
     
     /*for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 6; j++) {
