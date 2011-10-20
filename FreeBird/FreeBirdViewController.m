@@ -13,6 +13,8 @@
 #import "Card.h"
 #import "Column.h"
 
+Column *columns[6];
+
 @implementation FreeBirdViewController
 
 - (void)didReceiveMemoryWarning
@@ -36,7 +38,6 @@
     Deck *deck = [[Deck alloc] initWithFamilyOne:Icteridae FamilyTwo:Cardinalidae andFamilyThree:Corvidae];
     NSMutableArray *cards = [deck populateCardArray];
     
-    Column *columns[6];
     int xPos = 110;
     for (int i =0; i < 6; i++) {
         columns[i] = [[Column alloc] initWithXPosition:xPos];
@@ -48,8 +49,16 @@
     aCard.center = [aCard getCardPosition];
     [self.view addSubview:aCard];
     
+    [columns[3] addCardToColumn:[cards objectAtIndex:1]];
+    aCard = [columns[3] bottomCard];
+    aCard.center = [aCard getCardPosition];
+    [self.view addSubview:aCard];
     
-    
+    NSMutableArray *lol = [columns[3] allCardsInTheColumn];
+    for (int i = 0; i < [lol count]; i++) {
+        aCard = [lol objectAtIndex:i];
+        NSLog(@"%@", [aCard speciesAsString]);
+    }
     
     /*[columns[0] addCardToColumn:[cards objectAtIndex:0]];
     Card *aCard = [columns[0] bottomCard];

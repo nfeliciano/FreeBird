@@ -55,8 +55,10 @@
 }
 
 -(Card *)removeCardFromColumn {
-    Card *lol;
-    return lol;
+    Card *bottom = [self bottomCard];
+    [column removeObjectAtIndex:cardsInColumn-1];
+    cardsInColumn--;
+    return bottom;
 }
 
 -(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB {
@@ -69,6 +71,10 @@
 
 -(int)numberOfCardsInColumn {
     return cardsInColumn;
+}
+
+-(NSMutableArray *)allCardsInTheColumn {
+    return column;
 }
 
 @end
