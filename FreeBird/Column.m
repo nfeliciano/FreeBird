@@ -6,6 +6,8 @@
 //  Copyright 2011 University of Victoria. All rights reserved.
 //
 
+//random comment too
+
 #import "Column.h"
 
 @implementation Column
