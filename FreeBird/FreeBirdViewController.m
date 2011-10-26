@@ -15,6 +15,7 @@
 
 Column *columns[6];
 Card *cardToMove;
+Card *aCard;
 
 
 @implementation FreeBirdViewController
@@ -45,8 +46,23 @@ Card *cardToMove;
         columns[i] = [[Column alloc] initWithXPosition:xPos];
         xPos += 160;
     }
-    
-    [columns[3] addCardToColumn:[cards objectAtIndex:0]];
+    int temp =0;
+    for (int col = 0; col<6; col++) 
+    {
+        for (int row = 0; row<4; row++, temp++) 
+        {
+            [columns[col] addCardToColumn:[cards objectAtIndex:temp]];
+            aCard = [columns[col] bottomCard];
+            aCard.center = [aCard getCardPosition];
+            [self.view addSubview:aCard];
+        }
+        NSMutableArray *lol = [columns[col] allCardsInTheColumn];
+        for (int i = 0; i < [lol count]; i++) {
+            aCard = [lol objectAtIndex:i];
+            NSLog(@"%@", [aCard speciesAsString]);
+        }
+    }
+   /* [columns[3] addCardToColumn:[cards objectAtIndex:0]];
     Card *aCard = [columns[3] bottomCard];
     aCard.center = [aCard getCardPosition];
     [self.view addSubview:aCard];
@@ -54,13 +70,9 @@ Card *cardToMove;
     [columns[3] addCardToColumn:[cards objectAtIndex:1]];
     aCard = [columns[3] bottomCard];
     aCard.center = [aCard getCardPosition];
-    [self.view addSubview:aCard];
+    [self.view addSubview:aCard];*/
     
-    NSMutableArray *lol = [columns[3] allCardsInTheColumn];
-    for (int i = 0; i < [lol count]; i++) {
-        aCard = [lol objectAtIndex:i];
-        NSLog(@"%@", [aCard speciesAsString]);
-    }
+
     
     /*[columns[0] addCardToColumn:[cards objectAtIndex:0]];
     Card *aCard = [columns[0] bottomCard];
@@ -149,7 +161,10 @@ Card *cardToMove;
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    //checks to see if any objects were touched
     UITouch *touch = [touches anyObject];
+    
+    //traverses the array of cards to see what card was touched
     for (int i=0; i<6; i++) 
     {
         int columnLength = [columns[i] numberOfCardsInColumn];
@@ -157,23 +172,38 @@ Card *cardToMove;
         //NSLog(@"%d", columnLength);
         for (int j=0; j<columnLength; j++) 
         {
+            //cardToMove is the card that has been touched
             cardToMove = [thisColumn objectAtIndex:j];
                                         
             if ([touch view] == cardToMove) 
             {
+                //Moves card assigned to cardToMove to the touched position
                 CGPoint location = [touch locationInView:self.view];
                 cardToMove.center = location;
-                break;
-            }
-        } 
+                return;
+            } 
+        }
     }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+       
+    for (int col = 0; col<6; col++) {
+        Card *tempCard = [columns[col] bottomCard];
+        if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
+            
+            [columns[col] addCardToColumn:cardToMove];
+            cardToMove.center = [cardToMove getCardPosition];
+            return;
+        }
+    }
+    //returns moved card to its original position
     CGPoint start = [cardToMove getCardPosition];
     cardToMove.center = start;
+    //resets cardToMove
     cardToMove = nil;
+
 }
 
 - (void)viewDidUnload
