@@ -14,6 +14,8 @@
 #import "Column.h"
 
 Column *columns[6];
+Card *cardToMove;
+
 
 @implementation FreeBirdViewController
 
@@ -140,6 +142,39 @@ Column *columns[6];
     
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    for (int i=0; i<6; i++) 
+    {
+        int columnLength = [columns[i] numberOfCardsInColumn];
+        NSMutableArray *thisColumn = [columns[i] allCardsInTheColumn];
+        //NSLog(@"%d", columnLength);
+        for (int j=0; j<columnLength; j++) 
+        {
+            cardToMove = [thisColumn objectAtIndex:j];
+                                        
+            if ([touch view] == cardToMove) 
+            {
+                CGPoint location = [touch locationInView:self.view];
+                cardToMove.center = location;
+                break;
+            }
+        } 
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGPoint start = [cardToMove getCardPosition];
+    cardToMove.center = start;
+    cardToMove = nil;
+}
 
 - (void)viewDidUnload
 {
