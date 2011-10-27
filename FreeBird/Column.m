@@ -59,6 +59,7 @@
 -(Card *)removeCardFromColumn {
     Card *bottom = [self bottomCard];
     [column removeObjectAtIndex:cardsInColumn-1];
+    yPosition -= 80;
     cardsInColumn--;
     return bottom;
 }

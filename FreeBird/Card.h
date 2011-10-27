@@ -14,7 +14,7 @@
     NSString *displaySpecies;
     NSString *displayFamily;
     CGPoint cardPosition;
-    
+    int column;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;
@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString *displaySpecies;
 @property (nonatomic, retain) NSString *displayFamily;
 @property (nonatomic, assign) CGPoint cardPosition;
+@property (nonatomic, assign) int column;
 
 -(id) initWithImagePath:(NSString *)imagePath withSpecies:(NSString *)speciesString withFamily:(NSString *)familyString;
 -(NSString *)speciesAsString;

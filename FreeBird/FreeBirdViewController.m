@@ -38,6 +38,8 @@ Card *aCard;
     
     [self setUpGameBoard];
     
+    cardToMove = nil;
+    
     Deck *deck = [[Deck alloc] initWithFamilyOne:Icteridae FamilyTwo:Cardinalidae andFamilyThree:Corvidae];
     NSMutableArray *cards = [deck populateCardArray];
     
@@ -54,13 +56,14 @@ Card *aCard;
             [columns[col] addCardToColumn:[cards objectAtIndex:temp]];
             aCard = [columns[col] bottomCard];
             aCard.center = [aCard getCardPosition];
+            [aCard setColumn:col];
             [self.view addSubview:aCard];
         }
-        NSMutableArray *lol = [columns[col] allCardsInTheColumn];
+        /*NSMutableArray *lol = [columns[col] allCardsInTheColumn];
         for (int i = 0; i < [lol count]; i++) {
             aCard = [lol objectAtIndex:i];
             NSLog(@"%@", [aCard speciesAsString]);
-        }
+        }*/
     }
    /* [columns[3] addCardToColumn:[cards objectAtIndex:0]];
     Card *aCard = [columns[3] bottomCard];
@@ -91,67 +94,6 @@ Card *aCard;
      
      */
     
-    /*for (int i = 0; i < 6; i++) {
-        Column *col = columns[i];
-        NSLog(@"%d", [col numberOfCardsInColumn]);
-    }*/
-    
-    /*for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 6; j++) {
-            
-        }
-    }*/
-    
-    /*Card *cardDeck[48];
-    for (int i = 0; i < 48; i++) {
-        cardDeck[i] = [cards objectAtIndex:i];
-    }
-    
-    cardDeck[0].center = CGPointMake(110, 300);
-    [self.view addSubview:cardDeck[0]];
-    
-    cardDeck[1].center = CGPointMake(270, 300);
-    [self.view addSubview:cardDeck[1]];
-    
-    cardDeck[2].center = CGPointMake(430, 300);
-    [self.view addSubview:cardDeck[2]];
-    
-    cardDeck[3].center = CGPointMake(590, 300);
-    [self.view addSubview:cardDeck[3]];
-    
-    cardDeck[4].center = CGPointMake(750, 300);
-    [self.view addSubview:cardDeck[4]];
-    
-    cardDeck[5].center = CGPointMake(910, 300);
-    [self.view addSubview:cardDeck[5]];
-    
-    
-    
-    
-    cardDeck[6].center = CGPointMake(110, 330);
-    [self.view addSubview:cardDeck[6]];
-    
-    cardDeck[7].center = CGPointMake(110, 360);
-    [self.view addSubview:cardDeck[7]];
-    
-    cardDeck[8].center = CGPointMake(110, 440);
-    [self.view addSubview:cardDeck[8]];
-    
-    cardDeck[9].center = CGPointMake(110, 520);
-    [self.view addSubview:cardDeck[9]];
-    
-    cardDeck[10].center = CGPointMake(430, 380);
-    [self.view addSubview:cardDeck[10]];
-    
-    cardDeck[11].center = CGPointMake(430, 460);
-    [self.view addSubview:cardDeck[11]];
-    
-    cardDeck[12].center = CGPointMake(270, 380);
-    [self.view addSubview:cardDeck[12]];
-    
-    cardDeck[13].center = CGPointMake(270, 460);
-    [self.view addSubview:cardDeck[13]];*/
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -178,32 +120,36 @@ Card *aCard;
             if ([touch view] == cardToMove) 
             {
                 //Moves card assigned to cardToMove to the touched position
+                [self.view bringSubviewToFront:cardToMove];
                 CGPoint location = [touch locationInView:self.view];
                 cardToMove.center = location;
                 return;
-            } 
+            }
+            cardToMove = nil;
+            
         }
     }
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-       
+    
+    [columns[[cardToMove column]] removeCardFromColumn];
     for (int col = 0; col<6; col++) {
         Card *tempCard = [columns[col] bottomCard];
         if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
-            
-            [columns[col] addCardToColumn:cardToMove];
+            [cardToMove setColumn:col];
+            if (cardToMove != nil) [columns[col] addCardToColumn:cardToMove];
             cardToMove.center = [cardToMove getCardPosition];
             return;
         }
     }
     //returns moved card to its original position
     CGPoint start = [cardToMove getCardPosition];
+    [columns[[cardToMove column]] addCardToColumn:cardToMove];
     cardToMove.center = start;
     //resets cardToMove
     cardToMove = nil;
-
 }
 
 - (void)viewDidUnload
