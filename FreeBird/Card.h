@@ -15,6 +15,7 @@
     NSString *displayFamily;
     CGPoint cardPosition;
     int column;
+    BOOL isABottomCard;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSString *displayFamily;
 @property (nonatomic, assign) CGPoint cardPosition;
 @property (nonatomic, assign) int column;
+@property (nonatomic, assign) BOOL isABottomCard;
 
 -(id) initWithImagePath:(NSString *)imagePath withSpecies:(NSString *)speciesString withFamily:(NSString *)familyString;
 -(NSString *)speciesAsString;

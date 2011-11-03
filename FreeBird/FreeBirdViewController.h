@@ -12,6 +12,7 @@
     
 }
 
+-(void)addRowOfCards;
 -(void)setUpGameBoard;
 
 @end

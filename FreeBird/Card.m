@@ -18,6 +18,7 @@
 @synthesize backgroundImage;
 @synthesize cardPosition;
 @synthesize column;
+@synthesize isABottomCard;
 
 /*In this initialization, the card itself is initialized, that's the image being shown, the family, and the species
  *It isn't drawn itself until drawRect - not sure if this is the right thing to do, performance-wise*/

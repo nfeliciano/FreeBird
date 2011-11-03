@@ -46,10 +46,15 @@
 }
 
 -(void)addCardToColumn:(Card *)aCard {
+    if (cardsInColumn != 0) {
+        Card *lastBottom = [column objectAtIndex:cardsInColumn-1];
+        [lastBottom setIsABottomCard:NO];
+    }
     [column addObject:aCard];
     [aCard setCoordinatesWithXPosition:xPosition andYPosition:yPosition];
     cardsInColumn++;
     yPosition += 80;
+    [aCard setIsABottomCard:YES];
 }
 
 -(Card *)bottomCard {
@@ -57,6 +62,10 @@
 }
 
 -(Card *)removeCardFromColumn {
+    if (cardsInColumn != 0) {
+        Card *lastBottom = [column objectAtIndex:cardsInColumn-2];
+        [lastBottom setIsABottomCard:YES];
+    }
     Card *bottom = [self bottomCard];
     [column removeObjectAtIndex:cardsInColumn-1];
     yPosition -= 80;
