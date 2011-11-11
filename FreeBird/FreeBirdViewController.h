@@ -24,5 +24,8 @@
 
 -(void)addRowOfCards;
 -(void)setUpGameBoard;
+-(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
+-(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
+-(int)checkAbove:(int )clmn;
 
 @end
