@@ -9,19 +9,17 @@
 //comment comment lolololol
 
 #import "FreeBirdViewController.h"
-#import "Deck.h"
-#import "Card.h"
-#import "Column.h"
 
-Column *columns[6];
-Card *cardToMove;
+UIImageView *deckGraphic[3];
 Card *aCard;
 BOOL areWePeeking;
 int deckCounter;
-NSMutableArray *cards;
-
 
 @implementation FreeBirdViewController
+
+@synthesize columns;
+@synthesize cards;
+@synthesize cardToMove;
 
 - (void)didReceiveMemoryWarning
 {
@@ -45,11 +43,14 @@ NSMutableArray *cards;
     deckCounter = 0;
     
     Deck *deck = [[Deck alloc] initWithFamilyOne:Icteridae FamilyTwo:Cardinalidae andFamilyThree:Corvidae];
-    cards = [deck populateCardArray];
+    cards = [[NSMutableArray alloc] initWithArray:[deck populateCardArray]];
+    [deck release];
+    
+    columns = [[NSMutableArray alloc] init];
     
     int xPos = 110;
     for (int i =0; i < 6; i++) {
-        columns[i] = [[Column alloc] initWithXPosition:xPos];
+        [columns addObject: [[Column alloc] initWithXPosition:xPos]];
         xPos += 160;
     }
     for (int row  = 0; row < 4; row++) {
@@ -89,16 +90,24 @@ NSMutableArray *cards;
 }
 
 -(void)dealloc {
+    for (int i = 0; i < 6; i++) {
+        [[columns objectAtIndex:i] release];
+    }
+    
+    for (int i = 0; i < 3; i++) {
+        [deckGraphic[i] release];
+    }
     [super dealloc];
 }
 
 -(void)addRowOfCards {
     for (int col = 0; col < 6; col++, deckCounter++) {
-        [columns[col] addCardToColumn:[cards objectAtIndex:deckCounter]];
-        aCard = [columns[col] bottomCard];
+        [[columns objectAtIndex:col] addCardToColumn:[cards objectAtIndex:deckCounter]];
+        aCard = [[columns objectAtIndex:col] bottomCard];
         aCard.center = [aCard getCardPosition];
         [aCard setColumn:col];
         [self.view addSubview:aCard];
+        //[[cards objectAtIndex:deckCounter] release];
     }
 }
 
@@ -121,16 +130,16 @@ NSMutableArray *cards;
     x = 940;
     int y = 70;
     for (int i = 0; i < 3; i++) {
-        UIImageView *deckImage = [[UIImageView alloc] initWithFrame:deckImageRect];
-        [deckImage setImage:[UIImage imageNamed:@"cardBack.png"]];
-        deckImage.opaque = NO;
-        deckImage.center = CGPointMake(x, y);
-        deckImage.contentMode = UIViewContentModeScaleAspectFit;
-        CGRect temp = deckImage.frame;
+        deckGraphic[i] = [[UIImageView alloc] initWithFrame:deckImageRect];
+        deckGraphic[i].userInteractionEnabled = YES;
+        [deckGraphic[i] setImage:[UIImage imageNamed:@"cardBack.png"]];
+        deckGraphic[i].opaque = NO;
+        deckGraphic[i].center = CGPointMake(x, y);
+        deckGraphic[i].contentMode = UIViewContentModeScaleAspectFit;
+        CGRect temp = deckGraphic[i].frame;
         temp.size.width = 90;
-        deckImage.frame = temp;
-        [self.view addSubview:deckImage];
-        [deckImage release];
+        deckGraphic[i].frame = temp;
+        [self.view addSubview:deckGraphic[i]];
         x += 20;
         y += 30;
     }
@@ -139,10 +148,33 @@ NSMutableArray *cards;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
+    
+    /*for (int i = 0; i < 3; i++) {
+        if ([touch view] == deckGraphic[i]) {
+            if (deckCounter == 0) {
+                NSLog(@"%d", deckCounter);
+                for (int j=0; j<4; j++) {
+                    [self addRowOfCards];
+                }
+            } else if (deckCounter == 24) {
+                [self addRowOfCards];
+                [deckGraphic[2] removeFromSuperview];
+            } else if (deckCounter == 36) {
+                [self addRowOfCards];
+                [deckGraphic[1] removeFromSuperview];
+            } else if (deckCounter == 42) {
+                [self addRowOfCards];
+                [deckGraphic[0] removeFromSuperview];
+            } else {
+                break;
+            }
+        }
+    }*/
+    
     for (int i=0; i<6; i++) 
     {
-        int columnLength = [columns[i] numberOfCardsInColumn];
-        NSMutableArray *thisColumn = [columns[i] allCardsInTheColumn];
+        int columnLength = [[columns objectAtIndex:i] numberOfCardsInColumn];
+        NSMutableArray *thisColumn = [[columns objectAtIndex:i] allCardsInTheColumn];
         //NSLog(@"%d", columnLength);
         for (int j=0; j<columnLength; j++) 
         {
@@ -151,6 +183,7 @@ NSMutableArray *cards;
             
             if ([touch view] == cardToMove) 
             {
+                NSLog(@"%@", [cardToMove speciesAsString]);
                 if ([cardToMove isABottomCard]) {
                     areWePeeking = NO;
                 } else {
@@ -189,7 +222,7 @@ NSMutableArray *cards;
             
             //Find position of card in column
             int i;
-            NSMutableArray *thisColumn = [columns[[cardToMove column]] allCardsInTheColumn];
+            NSMutableArray *thisColumn = [[columns objectAtIndex:[cardToMove column]] allCardsInTheColumn];
             for (i = 0; i < [thisColumn count]; i++) {
                 if (cardToMove == [thisColumn objectAtIndex:i]) {
                     break;
@@ -210,35 +243,34 @@ NSMutableArray *cards;
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (cardToMove == nil) {
+    if (cardToMove ==  nil) {
         return;
     }
     if (!areWePeeking) {
-        [columns[[cardToMove column]] removeCardFromColumn];
+        [[columns objectAtIndex:[cardToMove column]] removeCardFromColumn];
         for (int col = 0; col<6; col++) {
-            Card *tempCard = [columns[col] bottomCard];
+            Card *tempCard = [[columns objectAtIndex:col] bottomCard];
             if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
                 [cardToMove setColumn:col];
-                if (cardToMove != nil) [columns[col] addCardToColumn:cardToMove];
+                if (cardToMove != nil) [[columns objectAtIndex:col] addCardToColumn:cardToMove];
                 cardToMove.center = [cardToMove getCardPosition];
                 return;
             }
         }
         //returns moved card to its original position
         CGPoint start = [cardToMove getCardPosition];
-        [columns[[cardToMove column]] addCardToColumn:cardToMove];
+        [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
         cardToMove.center = start;
         //resets cardToMove
-        cardToMove = nil;
+        //cardToMove = nil;
     } else {
-        NSMutableArray *thisColumn = [columns[[cardToMove column]] allCardsInTheColumn];
+        NSMutableArray *thisColumn = [[columns objectAtIndex:[cardToMove column]] allCardsInTheColumn];
         for (int i = 0; i < [thisColumn count]; i++) {
             Card *tempCard = [thisColumn objectAtIndex:i];
             CGPoint start = [tempCard getCardPosition];
             tempCard.center = start;
         }
     }
-    
 }
 
 @end

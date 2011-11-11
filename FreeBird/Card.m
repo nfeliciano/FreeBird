@@ -15,6 +15,7 @@
 @synthesize displayImage;
 @synthesize displaySpecies;
 @synthesize displayFamily;
+@synthesize displayPath;
 @synthesize backgroundImage;
 @synthesize cardPosition;
 @synthesize column;
@@ -26,15 +27,15 @@
     NSString *path = imagePath;
     path = [path stringByAppendingFormat:@".png"];                          //these will be .pngs in the future
     UIImage *image = [UIImage imageNamed:@"cardFront.png"];
-    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);    
     
     self = [self initWithFrame:frame];
     if (self) {
         self.opaque = NO;
         displayImage = [UIImage imageNamed:path];
         backgroundImage = image;
-        displayFamily = familyString;
-        displaySpecies = speciesString;
+        displayFamily = [[NSString alloc] initWithString:familyString];
+        displaySpecies = [[NSString alloc] initWithString:speciesString];
         cardPosition = CGPointMake(0, 0);
     }
     
@@ -46,6 +47,7 @@
     [backgroundImage release];
     [displayImage release];
     [displayFamily release];
+    [displayPath release];
     [displaySpecies release];
 }
 

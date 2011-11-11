@@ -27,10 +27,7 @@
 -(void)addCardToColumn:(Card *)aCard;
 -(Card *)bottomCard;
 -(Card *)removeCardFromColumn;
--(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
--(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(int)numberOfCardsInColumn;
 -(NSMutableArray *)allCardsInTheColumn;
-//-(void)peekAtCard;
 
 @end

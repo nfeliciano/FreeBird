@@ -250,7 +250,7 @@ typedef enum {
 
 @property (nonatomic, assign) NSDictionary *mainDictionary;
 @property (nonatomic, assign) int cardsLeft;
-@property (nonatomic, assign) NSMutableArray *cards;
+@property (nonatomic, retain) NSMutableArray *cards;
 @property (nonatomic, assign) int arrayCounter;
 
 -(id)initWithFamilyOne:(Family)familyOne FamilyTwo:(Family)familyTwo andFamilyThree:(Family)familyThree;

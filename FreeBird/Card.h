@@ -13,6 +13,7 @@
     UIImage *backgroundImage;
     NSString *displaySpecies;
     NSString *displayFamily;
+    NSString *displayPath;
     CGPoint cardPosition;
     int column;
     BOOL isABottomCard;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) UIImage *displayImage;
 @property (nonatomic, retain) NSString *displaySpecies;
 @property (nonatomic, retain) NSString *displayFamily;
+@property (nonatomic, retain) NSString *displayPath;
 @property (nonatomic, assign) CGPoint cardPosition;
 @property (nonatomic, assign) int column;
 @property (nonatomic, assign) BOOL isABottomCard;

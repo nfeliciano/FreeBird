@@ -55,6 +55,7 @@ NSDictionary *speciesArray[12];
                     familyDictionary = [birdDictionary objectForKey:@"corvidae"];
                     break;
                 default:
+                    familyDictionary = nil;
                     break;
             }
             
@@ -83,7 +84,6 @@ NSDictionary *speciesArray[12];
         } else {
             i--;
         }
-        
     }
     
     arrayCounter += 4;

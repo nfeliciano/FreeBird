@@ -73,14 +73,6 @@
     return bottom;
 }
 
--(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB {
-    return YES;
-}
-
--(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB {
-    return YES;   
-}
-
 -(int)numberOfCardsInColumn {
     return cardsInColumn;
 }
