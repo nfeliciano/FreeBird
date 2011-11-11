@@ -62,7 +62,7 @@
 }
 
 -(Card *)removeCardFromColumn {
-    if (cardsInColumn != 0) {
+    if (cardsInColumn != 1) {
         Card *lastBottom = [column objectAtIndex:cardsInColumn-2];
         [lastBottom setIsABottomCard:YES];
     }

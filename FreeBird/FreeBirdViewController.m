@@ -241,6 +241,8 @@ int deckCounter;
     cardToMove = nil;
 }
 
+
+
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (cardToMove ==  nil) {
@@ -251,12 +253,24 @@ int deckCounter;
         for (int col = 0; col<6; col++) {
             Card *tempCard = [[columns objectAtIndex:col] bottomCard];
             if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
-                [cardToMove setColumn:col];
-                if (cardToMove != nil) [[columns objectAtIndex:col] addCardToColumn:cardToMove];
-                cardToMove.center = [cardToMove getCardPosition];
+                //NSLog(@"%@", [cardToMove speciesAsString]);
+                if ([self compareFamiliesOfCardA:cardToMove andCardB:tempCard]){
+                    [cardToMove setColumn:col];
+                
+                    if (cardToMove != nil) {
+                        [[columns objectAtIndex:col] addCardToColumn:cardToMove];
+                        cardToMove.center = [cardToMove getCardPosition];
+                        return;
+                    }
+                }
+                
+                CGPoint start = [cardToMove getCardPosition];
+                [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
+                cardToMove.center = start;
                 return;
             }
         }
+        
         //returns moved card to its original position
         CGPoint start = [cardToMove getCardPosition];
         [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
@@ -271,6 +285,58 @@ int deckCounter;
             tempCard.center = start;
         }
     }
+}
+
+-(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB {
+    NSString *movedCard = [aCardA speciesAsString];
+    NSString *cardInColumn = [aCardB speciesAsString];
+    
+    return [movedCard isEqualToString:cardInColumn];
+}
+
+-(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB {
+    
+    NSString *movedCard = [aCardA familyAsString];
+    NSString *cardInColumn = [aCardB familyAsString];
+    
+    NSLog(@"%d", [movedCard isEqualToString:cardInColumn]);
+    return [movedCard isEqualToString:cardInColumn];  
+}
+
+-(int)checkAbove:(int )clmn {
+    int row = [[columns objectAtIndex:clmn] numberOfCardsInColumn];
+    NSMutableArray *anotherColumn = [[columns objectAtIndex:clmn] allCardsInTheColumn]; 
+    NSMutableString *currentCard = nil;
+    NSMutableString *lastCard = nil;
+    int numberInARow =0;
+    if (row <1){
+        return 0;
+    }
+    else if (row > 3) {
+        lastCard = [anotherColumn objectAtIndex:row-1];
+        for(int k=row-1; k>(row-4);k--) {
+            Card *newCard = [anotherColumn objectAtIndex:k];
+            NSString *tempString = [newCard speciesAsString];
+            currentCard = [NSMutableString stringWithString:tempString];
+            if([lastCard isEqualToString:currentCard]) {
+                lastCard = currentCard;
+                numberInARow++;
+            }
+        }
+    }
+    else {
+        lastCard = [anotherColumn objectAtIndex:row-1];
+        for(int k=row-1; k>=0;k--) {
+            Card *newCard = [anotherColumn objectAtIndex:k];
+            NSString *tempString = [newCard speciesAsString];
+            currentCard = [NSMutableString stringWithString:tempString];
+            if([lastCard isEqualToString:currentCard]) {
+                lastCard = currentCard;
+                numberInARow++;
+            }
+        }
+    }
+    return numberInARow;
 }
 
 @end
