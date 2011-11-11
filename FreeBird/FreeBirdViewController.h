@@ -20,7 +20,7 @@
 
 @property (nonatomic, retain) NSMutableArray *columns;
 @property (nonatomic, retain) NSMutableArray *cards;
-@property (nonatomic, retain) Card *cardToMove;
+@property (nonatomic, retain) Card *cardToMove; 
 
 -(void)addRowOfCards;
 -(void)setUpGameBoard;
