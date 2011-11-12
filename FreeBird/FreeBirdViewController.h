@@ -16,11 +16,17 @@
     Card *cardToMove;
     NSMutableArray *columns;
     NSMutableArray *cards;
+    UIImageView *deckNumberOne;
+    UIImageView *deckNumberTwo;
+    UIImageView *deckNumberThree;
 }
 
 @property (nonatomic, retain) NSMutableArray *columns;
 @property (nonatomic, retain) NSMutableArray *cards;
-@property (nonatomic, retain) Card *cardToMove;
+@property (nonatomic, retain) Card *cardToMove; 
+@property (nonatomic, retain) UIImageView *deckNumberOne; 
+@property (nonatomic, retain) UIImageView *deckNumberTwo; 
+@property (nonatomic, retain) UIImageView *deckNumberThree; 
 
 -(void)addRowOfCards;
 -(void)setUpGameBoard;

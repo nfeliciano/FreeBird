@@ -10,7 +10,6 @@
 
 #import "FreeBirdViewController.h"
 
-UIImageView *deckGraphic[3];
 Card *aCard;
 BOOL areWePeeking;
 int deckCounter;
@@ -20,6 +19,9 @@ int deckCounter;
 @synthesize columns;
 @synthesize cards;
 @synthesize cardToMove;
+@synthesize deckNumberOne;
+@synthesize deckNumberTwo;
+@synthesize deckNumberThree;
 
 - (void)didReceiveMemoryWarning
 {
@@ -53,9 +55,9 @@ int deckCounter;
         [columns addObject: [[Column alloc] initWithXPosition:xPos]];
         xPos += 160;
     }
-    for (int row  = 0; row < 4; row++) {
+    /*for (int row  = 0; row < 4; row++) {
         [self addRowOfCards];
-    }
+    }*/
     /*int temp =0;
     for (int col = 0; col<6; col++) 
     {
@@ -94,9 +96,9 @@ int deckCounter;
         [[columns objectAtIndex:i] release];
     }
     
-    for (int i = 0; i < 3; i++) {
-        [deckGraphic[i] release];
-    }
+    [deckNumberOne release];
+    [deckNumberTwo release];
+    [deckNumberThree release];
     [super dealloc];
 }
 
@@ -129,7 +131,46 @@ int deckCounter;
     CGRect deckImageRect = CGRectMake(0, 0, 120, 168);
     x = 940;
     int y = 70;
-    for (int i = 0; i < 3; i++) {
+    deckNumberOne = [[UIImageView alloc] initWithFrame:deckImageRect];
+    deckNumberOne.userInteractionEnabled = YES;
+    [deckNumberOne setImage:[UIImage imageNamed:@"cardBack.png"]];
+    deckNumberOne.opaque = NO;
+    deckNumberOne.center = CGPointMake(x, y);
+    deckNumberOne.contentMode = UIViewContentModeScaleAspectFit;
+    CGRect temp = deckNumberOne.frame;
+    temp.size.width = 90;
+    deckNumberOne.frame = temp;
+    [self.view addSubview:deckNumberOne];
+    x += 20;
+    y += 30;
+    
+    deckNumberTwo = [[UIImageView alloc] initWithFrame:deckImageRect];
+    deckNumberTwo.userInteractionEnabled = YES;
+    [deckNumberTwo setImage:[UIImage imageNamed:@"cardBack.png"]];
+    deckNumberTwo.opaque = NO;
+    deckNumberTwo.center = CGPointMake(x, y);
+    deckNumberTwo.contentMode = UIViewContentModeScaleAspectFit;
+    temp = deckNumberTwo.frame;
+    temp.size.width = 90;
+    deckNumberTwo.frame = temp;
+    [self.view addSubview:deckNumberTwo];
+    x += 20;
+    y += 30;
+    
+    deckNumberThree = [[UIImageView alloc] initWithFrame:deckImageRect];
+    deckNumberThree.userInteractionEnabled = YES;
+    [deckNumberThree setImage:[UIImage imageNamed:@"cardBack.png"]];
+    deckNumberThree.opaque = NO;
+    deckNumberThree.center = CGPointMake(x, y);
+    deckNumberThree.contentMode = UIViewContentModeScaleAspectFit;
+    temp = deckNumberThree.frame;
+    temp.size.width = 90;
+    deckNumberThree.frame = temp;
+    [self.view addSubview:deckNumberThree];
+    x += 20;
+    y += 30;
+
+    /*for (int i = 0; i < 3; i++) {
         deckGraphic[i] = [[UIImageView alloc] initWithFrame:deckImageRect];
         deckGraphic[i].userInteractionEnabled = YES;
         [deckGraphic[i] setImage:[UIImage imageNamed:@"cardBack.png"]];
@@ -142,34 +183,41 @@ int deckCounter;
         [self.view addSubview:deckGraphic[i]];
         x += 20;
         y += 30;
-    }
+    }*/
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     
-    /*for (int i = 0; i < 3; i++) {
-        if ([touch view] == deckGraphic[i]) {
+    for (int i = 0; i < 3; i++) {
+        if ([touch view] == deckNumberOne || [touch view] == deckNumberTwo || [touch view] == deckNumberThree) {
             if (deckCounter == 0) {
                 NSLog(@"%d", deckCounter);
                 for (int j=0; j<4; j++) {
                     [self addRowOfCards];
                 }
+                break;
             } else if (deckCounter == 24) {
                 [self addRowOfCards];
-                [deckGraphic[2] removeFromSuperview];
+                [deckNumberThree removeFromSuperview];
+                break;
+            } else if (deckCounter == 30) {
+                [self addRowOfCards];
+                break;
             } else if (deckCounter == 36) {
                 [self addRowOfCards];
-                [deckGraphic[1] removeFromSuperview];
+                [deckNumberTwo removeFromSuperview];
+                break;
             } else if (deckCounter == 42) {
                 [self addRowOfCards];
-                [deckGraphic[0] removeFromSuperview];
+                [deckNumberOne removeFromSuperview];
+                break;
             } else {
                 break;
             }
         }
-    }*/
+    }
     
     for (int i=0; i<6; i++) 
     {

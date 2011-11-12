@@ -58,7 +58,8 @@
 }
 
 -(Card *)bottomCard {
-    return [column objectAtIndex:cardsInColumn - 1];
+    if (cardsInColumn != 0) return [column objectAtIndex:cardsInColumn - 1];
+    return nil;
 }
 
 -(Card *)removeCardFromColumn {
