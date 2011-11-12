@@ -260,6 +260,7 @@ int deckCounter;
                     if (cardToMove != nil) {
                         [[columns objectAtIndex:col] addCardToColumn:cardToMove];
                         cardToMove.center = [cardToMove getCardPosition];
+                        [self inARow:col];
                         return;
                     }
                 }
@@ -267,6 +268,7 @@ int deckCounter;
                 CGPoint start = [cardToMove getCardPosition];
                 [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
                 cardToMove.center = start;
+                
                 return;
             }
         }
@@ -302,7 +304,17 @@ int deckCounter;
     NSLog(@"%d", [movedCard isEqualToString:cardInColumn]);
     return [movedCard isEqualToString:cardInColumn];  
 }
-
+-(void)inARow:(int )clmn {
+    int numberInARow = [self checkAbove:clmn];
+    if (numberInARow == 4) {
+        for(int i=0;i<4;i++){
+            Card *tempCard = [[columns objectAtIndex:clmn] removeCardFromColumn];
+            [tempCard removeFromSuperview]; 
+        }
+        return;        
+    }
+    return;
+}
 -(int)checkAbove:(int )clmn {
     int row = [[columns objectAtIndex:clmn] numberOfCardsInColumn];
     NSMutableArray *anotherColumn = [[columns objectAtIndex:clmn] allCardsInTheColumn]; 
@@ -313,19 +325,21 @@ int deckCounter;
         return 0;
     }
     else if (row > 3) {
-        lastCard = [anotherColumn objectAtIndex:row-1];
+        lastCard = [NSMutableString stringWithString:[[anotherColumn objectAtIndex:row-1] speciesAsString]];
         for(int k=row-1; k>(row-4);k--) {
             Card *newCard = [anotherColumn objectAtIndex:k];
-            NSString *tempString = [newCard speciesAsString];
-            currentCard = [NSMutableString stringWithString:tempString];
+          //  NSString *tempString = [newCard speciesAsString];
+            currentCard = [NSMutableString stringWithString:[newCard speciesAsString]];
+            //NSLog(@"%d", k);
             if([lastCard isEqualToString:currentCard]) {
+                NSLog(@"%d", k);
                 lastCard = currentCard;
                 numberInARow++;
             }
         }
     }
     else {
-        lastCard = [anotherColumn objectAtIndex:row-1];
+        lastCard = [NSMutableString stringWithString:[[anotherColumn objectAtIndex:row-1] speciesAsString]];
         for(int k=row-1; k>=0;k--) {
             Card *newCard = [anotherColumn objectAtIndex:k];
             NSString *tempString = [newCard speciesAsString];
