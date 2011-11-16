@@ -10,18 +10,22 @@
 
 #import "FreeBirdViewController.h"
 
-Card *aCard;
 BOOL areWePeeking;
 int deckCounter;
 
 @implementation FreeBirdViewController
 
+@synthesize freeCells;
+@synthesize emptyColumnCells;
 @synthesize columns;
 @synthesize cards;
 @synthesize cardToMove;
 @synthesize deckNumberOne;
 @synthesize deckNumberTwo;
 @synthesize deckNumberThree;
+@synthesize numberOfMoves;
+@synthesize moveCounter;
+@synthesize cardsFinished;
 
 - (void)didReceiveMemoryWarning
 {
@@ -38,17 +42,31 @@ int deckCounter;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    columns = [[NSMutableArray alloc] init];
+    freeCells = [[NSMutableArray alloc] init];
+    emptyColumnCells = [[NSMutableArray alloc] init];
     
     [self setUpGameBoard];
     
     cardToMove = nil;
     deckCounter = 0;
+    numberOfMoves = 0;
+    cardsFinished = 0;
+    
+    CGRect labelFrame = CGRectMake(0, 0, 160, 30);
+    moveCounter = [[UILabel alloc] initWithFrame:labelFrame];
+    [moveCounter setFont:[UIFont systemFontOfSize:26]];
+    moveCounter.textAlignment = UITextAlignmentLeft;
+    moveCounter.textColor = [UIColor whiteColor];
+    moveCounter.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    [moveCounter setText:[NSString stringWithFormat:@"Moves: %d", numberOfMoves]];
+    moveCounter.center = CGPointMake(740, 40);
+    moveCounter.opaque = YES;
+    [self.view addSubview:moveCounter];
     
     Deck *deck = [[Deck alloc] initWithFamilyOne:Icteridae FamilyTwo:Cardinalidae andFamilyThree:Corvidae];
     cards = [[NSMutableArray alloc] initWithArray:[deck populateCardArray]];
     [deck release];
-    
-    columns = [[NSMutableArray alloc] init];
     
     int xPos = 110;
     for (int i =0; i < 6; i++) {
@@ -95,7 +113,7 @@ int deckCounter;
     for (int i = 0; i < 6; i++) {
         [[columns objectAtIndex:i] release];
     }
-    
+    [freeCells release];
     [deckNumberOne release];
     [deckNumberTwo release];
     [deckNumberThree release];
@@ -117,7 +135,39 @@ int deckCounter;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gameplayBackgroundOne.png"]];
     
     int x = 100;
-    CGRect freeCellImageRect = CGRectMake(0, 0, 120, 168);
+    int y = 100;
+    
+    for (int i = 0; i < 4; i++) {
+        EmptyCell *emptyCellImage = [[EmptyCell alloc] initWithXPos:x andYPos:y andIsAFreeCell:YES];
+        [freeCells addObject:emptyCellImage];
+        //emptyCellImage.center = [emptyCellImage position];
+        //[self.view addSubview:emptyCellImage];
+        [emptyCellImage release];
+        x += 160;
+    }
+    
+    for (int i = 0; i < 4; i++) {
+        EmptyCell *emptyCell = [freeCells objectAtIndex:i];
+        emptyCell.center = [emptyCell position];
+        [self.view addSubview:emptyCell];
+    }
+    
+    x = 110;
+    y = 300;
+    for (int i = 0; i < 6; i++) {
+        EmptyCell *emptyCellImage = [[EmptyCell alloc] initWithXPos:x andYPos:y andIsAFreeCell:NO];
+        [emptyColumnCells addObject:emptyCellImage];
+        [emptyCellImage release];
+        x += 160;
+    }
+    
+    for (int i = 0; i < 6; i++) {
+        EmptyCell *emptyCell = [emptyColumnCells objectAtIndex:i];
+        emptyCell.center = [emptyCell position];
+        [self.view addSubview:emptyCell];
+    }
+    
+    /*CGRect freeCellImageRect = CGRectMake(0, 0, 120, 168);
     for (int i = 0; i < 4; i++) {
         UIImageView *freeCellImage = [[UIImageView alloc] initWithFrame:freeCellImageRect];
         [freeCellImage setImage:[UIImage imageNamed:@"freeCell.png"]];
@@ -126,11 +176,11 @@ int deckCounter;
         [self.view addSubview:freeCellImage];
         [freeCellImage release];
         x += 160;
-    }
+    }*/
     
     CGRect deckImageRect = CGRectMake(0, 0, 120, 168);
     x = 940;
-    int y = 70;
+    y = 70;
     deckNumberOne = [[UIImageView alloc] initWithFrame:deckImageRect];
     deckNumberOne.userInteractionEnabled = YES;
     [deckNumberOne setImage:[UIImage imageNamed:@"cardBack.png"]];
@@ -186,6 +236,10 @@ int deckCounter;
     }*/
 }
 
+-(void)updateMoveCounter {
+    [moveCounter setText:[NSString stringWithFormat:@"Moves: %d", numberOfMoves]];
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
@@ -197,15 +251,18 @@ int deckCounter;
                 for (int j=0; j<4; j++) {
                     [self addRowOfCards];
                 }
+                [deckNumberThree removeFromSuperview];//temp for 36 cards
                 break;
             } else if (deckCounter == 24) {
                 [self addRowOfCards];
-                [deckNumberThree removeFromSuperview];
+                [deckNumberTwo removeFromSuperview];//temp for 36
+                //[deckNumberThree removeFromSuperview];
                 break;
             } else if (deckCounter == 30) {
+                [deckNumberOne removeFromSuperview];//temp for 36
                 [self addRowOfCards];
                 break;
-            } else if (deckCounter == 36) {
+            } /*else if (deckCounter == 36) {
                 [self addRowOfCards];
                 [deckNumberTwo removeFromSuperview];
                 break;
@@ -213,9 +270,19 @@ int deckCounter;
                 [self addRowOfCards];
                 [deckNumberOne removeFromSuperview];
                 break;
-            } else {
+            }*/ else {
                 break;
             }
+        }
+    }
+    
+    for (int i=0; i<4; i++) {
+        EmptyCell *freeCell = [freeCells objectAtIndex:i];
+        cardToMove = [freeCell freeCellIsFilledWith];
+        if ([touch view] == cardToMove) {
+            NSLog(@"%@", [cardToMove speciesAsString]);
+            [freeCell setIsFilled:NO];
+            return;
         }
     }
     
@@ -240,7 +307,6 @@ int deckCounter;
                 return;
             }
             cardToMove = nil;
-            
         }
     }
 }
@@ -297,27 +363,71 @@ int deckCounter;
         return;
     }
     if (!areWePeeking) {
-        [[columns objectAtIndex:[cardToMove column]] removeCardFromColumn];
+        if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] removeCardFromColumn];
+        for (int i = 0; i < 4; i++) {
+            EmptyCell *empty = [freeCells objectAtIndex:i];
+            if (CGRectIntersectsRect([cardToMove frame], [empty frame])) {
+                //NSLog(@"ALFJAL");
+                if ([empty isFilled] == YES) {
+                    CGPoint start = [cardToMove getCardPosition];
+                    if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
+                    else {
+                        EmptyCell *backTo = [freeCells objectAtIndex:[cardToMove column]-10];
+                        [backTo setIsFilled:YES];
+                    }
+                    cardToMove.center = start;
+                    return;
+                }
+                cardToMove.center = [empty position];
+                [cardToMove setCardPosition:[empty position]];
+                [cardToMove setColumn:10+i];
+                [empty setIsFilled:YES];
+                [empty setFreeCellIsFilledWith:cardToMove];
+                numberOfMoves++;
+                [self updateMoveCounter];
+                return;
+            }
+        }
         for (int col = 0; col<6; col++) {
             Card *tempCard = [[columns objectAtIndex:col] bottomCard];
             if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
                 //NSLog(@"%@", [cardToMove speciesAsString]);
-                if ([self compareFamiliesOfCardA:cardToMove andCardB:tempCard]){
+                if ([self compareFamiliesOfCardA:cardToMove andCardB:tempCard]) {
                     [cardToMove setColumn:col];
                 
                     if (cardToMove != nil) {
                         [[columns objectAtIndex:col] addCardToColumn:cardToMove];
                         cardToMove.center = [cardToMove getCardPosition];
                         [self inARow:col];
+                        numberOfMoves++;
+                        [self updateMoveCounter];
                         return;
                     }
                 }
                 
                 CGPoint start = [cardToMove getCardPosition];
-                [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
+                if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
                 cardToMove.center = start;
                 
                 return;
+            }
+        }
+        
+        for (int col = 0; col < 6; col++) {
+            if ([[columns objectAtIndex:col] cardsInColumn] == 0) {
+                EmptyCell *emptyColumn = [emptyColumnCells objectAtIndex:col];
+                if (CGRectIntersectsRect([cardToMove frame], [emptyColumn frame])) {
+                    [cardToMove setColumn:col];
+                    
+                    if (cardToMove != nil) {
+                        [[columns objectAtIndex:col] addCardToColumn:cardToMove];
+                        cardToMove.center = [cardToMove getCardPosition];
+                        [self inARow:col];
+                        numberOfMoves++;
+                        [self updateMoveCounter];
+                        return;
+                    }
+                }
             }
         }
         
@@ -352,17 +462,32 @@ int deckCounter;
     NSLog(@"%d", [movedCard isEqualToString:cardInColumn]);
     return [movedCard isEqualToString:cardInColumn];  
 }
+
 -(void)inARow:(int )clmn {
     int numberInARow = [self checkAbove:clmn];
-    if (numberInARow == 4) {
-        for(int i=0;i<4;i++){
+    if (numberInARow == 2) {    //change back to 4, this and line below
+        for(int i=0;i<2;i++){
             Card *tempCard = [[columns objectAtIndex:clmn] removeCardFromColumn];
-            [tempCard removeFromSuperview]; 
+            [tempCard removeFromSuperview];
+            cardsFinished += 2;
+            if (cardsFinished == 36) {
+                CGRect labelFrame = CGRectMake(0, 0, 800, 100);
+                UILabel *gameDone = [[UILabel alloc] initWithFrame:labelFrame];
+                [gameDone setFont:[UIFont systemFontOfSize:42]];
+                gameDone.textAlignment = UITextAlignmentCenter;
+                gameDone.textColor = [UIColor whiteColor];
+                gameDone.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+                [gameDone setText:[NSString stringWithFormat:@"GAME OVER. CONGRATULATIONS!"]];
+                gameDone.center = CGPointMake(512, 368);
+                gameDone.opaque = YES;
+                [self.view addSubview:gameDone];
+            }
         }
         return;        
     }
     return;
 }
+
 -(int)checkAbove:(int )clmn {
     int row = [[columns objectAtIndex:clmn] numberOfCardsInColumn];
     NSMutableArray *anotherColumn = [[columns objectAtIndex:clmn] allCardsInTheColumn]; 

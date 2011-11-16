@@ -69,6 +69,7 @@
 		B8BEC375143E6AF5005D6800 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BEC374143E6AF5005D6800 /* Deck.m */; };
 		B8E6AF871440FD4F0016771C /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6AF861440FD4F0016771C /* Column.m */; };
 		B8F353BA14312DF7004A9593 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F353B914312DF7004A9593 /* Card.m */; };
+		B8FECA4C1473B9FF0099145F /* EmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FECA4B1473B9FF0099145F /* EmptyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,8 @@
 		B8E6AF861440FD4F0016771C /* Column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Column.m; sourceTree = "<group>"; };
 		B8F353B814312DF7004A9593 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		B8F353B914312DF7004A9593 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		B8FECA4A1473B9FF0099145F /* EmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyCell.h; sourceTree = "<group>"; };
+		B8FECA4B1473B9FF0099145F /* EmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,8 @@
 				B8BEC374143E6AF5005D6800 /* Deck.m */,
 				B8E6AF851440FD4F0016771C /* Column.h */,
 				B8E6AF861440FD4F0016771C /* Column.m */,
+				B8FECA4A1473B9FF0099145F /* EmptyCell.h */,
+				B8FECA4B1473B9FF0099145F /* EmptyCell.m */,
 				B826FFAA142EA2FA0013A3E6 /* Resources */,
 				B89C3144142759E400CCFF15 /* Supporting Files */,
 			);
@@ -518,6 +523,7 @@
 				B8F353BA14312DF7004A9593 /* Card.m in Sources */,
 				B8BEC375143E6AF5005D6800 /* Deck.m in Sources */,
 				B8E6AF871440FD4F0016771C /* Column.m in Sources */,
+				B8FECA4C1473B9FF0099145F /* EmptyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
