@@ -407,6 +407,10 @@ int deckCounter;
                 
                 CGPoint start = [cardToMove getCardPosition];
                 if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
+                else {
+                    EmptyCell *backTo = [freeCells objectAtIndex:[cardToMove column]-10];
+                    [backTo setIsFilled:YES];
+                }
                 cardToMove.center = start;
                 
                 return;
@@ -433,7 +437,11 @@ int deckCounter;
         
         //returns moved card to its original position
         CGPoint start = [cardToMove getCardPosition];
-        [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
+        if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
+        else {
+            EmptyCell *backTo = [freeCells objectAtIndex:[cardToMove column]-10];
+            [backTo setIsFilled:YES];
+        }
         cardToMove.center = start;
         //resets cardToMove
         //cardToMove = nil;
@@ -465,11 +473,13 @@ int deckCounter;
 
 -(void)inARow:(int )clmn {
     int numberInARow = [self checkAbove:clmn];
-    if (numberInARow == 2) {    //change back to 4, this and line below
-        for(int i=0;i<2;i++){
+    //NSLog(@"NUMBER IN A ROW %d", numberInARow);
+    if (numberInARow == 4) {    //change back to 4, this and line below
+        for(int i=0;i<4;i++){
             Card *tempCard = [[columns objectAtIndex:clmn] removeCardFromColumn];
             [tempCard removeFromSuperview];
-            cardsFinished += 2;
+            cardsFinished ++;
+            //NSLog(@"CARDS DONE %d", cardsFinished);
             if (cardsFinished == 36) {
                 CGRect labelFrame = CGRectMake(0, 0, 800, 100);
                 UILabel *gameDone = [[UILabel alloc] initWithFrame:labelFrame];
@@ -478,7 +488,7 @@ int deckCounter;
                 gameDone.textColor = [UIColor whiteColor];
                 gameDone.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
                 [gameDone setText:[NSString stringWithFormat:@"GAME OVER. CONGRATULATIONS!"]];
-                gameDone.center = CGPointMake(512, 368);
+                gameDone.center = CGPointMake(512, 500);
                 gameDone.opaque = YES;
                 [self.view addSubview:gameDone];
             }
@@ -499,7 +509,7 @@ int deckCounter;
     }
     else if (row > 3) {
         lastCard = [NSMutableString stringWithString:[[anotherColumn objectAtIndex:row-1] speciesAsString]];
-        for(int k=row-1; k>(row-4);k--) {
+        for(int k=row-1; k>(row-5);k--) {
             Card *newCard = [anotherColumn objectAtIndex:k];
           //  NSString *tempString = [newCard speciesAsString];
             currentCard = [NSMutableString stringWithString:[newCard speciesAsString]];
