@@ -26,7 +26,7 @@
 - (id)initWithImagePath:(NSString *)imagePath withSpecies:(NSString *)speciesString withFamily:(NSString *)familyString {
     NSString *path = imagePath;
     path = [path stringByAppendingFormat:@".png"];                          //these will be .pngs in the future
-    UIImage *image = [UIImage imageNamed:@"cardFront.png"];
+    UIImage *image = [UIImage imageNamed:@"cardFront2.png"];
     CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);    
     
     self = [self initWithFrame:frame];
@@ -77,7 +77,7 @@
     temp.size.width = 110;
     birdImageView.frame = temp;
     birdImageView.opaque = NO;
-    birdImageView.center = CGPointMake(birdImageView.center.x + 6, birdImageView.center.y + 18);
+    birdImageView.center = CGPointMake(birdImageView.center.x + 40, birdImageView.center.y - 180);      //was 6 and something else
     [self addSubview:birdImageView];
     
     

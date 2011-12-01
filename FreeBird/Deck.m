@@ -98,7 +98,7 @@ NSDictionary *speciesArray[9];  //should be 12 with 48 cards
         NSArray *pose = [thisBird objectForKey:@"imagePath"];
         
         for (int j = 0; j < 4; j++) {
-            Card *aCard = [[Card alloc] initWithImagePath:[pose objectAtIndex:0] withSpecies:[thisBird objectForKey:@"species"] withFamily:[thisBird objectForKey:@"family"]];
+            Card *aCard = [[Card alloc] initWithImagePath:[pose objectAtIndex:j] withSpecies:[thisBird objectForKey:@"species"] withFamily:[thisBird objectForKey:@"family"]];
             [cards addObject:aCard];
             [aCard release];
         }

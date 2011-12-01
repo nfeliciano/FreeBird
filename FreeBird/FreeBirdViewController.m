@@ -68,10 +68,10 @@ int deckCounter;
     cards = [[NSMutableArray alloc] initWithArray:[deck populateCardArray]];
     [deck release];
     
-    int xPos = 110;
+    int xPos = 85;      //was 110
     for (int i =0; i < 6; i++) {
         [columns addObject: [[Column alloc] initWithXPosition:xPos]];
-        xPos += 160;
+        xPos += 170;    //was 160
     }
     /*for (int row  = 0; row < 4; row++) {
         [self addRowOfCards];
@@ -132,7 +132,7 @@ int deckCounter;
 }
 
 -(void)setUpGameBoard {
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gameplayBackgroundOne.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gameplayBackgroundThree.png"]];
     
     int x = 100;
     int y = 100;

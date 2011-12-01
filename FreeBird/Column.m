@@ -34,7 +34,7 @@
         column = [[NSMutableArray alloc] init];
         cardsInColumn = 0;
         xPosition = xPos;
-        yPosition = 300;
+        yPosition = 260;    //was 300
         bottomCard = nil;
     }
     return self;
@@ -53,7 +53,7 @@
     [column addObject:aCard];
     [aCard setCoordinatesWithXPosition:xPosition andYPosition:yPosition];
     cardsInColumn++;
-    yPosition += 80;
+    yPosition += 70;    //was 80
     [aCard setIsABottomCard:YES];
 }
 
@@ -69,7 +69,7 @@
     }
     Card *bottom = [self bottomCard];
     [column removeObjectAtIndex:cardsInColumn-1];
-    yPosition -= 80;
+    yPosition -= 70;        //was 80
     cardsInColumn--;
     return bottom;
 }
