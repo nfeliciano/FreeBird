@@ -60,7 +60,7 @@ int deckCounter;
     moveCounter.textColor = [UIColor whiteColor];
     moveCounter.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
     [moveCounter setText:[NSString stringWithFormat:@"Moves: %d", numberOfMoves]];
-    moveCounter.center = CGPointMake(740, 40);
+    moveCounter.center = CGPointMake(800, 40);
     moveCounter.opaque = YES;
     [self.view addSubview:moveCounter];
     
@@ -135,7 +135,7 @@ int deckCounter;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gameplayBackgroundThree.png"]];
     
     int x = 100;
-    int y = 100;
+    int y = 80;
     
     for (int i = 0; i < 4; i++) {
         EmptyCell *emptyCellImage = [[EmptyCell alloc] initWithXPos:x andYPos:y andIsAFreeCell:YES];
@@ -143,7 +143,7 @@ int deckCounter;
         //emptyCellImage.center = [emptyCellImage position];
         //[self.view addSubview:emptyCellImage];
         [emptyCellImage release];
-        x += 160;
+        x += 170;
     }
     
     for (int i = 0; i < 4; i++) {
@@ -152,13 +152,13 @@ int deckCounter;
         [self.view addSubview:emptyCell];
     }
     
-    x = 110;
-    y = 300;
+    x = 85;
+    y = 220;
     for (int i = 0; i < 6; i++) {
         EmptyCell *emptyCellImage = [[EmptyCell alloc] initWithXPos:x andYPos:y andIsAFreeCell:NO];
         [emptyColumnCells addObject:emptyCellImage];
         [emptyCellImage release];
-        x += 160;
+        x += 170;
     }
     
     for (int i = 0; i < 6; i++) {
@@ -179,8 +179,8 @@ int deckCounter;
     }*/
     
     CGRect deckImageRect = CGRectMake(0, 0, 120, 168);
-    x = 940;
-    y = 70;
+    x = 900;
+    y = 85;
     deckNumberOne = [[UIImageView alloc] initWithFrame:deckImageRect];
     deckNumberOne.userInteractionEnabled = YES;
     [deckNumberOne setImage:[UIImage imageNamed:@"cardBack.png"]];
@@ -188,7 +188,7 @@ int deckCounter;
     deckNumberOne.center = CGPointMake(x, y);
     deckNumberOne.contentMode = UIViewContentModeScaleAspectFit;
     CGRect temp = deckNumberOne.frame;
-    temp.size.width = 90;
+    temp.size.height = 90;
     deckNumberOne.frame = temp;
     [self.view addSubview:deckNumberOne];
     x += 20;
@@ -201,7 +201,7 @@ int deckCounter;
     deckNumberTwo.center = CGPointMake(x, y);
     deckNumberTwo.contentMode = UIViewContentModeScaleAspectFit;
     temp = deckNumberTwo.frame;
-    temp.size.width = 90;
+    temp.size.height = 90;
     deckNumberTwo.frame = temp;
     [self.view addSubview:deckNumberTwo];
     x += 20;
@@ -214,7 +214,7 @@ int deckCounter;
     deckNumberThree.center = CGPointMake(x, y);
     deckNumberThree.contentMode = UIViewContentModeScaleAspectFit;
     temp = deckNumberThree.frame;
-    temp.size.width = 90;
+    temp.size.height = 90;
     deckNumberThree.frame = temp;
     [self.view addSubview:deckNumberThree];
     x += 20;

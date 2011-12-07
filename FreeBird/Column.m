@@ -34,7 +34,7 @@
         column = [[NSMutableArray alloc] init];
         cardsInColumn = 0;
         xPosition = xPos;
-        yPosition = 260;    //was 300
+        yPosition = 220;    //was 300, then 260
         bottomCard = nil;
     }
     return self;
