@@ -25,6 +25,7 @@
     int numberOfMoves;
     UILabel *moveCounter;
     int cardsFinished;
+    UIImageView *button;
 }
 
 @property (nonatomic, retain) NSMutableArray *freeCells;
@@ -46,5 +47,6 @@
 -(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(int)checkAbove:(int )clmn;
 -(void)updateMoveCounter;
+-(void)sendStats;
 
 @end
