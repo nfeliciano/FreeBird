@@ -251,18 +251,18 @@ int deckCounter;
                 for (int j=0; j<4; j++) {
                     [self addRowOfCards];
                 }
-                [deckNumberThree removeFromSuperview];//temp for 36 cards
+                //[deckNumberThree removeFromSuperview];//temp for 36 cards
                 break;
             } else if (deckCounter == 24) {
                 [self addRowOfCards];
-                [deckNumberTwo removeFromSuperview];//temp for 36
-                //[deckNumberThree removeFromSuperview];
+                //[deckNumberTwo removeFromSuperview];//temp for 36
+                [deckNumberThree removeFromSuperview];
                 break;
             } else if (deckCounter == 30) {
-                [deckNumberOne removeFromSuperview];//temp for 36
+                //[deckNumberOne removeFromSuperview];//temp for 36
                 [self addRowOfCards];
                 break;
-            } /*else if (deckCounter == 36) {
+            } else if (deckCounter == 36) {
                 [self addRowOfCards];
                 [deckNumberTwo removeFromSuperview];
                 break;
@@ -270,7 +270,7 @@ int deckCounter;
                 [self addRowOfCards];
                 [deckNumberOne removeFromSuperview];
                 break;
-            }*/ else {
+            } else {
                 break;
             }
         }
