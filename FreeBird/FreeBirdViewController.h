@@ -46,5 +46,6 @@
 -(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(int)checkAbove:(int )clmn;
 -(void)updateMoveCounter;
+-(void)postToServer;
 
 @end

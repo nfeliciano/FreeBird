@@ -242,6 +242,10 @@ int deckCounter;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (cardsFinished == 48) {
+        
+    }
+    
     UITouch *touch = [touches anyObject];
     
     for (int i = 0; i < 3; i++) {
@@ -480,7 +484,7 @@ int deckCounter;
             [tempCard removeFromSuperview];
             cardsFinished ++;
             //NSLog(@"CARDS DONE %d", cardsFinished);
-            if (cardsFinished == 36) {
+            if (cardsFinished == 48) {
                 CGRect labelFrame = CGRectMake(0, 0, 800, 100);
                 UILabel *gameDone = [[UILabel alloc] initWithFrame:labelFrame];
                 [gameDone setFont:[UIFont systemFontOfSize:42]];
@@ -534,6 +538,40 @@ int deckCounter;
         }
     }
     return numberInARow;
+}
+
+-(void)postToServer {
+    int moves = numberOfMoves;
+    //other IVs and DVs to put in
+    
+    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?numberOfMoves=%d&user=1001", moves];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
+    [request setHTTPMethod:@"POST"];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@", get);
+    
+    /*NSString *post = [[NSString alloc] initWithFormat:@"numberOfMoves=%d&submit=yes", moves];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d",[post length]];
+    
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Current-Type"];
+    
+    
+    [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+    
+    if(conn) {
+        NSLog(@"Connection Successful");
+    } else {
+        NSLog(@"Connection not made");
+    }*/
+    
+    
+    
 }
 
 @end
