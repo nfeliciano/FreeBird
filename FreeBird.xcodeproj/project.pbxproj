@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EBCCA571492C8A7002CEA5E /* buttonPic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCCA561492C8A7002CEA5E /* buttonPic2.png */; };
 		B81AEF7A143EF9E90024F192 /* gameplayBackgroundOne.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */; };
 		B81AEF7C143EFAA20024F192 /* gameplayBackgroundTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */; };
 		B81AEF7F143EFF810024F192 /* cardFront.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7E143EFF810024F192 /* cardFront.png */; };
@@ -193,6 +194,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EBCCA561492C8A7002CEA5E /* buttonPic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPic2.png; path = images/buttonPic2.png; sourceTree = "<group>"; };
 		B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundOne.png; path = images/gameplayBackgroundOne.png; sourceTree = "<group>"; };
 		B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundTwo.png; path = images/gameplayBackgroundTwo.png; sourceTree = "<group>"; };
 		B81AEF7E143EFF810024F192 /* cardFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardFront.png; path = images/cardFront.png; sourceTree = "<group>"; };
@@ -782,6 +784,7 @@
 				B81AEF7D143EFF140024F192 /* Temp Bird Images */,
 				B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */,
 				B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */,
+				5EBCCA561492C8A7002CEA5E /* buttonPic2.png */,
 				B8CC307914803651008D33B4 /* gameplayBackgroundThree.png */,
 				B81AEF7E143EFF810024F192 /* cardFront.png */,
 				B8CC30771480341F008D33B4 /* cardFront2.png */,
@@ -1018,6 +1021,7 @@
 				B8CC30761480301E008D33B4 /* icteridaeYellowHeadedBlackbirdSetD.png in Resources */,
 				B8CC30781480341F008D33B4 /* cardFront2.png in Resources */,
 				B8CC307A14803651008D33B4 /* gameplayBackgroundThree.png in Resources */,
+				5EBCCA571492C8A7002CEA5E /* buttonPic2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

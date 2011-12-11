@@ -219,6 +219,17 @@ int deckCounter;
     [self.view addSubview:deckNumberThree];
     x += 20;
     y += 30;
+    
+    
+                                                                //info for the send stats button
+    CGRect buttonRect = CGRectMake(0, 0, 160, 200);
+    button = [[UIImageView alloc] initWithFrame:buttonRect];    //size
+    button.userInteractionEnabled = YES;                        //enable interaction
+    [button setImage:[UIImage imageNamed:@"buttonPic2.png"]];   //set the image for the button
+    button.opaque = NO;                                         //not opaque
+    button.center = CGPointMake(512, 384);                      //center the button
+    button.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:button];
 
     /*for (int i = 0; i < 3; i++) {
         deckGraphic[i] = [[UIImageView alloc] initWithFrame:deckImageRect];
@@ -247,6 +258,11 @@ int deckCounter;
     }
     
     UITouch *touch = [touches anyObject];
+    if ([touch view] == button)
+    {
+        NSLog(@"%@", @"hi");
+        [self sendStats];
+    }
     
     for (int i = 0; i < 3; i++) {
         if ([touch view] == deckNumberOne || [touch view] == deckNumberTwo || [touch view] == deckNumberThree) {
@@ -495,6 +511,8 @@ int deckCounter;
                 gameDone.center = CGPointMake(512, 500);
                 gameDone.opaque = YES;
                 [self.view addSubview:gameDone];
+                
+                
             }
         }
         return;        
@@ -540,6 +558,7 @@ int deckCounter;
     return numberInARow;
 }
 
+<<<<<<< HEAD
 -(void)postToServer {
     int moves = numberOfMoves;
     //other IVs and DVs to put in
@@ -574,4 +593,20 @@ int deckCounter;
     
 }
 
+=======
+-(IBAction)statButtonPressed;
+{
+    NSLog(@"%@", @"hi");
+    [self sendStats];
+    //
+    
+}
+
+-(void)sendStats
+{
+     NSLog(@"%@", @"there");
+    //send stats from game to server
+}
+
+>>>>>>> 03366ed2f0e7636fddcc857d151912c8283c3466
 @end
