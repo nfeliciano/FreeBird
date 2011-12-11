@@ -260,14 +260,13 @@ int deckCounter;
     UITouch *touch = [touches anyObject];
     if ([touch view] == button)
     {
-        NSLog(@"%@", @"hi");
-        [self sendStats];
+        [self postToServer];
     }
     
     for (int i = 0; i < 3; i++) {
         if ([touch view] == deckNumberOne || [touch view] == deckNumberTwo || [touch view] == deckNumberThree) {
             if (deckCounter == 0) {
-                NSLog(@"%d", deckCounter);
+                //NSLog(@"%d", deckCounter);
                 for (int j=0; j<4; j++) {
                     [self addRowOfCards];
                 }
@@ -300,7 +299,7 @@ int deckCounter;
         EmptyCell *freeCell = [freeCells objectAtIndex:i];
         cardToMove = [freeCell freeCellIsFilledWith];
         if ([touch view] == cardToMove) {
-            NSLog(@"%@", [cardToMove speciesAsString]);
+            //NSLog(@"%@", [cardToMove speciesAsString]);
             [freeCell setIsFilled:NO];
             return;
         }
@@ -318,7 +317,7 @@ int deckCounter;
             
             if ([touch view] == cardToMove) 
             {
-                NSLog(@"%@", [cardToMove speciesAsString]);
+                //NSLog(@"%@", [cardToMove speciesAsString]);
                 if ([cardToMove isABottomCard]) {
                     areWePeeking = NO;
                 } else {
@@ -487,7 +486,7 @@ int deckCounter;
     NSString *movedCard = [aCardA familyAsString];
     NSString *cardInColumn = [aCardB familyAsString];
     
-    NSLog(@"%d", [movedCard isEqualToString:cardInColumn]);
+    //NSLog(@"%d", [movedCard isEqualToString:cardInColumn]);
     return [movedCard isEqualToString:cardInColumn];  
 }
 
@@ -537,7 +536,7 @@ int deckCounter;
             currentCard = [NSMutableString stringWithString:[newCard speciesAsString]];
             //NSLog(@"%d", k);
             if([lastCard isEqualToString:currentCard]) {
-                NSLog(@"%d", k);
+                //NSLog(@"%d", k);
                 lastCard = currentCard;
                 numberInARow++;
             }
@@ -558,7 +557,6 @@ int deckCounter;
     return numberInARow;
 }
 
-<<<<<<< HEAD
 -(void)postToServer {
     int moves = numberOfMoves;
     //other IVs and DVs to put in
@@ -569,7 +567,7 @@ int deckCounter;
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     
-    NSLog(@"%@", get);
+    NSLog(@"You said: %@", get);
     
     /*NSString *post = [[NSString alloc] initWithFormat:@"numberOfMoves=%d&submit=yes", moves];
     
@@ -593,20 +591,11 @@ int deckCounter;
     
 }
 
-=======
--(IBAction)statButtonPressed;
-{
-    NSLog(@"%@", @"hi");
-    [self sendStats];
-    //
-    
-}
-
 -(void)sendStats
 {
-     NSLog(@"%@", @"there");
+    //NSLog(@"%@", @"there");
+    //[self postToServer];
     //send stats from game to server
 }
 
->>>>>>> 03366ed2f0e7636fddcc857d151912c8283c3466
 @end
