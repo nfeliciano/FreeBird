@@ -178,6 +178,7 @@
 		B8CC30761480301E008D33B4 /* icteridaeYellowHeadedBlackbirdSetD.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC30461480301E008D33B4 /* icteridaeYellowHeadedBlackbirdSetD.png */; };
 		B8CC30781480341F008D33B4 /* cardFront2.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC30771480341F008D33B4 /* cardFront2.png */; };
 		B8CC307A14803651008D33B4 /* gameplayBackgroundThree.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC307914803651008D33B4 /* gameplayBackgroundThree.png */; };
+		B8DCD8C51495F4C300E63CF4 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DCD8C41495F4C300E63CF4 /* appIcon.png */; };
 		B8E6AF871440FD4F0016771C /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6AF861440FD4F0016771C /* Column.m */; };
 		B8F353BA14312DF7004A9593 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F353B914312DF7004A9593 /* Card.m */; };
 		B8FECA4C1473B9FF0099145F /* EmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FECA4B1473B9FF0099145F /* EmptyCell.m */; };
@@ -370,6 +371,7 @@
 		B8CC30461480301E008D33B4 /* icteridaeYellowHeadedBlackbirdSetD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeYellowHeadedBlackbirdSetD.png; sourceTree = "<group>"; };
 		B8CC30771480341F008D33B4 /* cardFront2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardFront2.png; path = images/cardFront2.png; sourceTree = "<group>"; };
 		B8CC307914803651008D33B4 /* gameplayBackgroundThree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundThree.png; path = images/gameplayBackgroundThree.png; sourceTree = "<group>"; };
+		B8DCD8C41495F4C300E63CF4 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = ../appIcon.png; sourceTree = "<group>"; };
 		B8E6AF851440FD4F0016771C /* Column.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Column.h; sourceTree = "<group>"; };
 		B8E6AF861440FD4F0016771C /* Column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Column.m; sourceTree = "<group>"; };
 		B8F353B814312DF7004A9593 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
@@ -782,6 +784,7 @@
 			isa = PBXGroup;
 			children = (
 				B81AEF7D143EFF140024F192 /* Temp Bird Images */,
+				B8DCD8C41495F4C300E63CF4 /* appIcon.png */,
 				B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */,
 				B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */,
 				5EBCCA561492C8A7002CEA5E /* buttonPic2.png */,
@@ -1022,6 +1025,7 @@
 				B8CC30781480341F008D33B4 /* cardFront2.png in Resources */,
 				B8CC307A14803651008D33B4 /* gameplayBackgroundThree.png in Resources */,
 				5EBCCA571492C8A7002CEA5E /* buttonPic2.png in Resources */,
+				B8DCD8C51495F4C300E63CF4 /* appIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

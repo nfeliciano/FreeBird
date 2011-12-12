@@ -229,7 +229,6 @@ int deckCounter;
     button.opaque = NO;                                         //not opaque
     button.center = CGPointMake(512, 384);                      //center the button
     button.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:button];
 
     /*for (int i = 0; i < 3; i++) {
         deckGraphic[i] = [[UIImageView alloc] initWithFrame:deckImageRect];
@@ -253,14 +252,14 @@ int deckCounter;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (cardsFinished == 48) {
-        
-    }
-    
     UITouch *touch = [touches anyObject];
     if ([touch view] == button)
     {
         [self postToServer];
+    }
+    
+    if (cardsFinished == 36) {      //change for 48!!
+        return;
     }
     
     for (int i = 0; i < 3; i++) {
@@ -499,7 +498,7 @@ int deckCounter;
             [tempCard removeFromSuperview];
             cardsFinished ++;
             //NSLog(@"CARDS DONE %d", cardsFinished);
-            if (cardsFinished == 48) {
+            if (cardsFinished == 36) {
                 CGRect labelFrame = CGRectMake(0, 0, 800, 100);
                 UILabel *gameDone = [[UILabel alloc] initWithFrame:labelFrame];
                 [gameDone setFont:[UIFont systemFontOfSize:42]];
@@ -510,7 +509,7 @@ int deckCounter;
                 gameDone.center = CGPointMake(512, 500);
                 gameDone.opaque = YES;
                 [self.view addSubview:gameDone];
-                
+                [self.view addSubview:button];
                 
             }
         }

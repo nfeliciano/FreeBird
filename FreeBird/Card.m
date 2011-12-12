@@ -67,7 +67,7 @@
 {
     // Drawing code
     [backgroundImage drawAtPoint:CGPointMake(0, 0)];
-    [[UIColor whiteColor] set];
+    [[UIColor blackColor] set];
     [displaySpecies drawAtPoint:CGPointMake(rect.size.width / 7, 13) withFont:[UIFont systemFontOfSize:11.0f]];
     
     UIImageView *birdImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15, displayImage.size.width, displayImage.size.height)];
