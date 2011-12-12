@@ -60,7 +60,7 @@ int deckCounter;
     moveCounter.textColor = [UIColor whiteColor];
     moveCounter.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
     [moveCounter setText:[NSString stringWithFormat:@"Moves: %d", numberOfMoves]];
-    moveCounter.center = CGPointMake(800, 40);
+    moveCounter.center = CGPointMake(780, 40);
     moveCounter.opaque = YES;
     [self.view addSubview:moveCounter];
     
@@ -270,18 +270,18 @@ int deckCounter;
                 for (int j=0; j<4; j++) {
                     [self addRowOfCards];
                 }
-                //[deckNumberThree removeFromSuperview];//temp for 36 cards
+                [deckNumberThree removeFromSuperview];//temp for 36 cards
                 break;
             } else if (deckCounter == 24) {
                 [self addRowOfCards];
-                //[deckNumberTwo removeFromSuperview];//temp for 36
-                [deckNumberThree removeFromSuperview];
+                [deckNumberTwo removeFromSuperview];//temp for 36
+                //[deckNumberThree removeFromSuperview];
                 break;
             } else if (deckCounter == 30) {
-                //[deckNumberOne removeFromSuperview];//temp for 36
+                [deckNumberOne removeFromSuperview];//temp for 36
                 [self addRowOfCards];
                 break;
-            } else if (deckCounter == 36) {
+            } /*else if (deckCounter == 36) {
                 [self addRowOfCards];
                 [deckNumberTwo removeFromSuperview];
                 break;
@@ -289,7 +289,7 @@ int deckCounter;
                 [self addRowOfCards];
                 [deckNumberOne removeFromSuperview];
                 break;
-            } else {
+            }*/ else {
                 break;
             }
         }
@@ -567,7 +567,7 @@ int deckCounter;
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     
-    NSLog(@"You said: %@", get);
+    //NSLog(@"You said: %@", get);
     
     /*NSString *post = [[NSString alloc] initWithFormat:@"numberOfMoves=%d&submit=yes", moves];
     

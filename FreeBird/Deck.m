@@ -76,24 +76,24 @@ NSDictionary *speciesArray[9];  //should be 12 with 48 cards
 
 -(void)getRandomSpeciesFromDictionary:(NSDictionary *)familyDictionary {
     NSArray *tempArray = [familyDictionary allKeys];
-    for (int i = arrayCounter; i < arrayCounter + 4; i++) { //should be arrayCounter + 4 with 48 cards, 3 for 36
+    for (int i = arrayCounter; i < arrayCounter + 3; i++) { //should be arrayCounter + 4 with 48 cards, 3 for 36
         NSString *tempDictString = [tempArray objectAtIndex:(arc4random() % [tempArray count])];
         NSDictionary *tempDictionary = [familyDictionary objectForKey:tempDictString];
-        if ( (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+1]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+2]]) /*comment starts here for 36*/ && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+3]]) /*uncomment with 48*/ ){
+        if ( (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+1]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+2]]) /*comment starts here for 36 && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+3]]) /*uncomment with 48*/ ){
             speciesArray[i] = tempDictionary;
         } else {
             i--;
         }
     }
     
-    arrayCounter += 4;  //should be 4 with 48
+    arrayCounter += 3;  //should be 4 with 48
 }
 
 -(NSMutableArray *)populateCardArray {
     
     cards = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < 12; i++) {       //should be 12 for 48
+    for (int i = 0; i < 9; i++) {       //should be 12 for 48
         NSDictionary *thisBird = speciesArray[i];
         NSArray *pose = [thisBird objectForKey:@"imagePath"];
         
