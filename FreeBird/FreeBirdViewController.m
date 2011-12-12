@@ -256,6 +256,7 @@ int deckCounter;
     if ([touch view] == button)
     {
         [self postToServer];
+        return;
     }
     
     if (cardsFinished == 36) {      //change for 48!!
@@ -565,6 +566,11 @@ int deckCounter;
     [request setHTTPMethod:@"POST"];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Your Data has been uploaded" message: [NSString stringWithFormat:@"Your number of moves: %d has been uploaded", moves] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    [alert show];
+    [alert release];
     
     //NSLog(@"You said: %@", get);
     
