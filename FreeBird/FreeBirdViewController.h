@@ -15,6 +15,10 @@
 @interface FreeBirdViewController : UIViewController {
     Card *aCard;
     Card *cardToMove;
+    Card *cardToMove0;
+    Card *cardToMove1;
+    Card *cardToMove2;
+    Card *cardToMove3;
     NSMutableArray *columns;
     NSMutableArray *cards;
     NSMutableArray *freeCells;
@@ -32,13 +36,18 @@
 @property (nonatomic, retain) NSMutableArray *emptyColumnCells;
 @property (nonatomic, retain) NSMutableArray *columns;
 @property (nonatomic, retain) NSMutableArray *cards;
-@property (nonatomic, retain) Card *cardToMove; 
+@property (nonatomic, retain) Card *cardToMove;
+@property (nonatomic, retain) Card *cardToMove0; 
+@property (nonatomic, retain) Card *cardToMove1; 
+@property (nonatomic, retain) Card *cardToMove2; 
+@property (nonatomic, retain) Card *cardToMove3; 
 @property (nonatomic, retain) UIImageView *deckNumberOne; 
 @property (nonatomic, retain) UIImageView *deckNumberTwo; 
 @property (nonatomic, retain) UIImageView *deckNumberThree; 
 @property (nonatomic, assign) int numberOfMoves;
 @property (nonatomic, assign) UILabel *moveCounter;
 @property (nonatomic, assign) int cardsFinished;
+@property (nonatomic, assign) int touchStart;
 
 -(void)addRowOfCards;
 -(void)setUpGameBoard;

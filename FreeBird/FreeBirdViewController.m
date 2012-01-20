@@ -20,6 +20,11 @@ int deckCounter;
 @synthesize columns;
 @synthesize cards;
 @synthesize cardToMove;
+@synthesize cardToMove0;
+@synthesize cardToMove1;
+@synthesize cardToMove2;
+@synthesize cardToMove3;
+@synthesize touchStart;
 @synthesize deckNumberOne;
 @synthesize deckNumberTwo;
 @synthesize deckNumberThree;
@@ -49,6 +54,11 @@ int deckCounter;
     [self setUpGameBoard];
     
     cardToMove = nil;
+    cardToMove0 = nil;
+    cardToMove1 = nil;
+    cardToMove2 = nil;
+    cardToMove3 = nil;
+    touchStart = 0;
     deckCounter = 0;
     numberOfMoves = 0;
     cardsFinished = 0;
@@ -252,6 +262,9 @@ int deckCounter;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if(touchStart ==1)
+        return;
+    touchStart = 1;
     UITouch *touch = [touches anyObject];
     if ([touch view] == button)
     {
@@ -319,9 +332,15 @@ int deckCounter;
             {
                 //NSLog(@"%@", [cardToMove speciesAsString]);
                 if ([cardToMove isABottomCard]) {
+                    
                     areWePeeking = NO;
                 } else {
-                    areWePeeking = YES;
+                    if ([self checkAbove:i] == 1){
+                        areWePeeking = YES;
+                    }
+                    else{
+                        
+                    }
                 }
                 return;
             }
@@ -330,8 +349,7 @@ int deckCounter;
     }
 }
 
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     if (cardToMove == nil) {
         return;
     }
@@ -378,6 +396,7 @@ int deckCounter;
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    touchStart = 0;
     if (cardToMove ==  nil) {
         return;
     }
