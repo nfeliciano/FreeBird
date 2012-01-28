@@ -31,6 +31,7 @@ int deckCounter;
 @synthesize numberOfMoves;
 @synthesize moveCounter;
 @synthesize cardsFinished;
+@synthesize difficultyLevel;
 
 - (void)didReceiveMemoryWarning
 {
@@ -46,6 +47,10 @@ int deckCounter;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    
+    GameVariables* changeVariables = [GameVariables sharedInstance];
+    [changeVariables setDifficulty:[NSString stringWithFormat:@"Easy"]];
+    
     [super viewDidLoad];
     columns = [[NSMutableArray alloc] init];
     freeCells = [[NSMutableArray alloc] init];
@@ -335,10 +340,10 @@ int deckCounter;
                     
                     areWePeeking = NO;
                 } else {
-                    if ([self checkAbove:i] == 1){
+                    if ([self checkAbove:i] == 1) {
                         areWePeeking = YES;
                     }
-                    else{
+                    else {
                         
                     }
                 }
@@ -509,6 +514,8 @@ int deckCounter;
     return [movedCard isEqualToString:cardInColumn];  
 }
 
+
+
 -(void)inARow:(int )clmn {
     int numberInARow = [self checkAbove:clmn];
     //NSLog(@"NUMBER IN A ROW %d", numberInARow);
@@ -583,8 +590,8 @@ int deckCounter;
     NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?numberOfMoves=%d&user=1001", moves];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     [request setHTTPMethod:@"POST"];
-    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    //NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    //NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Your Data has been uploaded" message: [NSString stringWithFormat:@"Your number of moves: %d has been uploaded", moves] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     

@@ -30,6 +30,7 @@
 		B89C316A142759E400CCFF15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89C3168142759E400CCFF15 /* InfoPlist.strings */; };
 		B89C316C142759E400CCFF15 /* FreeBirdTests.h in Resources */ = {isa = PBXBuildFile; fileRef = B89C316B142759E400CCFF15 /* FreeBirdTests.h */; };
 		B89C316E142759E400CCFF15 /* FreeBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C316D142759E400CCFF15 /* FreeBirdTests.m */; };
+		B8A12BFB14D4062C00A77CAC /* GameVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A12BFA14D4062C00A77CAC /* GameVariables.m */; };
 		B8B8EB1814275C1B00D81938 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B8B8EB1714275C1B00D81938 /* README.rtf */; };
 		B8BEC375143E6AF5005D6800 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BEC374143E6AF5005D6800 /* Deck.m */; };
 		B8CC2F5B14802E73008D33B4 /* cardinalidaeBlackHeadedGrosbeakSetA.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC2F4F14802E73008D33B4 /* cardinalidaeBlackHeadedGrosbeakSetA.png */; };
@@ -222,6 +223,8 @@
 		B89C3169142759E400CCFF15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B89C316B142759E400CCFF15 /* FreeBirdTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FreeBirdTests.h; sourceTree = "<group>"; };
 		B89C316D142759E400CCFF15 /* FreeBirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreeBirdTests.m; sourceTree = "<group>"; };
+		B8A12BF914D4062C00A77CAC /* GameVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameVariables.h; sourceTree = "<group>"; };
+		B8A12BFA14D4062C00A77CAC /* GameVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameVariables.m; sourceTree = "<group>"; };
 		B8B8EB1714275C1B00D81938 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		B8BEC373143E6AF5005D6800 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
 		B8BEC374143E6AF5005D6800 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
@@ -503,6 +506,8 @@
 		B89C3143142759E400CCFF15 /* FreeBird */ = {
 			isa = PBXGroup;
 			children = (
+				B8A12BF914D4062C00A77CAC /* GameVariables.h */,
+				B8A12BFA14D4062C00A77CAC /* GameVariables.m */,
 				B89C314C142759E400CCFF15 /* FreeBirdAppDelegate.h */,
 				B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */,
 				B89C3152142759E400CCFF15 /* FreeBirdViewController.h */,
@@ -1068,6 +1073,7 @@
 				B8BEC375143E6AF5005D6800 /* Deck.m in Sources */,
 				B8E6AF871440FD4F0016771C /* Column.m in Sources */,
 				B8FECA4C1473B9FF0099145F /* EmptyCell.m in Sources */,
+				B8A12BFB14D4062C00A77CAC /* GameVariables.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

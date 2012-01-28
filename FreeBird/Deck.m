@@ -79,7 +79,7 @@ NSDictionary *speciesArray[9];  //should be 12 with 48 cards
     for (int i = arrayCounter; i < arrayCounter + 3; i++) { //should be arrayCounter + 4 with 48 cards, 3 for 36
         NSString *tempDictString = [tempArray objectAtIndex:(arc4random() % [tempArray count])];
         NSDictionary *tempDictionary = [familyDictionary objectForKey:tempDictString];
-        if ( (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+1]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+2]]) /*comment starts here for 36 && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+3]]) /*uncomment with 48*/ ){
+        if ( (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+1]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+2]]) /*comment starts here for 36 && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+3]])*/ /*uncomment with 48*/ ){
             speciesArray[i] = tempDictionary;
         } else {
             i--;

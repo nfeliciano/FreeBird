@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameVariables.h"
 #import "Deck.h"
 #import "Card.h"
 #import "Column.h"
@@ -30,6 +31,7 @@
     UILabel *moveCounter;
     int cardsFinished;
     UIImageView *button;
+    NSString *difficultyLevel;
 }
 
 @property (nonatomic, retain) NSMutableArray *freeCells;
@@ -48,6 +50,7 @@
 @property (nonatomic, assign) UILabel *moveCounter;
 @property (nonatomic, assign) int cardsFinished;
 @property (nonatomic, assign) int touchStart;
+@property (nonatomic, assign) NSString *difficultyLevel;
 
 -(void)addRowOfCards;
 -(void)setUpGameBoard;
