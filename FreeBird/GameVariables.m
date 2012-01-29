@@ -10,7 +10,8 @@
 
 @implementation GameVariables
 
-@synthesize difficulty;
+@synthesize numberOfCards;
+@synthesize labelShowing;
 
 static GameVariables *sharedInstance = nil;
 

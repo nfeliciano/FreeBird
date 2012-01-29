@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
  
-@class FreeBirdViewController;
+@class DifficultySettingsViewController;
 
 @interface FreeBirdAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    FreeBirdViewController *viewController;
+    DifficultySettingsViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet FreeBirdViewController *viewController;
+@property (nonatomic, retain) IBOutlet DifficultySettingsViewController *viewController;
 
 @end

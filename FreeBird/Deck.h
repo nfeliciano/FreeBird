@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameVariables.h"
 #import "Card.h"
 
 typedef enum {

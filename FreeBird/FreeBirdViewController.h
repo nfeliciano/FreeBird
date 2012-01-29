@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GameVariables.h"
+#import "DifficultySettingsViewController.h"
 #import "Deck.h"
 #import "Card.h"
 #import "Column.h"

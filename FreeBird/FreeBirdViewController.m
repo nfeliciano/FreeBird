@@ -48,8 +48,8 @@ int deckCounter;
 - (void)viewDidLoad
 {
     
-    GameVariables* changeVariables = [GameVariables sharedInstance];
-    [changeVariables setDifficulty:[NSString stringWithFormat:@"Easy"]];
+    //GameVariables* changeVariables = [GameVariables sharedInstance];
+    //[changeVariables setDifficulty:[NSString stringWithFormat:@"Easy"]];
     
     [super viewDidLoad];
     columns = [[NSMutableArray alloc] init];
@@ -277,38 +277,68 @@ int deckCounter;
         return;
     }
     
+    GameVariables *difficultySettings = [GameVariables sharedInstance];
+    int numCards = [difficultySettings numberOfCards];
+    
     if (cardsFinished == 36) {      //change for 48!!
         return;
     }
     
     for (int i = 0; i < 3; i++) {
         if ([touch view] == deckNumberOne || [touch view] == deckNumberTwo || [touch view] == deckNumberThree) {
-            if (deckCounter == 0) {
-                //NSLog(@"%d", deckCounter);
-                for (int j=0; j<4; j++) {
+            if (numCards == 36) {
+                if (deckCounter == 0) {
+                    //NSLog(@"%d", deckCounter);
+                    for (int j=0; j<4; j++) {
+                        [self addRowOfCards];
+                    }
+                    [deckNumberThree removeFromSuperview];//temp for 36 cards
+                    break;
+                } else if (deckCounter == 24) {
                     [self addRowOfCards];
+                    [deckNumberTwo removeFromSuperview];//temp for 36
+                    //[deckNumberThree removeFromSuperview];
+                    break;
+                } else if (deckCounter == 30) {
+                    [deckNumberOne removeFromSuperview];//temp for 36
+                    [self addRowOfCards];
+                    break;
+                } /*else if (deckCounter == 36) {
+                   [self addRowOfCards];
+                   [deckNumberTwo removeFromSuperview];
+                   return;
+                   } else if (deckCounter == 42) {
+                   [self addRowOfCards];
+                   [deckNumberOne removeFromSuperview];
+                   return;
+                   }*/ else {
+                       break;
+                   }
+            } else {
+                if (deckCounter == 0) {
+                    //NSLog(@"%d", deckCounter);
+                    for (int j=0; j<4; j++) {
+                        [self addRowOfCards];
+                    }
+                    break;
+                } else if (deckCounter == 24) {
+                    [self addRowOfCards];
+                    [deckNumberThree removeFromSuperview];
+                    break;
+                } else if (deckCounter == 30) {
+                    [self addRowOfCards];
+                    break;
+                } else if (deckCounter == 36) {
+                    [self addRowOfCards];
+                    [deckNumberTwo removeFromSuperview];
+                    break;
+                } else if (deckCounter == 42) {
+                    [self addRowOfCards];
+                    [deckNumberOne removeFromSuperview];
+                    break;
+                } else {
+                    break;
                 }
-                [deckNumberThree removeFromSuperview];//temp for 36 cards
-                break;
-            } else if (deckCounter == 24) {
-                [self addRowOfCards];
-                [deckNumberTwo removeFromSuperview];//temp for 36
-                //[deckNumberThree removeFromSuperview];
-                break;
-            } else if (deckCounter == 30) {
-                [deckNumberOne removeFromSuperview];//temp for 36
-                [self addRowOfCards];
-                break;
-            } /*else if (deckCounter == 36) {
-                [self addRowOfCards];
-                [deckNumberTwo removeFromSuperview];
-                break;
-            } else if (deckCounter == 42) {
-                [self addRowOfCards];
-                [deckNumberOne removeFromSuperview];
-                break;
-            }*/ else {
-                break;
             }
         }
     }
@@ -340,12 +370,7 @@ int deckCounter;
                     
                     areWePeeking = NO;
                 } else {
-                    if ([self checkAbove:i] == 1) {
-                        areWePeeking = YES;
-                    }
-                    else {
-                        
-                    }
+                    areWePeeking = YES;
                 }
                 return;
             }

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameVariables.h"
 
 @interface Card : UIView {
     UIImage *displayImage;

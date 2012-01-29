@@ -65,10 +65,17 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    GameVariables* changeVariables = [GameVariables sharedInstance];
+    int labelPlacement = [changeVariables labelShowing];
+    
     // Drawing code
     [backgroundImage drawAtPoint:CGPointMake(0, 0)];
     [[UIColor blackColor] set];
-    [displaySpecies drawAtPoint:CGPointMake(rect.size.width / 7, 13) withFont:[UIFont systemFontOfSize:11.0f]];
+    if (labelPlacement == 0) {
+        [displaySpecies drawAtPoint:CGPointMake(rect.size.width / 7, 13) withFont:[UIFont systemFontOfSize:11.0f]];
+    } else if (labelPlacement == 1) {
+        [displaySpecies drawAtPoint:CGPointMake(rect.size.width / 7, rect.size.height - 25) withFont:[UIFont systemFontOfSize:11.0f]];
+    }
     
     UIImageView *birdImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15, displayImage.size.width, displayImage.size.height)];
     [birdImageView setImage:displayImage];

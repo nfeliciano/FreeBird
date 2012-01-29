@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface GameVariables : NSObject {
-    NSString *difficulty;
+    int numberOfCards;
+    int labelsShowing;
 }
 
-@property (nonatomic, retain) NSString *difficulty;
+@property (nonatomic, assign) int numberOfCards;
+@property (nonatomic, assign) int labelShowing;
 
 + (id)sharedInstance;
 
