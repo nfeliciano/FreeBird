@@ -11,6 +11,7 @@
 #import "FreeBirdViewController.h"
 
 BOOL areWePeeking;
+BOOL speciesInARow;
 int deckCounter;
 
 @implementation FreeBirdViewController
@@ -367,10 +368,16 @@ int deckCounter;
             {
                 //NSLog(@"%@", [cardToMove speciesAsString]);
                 if ([cardToMove isABottomCard]) {
-                    
                     areWePeeking = NO;
+                    speciesInARow = NO;
                 } else {
-                    areWePeeking = YES;
+                    if ([self checkBelow:i fromRow:j]) {
+                        areWePeeking = NO;
+                        speciesInARow = YES;
+                    } else {
+                        areWePeeking = YES;
+                        speciesInARow = NO;
+                    }
                 }
                 return;
             }
@@ -390,7 +397,7 @@ int deckCounter;
     //traverses the array of cards to see what card was touched
     if ([touch view] == cardToMove) 
     {
-        if (!areWePeeking) {
+        if (!areWePeeking && !speciesInARow) {
             //Moves card assigned to cardToMove to the touched position
             [self.view bringSubviewToFront:cardToMove];
             CGPoint location = [touch locationInView:self.view];
@@ -398,7 +405,9 @@ int deckCounter;
             return;
         } else {
             CGPoint location = [touch locationInView:self.view];
-            CGPoint temp = CGPointMake(cardToMove.center.x, location.y);
+            CGPoint temp;
+            if (!speciesInARow) temp = CGPointMake(cardToMove.center.x, location.y);        //if multiple cards are being moved
+            else temp = CGPointMake(location.x, location.y);                                //if not
             cardToMove.center = temp;
             
             //Find position of card in column
@@ -412,8 +421,11 @@ int deckCounter;
             
             //Move rest of column
             for (int j = i; j < [thisColumn count]; j++) {
-                CGPoint moveOthers = CGPointMake(cardToMove.center.x, location.y + ((j - i) * 80));
+                CGPoint moveOthers;
+                if (!speciesInARow) moveOthers = CGPointMake(cardToMove.center.x, location.y + ((j - i) * 80));
+                else moveOthers = CGPointMake(location.x, location.y + ((j - i) * 80));
                 Card *moveTempCard = [thisColumn objectAtIndex:j];
+                [self.view bringSubviewToFront:moveTempCard];
                 moveTempCard.center = moveOthers;
             }
             return;
@@ -430,12 +442,15 @@ int deckCounter;
     if (cardToMove ==  nil) {
         return;
     }
-    if (!areWePeeking) {
-        if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] removeCardFromColumn];
+    
+    //If we're only moving one card
+    if (!areWePeeking && !speciesInARow) {
+        if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] removeCardFromColumn];       //not in a freecell
+        
+        //add card to free cell if in contact with it
         for (int i = 0; i < 4; i++) {
             EmptyCell *empty = [freeCells objectAtIndex:i];
             if (CGRectIntersectsRect([cardToMove frame], [empty frame])) {
-                //NSLog(@"ALFJAL");
                 if ([empty isFilled] == YES) {
                     CGPoint start = [cardToMove getCardPosition];
                     if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] addCardToColumn:cardToMove];
@@ -456,6 +471,8 @@ int deckCounter;
                 return;
             }
         }
+        
+        //add card to nonempty column
         for (int col = 0; col<6; col++) {
             Card *tempCard = [[columns objectAtIndex:col] bottomCard];
             if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
@@ -485,6 +502,7 @@ int deckCounter;
             }
         }
         
+        //add card to empty column
         for (int col = 0; col < 6; col++) {
             if ([[columns objectAtIndex:col] cardsInColumn] == 0) {
                 EmptyCell *emptyColumn = [emptyColumnCells objectAtIndex:col];
@@ -513,6 +531,100 @@ int deckCounter;
         cardToMove.center = start;
         //resets cardToMove
         //cardToMove = nil;
+    } else if (!areWePeeking && speciesInARow) {
+        //get the number that the card is on the column
+        int row;
+        Column *tempColumn = [columns objectAtIndex:[cardToMove column]];
+        NSMutableArray *tempColumnArray = [tempColumn allCardsInTheColumn];
+        Card *tempCard;
+        for (int i = 0; i < [tempColumn cardsInColumn]; i++) {
+            tempCard = [tempColumnArray objectAtIndex:i];
+            if (tempCard == cardToMove) {
+                row = i;
+                break;
+            }
+        }
+        
+        //check if cardToMove intersects with other card
+        //remove card from current column
+        //add card to new column
+        //set card's position
+        int numCardsInCol = [tempColumn cardsInColumn];
+        for (int col = 0; col<6; col++) {
+            Card *tempCard = [[columns objectAtIndex:col] bottomCard];
+            if (col != [cardToMove column]) {
+                if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
+                    if ([self compareSpeciesOfCardA:cardToMove andCardB:tempCard]) {
+                        NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+                        for (int i = row; i < numCardsInCol; i++) {
+                            cardToMove = [tempColumnArray objectAtIndex:i];
+                            [tempArray insertObject:cardToMove atIndex:0];
+                        }
+                        
+                        for (int i = 0; i < [tempArray count]; i++) {
+                            cardToMove = [tempArray objectAtIndex:i];
+                            [[columns objectAtIndex:[cardToMove column]] removeCardFromColumn];
+                            [cardToMove setColumn:col];
+                            if (cardToMove != nil) {
+                                [[columns objectAtIndex:col] addCardToColumn:cardToMove];
+                                cardToMove.center = [cardToMove getCardPosition];
+                                [self.view bringSubviewToFront:cardToMove];
+                                [self inARow:col];
+                            }
+                        }
+                        
+                        numberOfMoves++;
+                        [self updateMoveCounter];
+                        [tempArray release];
+                        
+                        speciesInARow = NO;
+                        return;
+                    }
+                }
+            }
+        }
+        
+        for (int col = 0; col < 6; col++) {
+            if ([[columns objectAtIndex:col] cardsInColumn] == 0) {
+                EmptyCell *emptyColumn = [emptyColumnCells objectAtIndex:col];
+                if (CGRectIntersectsRect([cardToMove frame], [emptyColumn frame])) {
+                    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+                    for (int i = row; i < numCardsInCol; i++) {
+                        cardToMove = [tempColumnArray objectAtIndex:i];
+                        [tempArray insertObject:cardToMove atIndex:0];
+                    }
+                    
+                    for (int i = 0; i < [tempArray count]; i++) {
+                        cardToMove = [tempArray objectAtIndex:i];
+                        [[columns objectAtIndex:[cardToMove column]] removeCardFromColumn];
+                        [cardToMove setColumn:col];
+                        if (cardToMove != nil) {
+                            [[columns objectAtIndex:col] addCardToColumn:cardToMove];
+                            cardToMove.center = [cardToMove getCardPosition];
+                            [self.view bringSubviewToFront:cardToMove];
+                            [self inARow:col];
+                        }
+                    }
+                    
+                    numberOfMoves++;
+                    [self updateMoveCounter];
+                    [tempArray release];
+                    speciesInARow = NO;
+                    return;
+                }
+            }
+        }
+        
+        for (int i = row; i < numCardsInCol; i++) {
+            //NSLog(@"THIS NUMBER %d AND THIS ONE %d, ALSO THIS %d", i, row, [tempColumn cardsInColumn]);
+            cardToMove = [tempColumnArray objectAtIndex:i];
+            CGPoint start = [cardToMove getCardPosition];
+            //NSLog(@"FROM %f TO %f", cardToMove.center.x, start.x);
+            cardToMove.center = start;
+        }
+        speciesInARow = NO;
+        return;
+        
     } else {
         NSMutableArray *thisColumn = [[columns objectAtIndex:[cardToMove column]] allCardsInTheColumn];
         for (int i = 0; i < [thisColumn count]; i++) {
@@ -606,6 +718,29 @@ int deckCounter;
         }
     }
     return numberInARow;
+}
+
+-(BOOL)checkBelow:(int)clmn fromRow:(int)row {
+    BOOL areInARow;
+    int numCardsInCol = [[columns objectAtIndex:clmn] numberOfCardsInColumn];
+    NSMutableArray *tempColumn = [[columns objectAtIndex:clmn] allCardsInTheColumn];
+    NSMutableString *currentCard = [NSMutableString stringWithString:[cardToMove speciesAsString]];
+    NSMutableString *nextCard = nil;
+    
+    if ([cardToMove isABottomCard]) return FALSE;
+    
+    for (int i = row; i < numCardsInCol; i++) {
+        Card *tempCard = [tempColumn objectAtIndex:i];
+        nextCard = [NSMutableString stringWithString:[tempCard speciesAsString]];
+        if (![currentCard isEqualToString:nextCard]) {
+            areInARow = FALSE;
+            //NSLog(@"NOPE FALSE RETURN");
+            return areInARow;
+        }
+    }
+    //NSLog(@"THIS RETURNED TRUE");
+    areInARow = TRUE;
+    return areInARow;
 }
 
 -(void)postToServer {

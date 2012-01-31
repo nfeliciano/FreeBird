@@ -59,6 +59,7 @@
 -(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(int)checkAbove:(int )clmn;
+-(BOOL)checkBelow:(int )clmn fromRow:(int )row;
 -(void)updateMoveCounter;
 -(void)postToServer;
 -(void)sendStats;
