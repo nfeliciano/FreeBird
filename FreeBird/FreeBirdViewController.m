@@ -281,7 +281,7 @@ int deckCounter;
     GameVariables *difficultySettings = [GameVariables sharedInstance];
     int numCards = [difficultySettings numberOfCards];
     
-    if (cardsFinished == 36) {      //change for 48!!
+    if (cardsFinished == numCards) {      //change for 48!!
         return;
     }
     
@@ -438,10 +438,10 @@ int deckCounter;
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    touchStart = 0;
     if (cardToMove ==  nil) {
         return;
     }
+    
     
     //If we're only moving one card
     if (!areWePeeking && !speciesInARow) {
@@ -661,6 +661,8 @@ int deckCounter;
 
 
 -(void)inARow:(int )clmn {
+    GameVariables *difficultySettings = [GameVariables sharedInstance];
+    int numCards = [difficultySettings numberOfCards];
     int numberInARow = [self checkAbove:clmn];
     //NSLog(@"NUMBER IN A ROW %d", numberInARow);
     if (numberInARow == 4) {    //change back to 4, this and line below
@@ -669,7 +671,7 @@ int deckCounter;
             [tempCard removeFromSuperview];
             cardsFinished ++;
             //NSLog(@"CARDS DONE %d", cardsFinished);
-            if (cardsFinished == 36) {
+            if (cardsFinished == numCards) {
                 CGRect labelFrame = CGRectMake(0, 0, 800, 100);
                 UILabel *gameDone = [[UILabel alloc] initWithFrame:labelFrame];
                 [gameDone setFont:[UIFont systemFontOfSize:42]];
