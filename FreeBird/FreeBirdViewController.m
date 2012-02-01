@@ -268,13 +268,13 @@ int deckCounter;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if(touchStart ==1)
-        return;
-    touchStart = 1;
     UITouch *touch = [touches anyObject];
     if ([touch view] == button)
     {
         [self postToServer];
+        return;
+    }
+    if ([touch view] != cardToMove && cardToMove != nil){
         return;
     }
     
@@ -468,6 +468,7 @@ int deckCounter;
                 [empty setFreeCellIsFilledWith:cardToMove];
                 numberOfMoves++;
                 [self updateMoveCounter];
+                cardToMove = nil;
                 return;
             }
         }
@@ -486,6 +487,7 @@ int deckCounter;
                         [self inARow:col];
                         numberOfMoves++;
                         [self updateMoveCounter];
+                        cardToMove = nil;
                         return;
                     }
                 }
@@ -497,7 +499,7 @@ int deckCounter;
                     [backTo setIsFilled:YES];
                 }
                 cardToMove.center = start;
-                
+                cardToMove = nil;
                 return;
             }
         }
@@ -515,6 +517,7 @@ int deckCounter;
                         [self inARow:col];
                         numberOfMoves++;
                         [self updateMoveCounter];
+                        cardToMove = nil;
                         return;
                     }
                 }
@@ -578,6 +581,7 @@ int deckCounter;
                         [tempArray release];
                         
                         speciesInARow = NO;
+                        cardToMove = nil;
                         return;
                     }
                 }
@@ -610,6 +614,7 @@ int deckCounter;
                     [self updateMoveCounter];
                     [tempArray release];
                     speciesInARow = NO;
+                    cardToMove = nil;
                     return;
                 }
             }
@@ -623,6 +628,7 @@ int deckCounter;
             cardToMove.center = start;
         }
         speciesInARow = NO;
+        cardToMove = nil;
         return;
         
     } else {
@@ -633,6 +639,7 @@ int deckCounter;
             tempCard.center = start;
         }
     }
+    cardToMove = nil;
 }
 
 -(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB {
