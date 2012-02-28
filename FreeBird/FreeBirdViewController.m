@@ -30,7 +30,9 @@ int deckCounter;
 @synthesize deckNumberTwo;
 @synthesize deckNumberThree;
 @synthesize numberOfMoves;
+@synthesize numberOfErrors;
 @synthesize moveCounter;
+@synthesize errorCounter;
 @synthesize cardsFinished;
 @synthesize difficultyLevel;
 
@@ -67,6 +69,7 @@ int deckCounter;
     touchStart = 0;
     deckCounter = 0;
     numberOfMoves = 0;
+    numberOfMoves = 0;
     cardsFinished = 0;
     
     CGRect labelFrame = CGRectMake(0, 0, 160, 30);
@@ -79,6 +82,17 @@ int deckCounter;
     moveCounter.center = CGPointMake(780, 40);
     moveCounter.opaque = YES;
     [self.view addSubview:moveCounter];
+    
+    CGRect labelFrame1 = CGRectMake(0, 0, 160, 30);
+    errorCounter = [[UILabel alloc] initWithFrame:labelFrame1];
+    [errorCounter setFont:[UIFont systemFontOfSize:26]];
+    errorCounter.textAlignment = UITextAlignmentLeft;
+    errorCounter.textColor = [UIColor whiteColor];
+    errorCounter.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    [errorCounter setText:[NSString stringWithFormat:@"Errors: %d", numberOfErrors]];
+    errorCounter.center = CGPointMake(780, 70);
+    errorCounter.opaque = YES;
+    [self.view addSubview:errorCounter];
     
     Deck *deck = [[Deck alloc] initWithFamilyOne:Icteridae FamilyTwo:Cardinalidae andFamilyThree:Corvidae];
     cards = [[NSMutableArray alloc] initWithArray:[deck populateCardArray]];
@@ -264,6 +278,7 @@ int deckCounter;
 
 -(void)updateMoveCounter {
     [moveCounter setText:[NSString stringWithFormat:@"Moves: %d", numberOfMoves]];
+    [errorCounter setText:[NSString stringWithFormat:@"Errors: %d", numberOfErrors]];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -292,17 +307,26 @@ int deckCounter;
                     //NSLog(@"%d", deckCounter);
                     for (int j=0; j<4; j++) {
                         [self addRowOfCards];
+                        for (int x=0;x<4;x++){
+                            [self inARow:x];
+                        }
                     }
                     [deckNumberThree removeFromSuperview];//temp for 36 cards
                     break;
                 } else if (deckCounter == 24) {
                     [self addRowOfCards];
+                    for (int x=0;x<4;x++){
+                        [self inARow:x];
+                    }
                     [deckNumberTwo removeFromSuperview];//temp for 36
                     //[deckNumberThree removeFromSuperview];
                     break;
                 } else if (deckCounter == 30) {
                     [deckNumberOne removeFromSuperview];//temp for 36
                     [self addRowOfCards];
+                    for (int x=0;x<4;x++){
+                        [self inARow:x];
+                    }
                     break;
                 } /*else if (deckCounter == 36) {
                    [self addRowOfCards];
@@ -320,11 +344,18 @@ int deckCounter;
                     //NSLog(@"%d", deckCounter);
                     for (int j=0; j<4; j++) {
                         [self addRowOfCards];
+                        
+                    }
+                    for (int x=0;x<4;x++){
+                        [self inARow:x];
                     }
                     break;
                 } else if (deckCounter == 24) {
                     [self addRowOfCards];
                     [deckNumberThree removeFromSuperview];
+                    for (int x=0;x<4;x++){
+                         [self inARow:x];
+                    }
                     break;
                 } else if (deckCounter == 30) {
                     [self addRowOfCards];
@@ -336,6 +367,9 @@ int deckCounter;
                 } else if (deckCounter == 42) {
                     [self addRowOfCards];
                     [deckNumberOne removeFromSuperview];
+                    for (int x=0;x<4;x++){
+                        [self inARow:x];
+                    }
                     break;
                 } else {
                     break;
@@ -500,6 +534,8 @@ int deckCounter;
                 }
                 cardToMove.center = start;
                 cardToMove = nil;
+                numberOfErrors++;
+                [self updateMoveCounter];
                 return;
             }
         }
@@ -557,7 +593,7 @@ int deckCounter;
             Card *tempCard = [[columns objectAtIndex:col] bottomCard];
             if (col != [cardToMove column]) {
                 if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
-                    if ([self compareSpeciesOfCardA:cardToMove andCardB:tempCard]) {
+                    if ([self compareFamiliesOfCardA:cardToMove andCardB:tempCard]) {
                         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
                         for (int i = row; i < numCardsInCol; i++) {
                             cardToMove = [tempColumnArray objectAtIndex:i];
