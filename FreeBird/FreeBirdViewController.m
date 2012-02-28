@@ -31,8 +31,10 @@ int deckCounter;
 @synthesize deckNumberThree;
 @synthesize numberOfMoves;
 @synthesize numberOfErrors;
+@synthesize freeCellsUsed;
 @synthesize moveCounter;
 @synthesize errorCounter;
+@synthesize freeCellCounter;
 @synthesize cardsFinished;
 @synthesize difficultyLevel;
 
@@ -69,7 +71,8 @@ int deckCounter;
     touchStart = 0;
     deckCounter = 0;
     numberOfMoves = 0;
-    numberOfMoves = 0;
+    numberOfErrors = 0;
+    freeCellsUsed = 0;
     cardsFinished = 0;
     
     CGRect labelFrame = CGRectMake(0, 0, 160, 30);
@@ -93,6 +96,17 @@ int deckCounter;
     errorCounter.center = CGPointMake(780, 70);
     errorCounter.opaque = YES;
     [self.view addSubview:errorCounter];
+    
+    /*CGRect labelFrame2 = CGRectMake(0, 0, 300, 30);
+    freeCellCounter = [[UILabel alloc] initWithFrame:labelFrame2];
+    [freeCellCounter setFont:[UIFont systemFontOfSize:26]];
+    freeCellCounter.textAlignment = UITextAlignmentLeft;
+    freeCellCounter.textColor = [UIColor whiteColor];
+    freeCellCounter.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    [freeCellCounter setText:[NSString stringWithFormat:@"FreeCells Used: %d", freeCellsUsed]];
+    freeCellCounter.center = CGPointMake(780, 100);
+    freeCellCounter.opaque = YES;
+    [self.view addSubview:freeCellCounter];*/
     
     Deck *deck = [[Deck alloc] initWithFamilyOne:Icteridae FamilyTwo:Cardinalidae andFamilyThree:Corvidae];
     cards = [[NSMutableArray alloc] initWithArray:[deck populateCardArray]];
@@ -279,6 +293,7 @@ int deckCounter;
 -(void)updateMoveCounter {
     [moveCounter setText:[NSString stringWithFormat:@"Moves: %d", numberOfMoves]];
     [errorCounter setText:[NSString stringWithFormat:@"Errors: %d", numberOfErrors]];
+    //[freeCellCounter setText:[NSString stringWithFormat:@"FreeCells Used: %d", freeCellsUsed]];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -501,6 +516,8 @@ int deckCounter;
                 [empty setIsFilled:YES];
                 [empty setFreeCellIsFilledWith:cardToMove];
                 numberOfMoves++;
+                freeCellsUsed++;
+                NSLog(@"%d", freeCellsUsed);
                 [self updateMoveCounter];
                 cardToMove = nil;
                 return;

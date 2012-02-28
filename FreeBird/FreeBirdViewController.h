@@ -53,6 +53,8 @@
 @property (nonatomic, assign) int numberOfErrors;
 @property (nonatomic, assign) UILabel *moveCounter;
 @property (nonatomic, assign) UILabel *errorCounter;
+@property (nonatomic, assign) UILabel *freeCellCounter;
+@property (nonatomic, assign) int freeCellsUsed;
 @property (nonatomic, assign) int cardsFinished;
 @property (nonatomic, assign) int touchStart;
 @property (nonatomic, assign) NSString *difficultyLevel;
