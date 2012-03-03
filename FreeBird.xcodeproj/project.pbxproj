@@ -900,7 +900,7 @@
 		B89C3130142759E400CCFF15 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "University of Victoria";
 			};
 			buildConfigurationList = B89C3133142759E400CCFF15 /* Build configuration list for PBXProject "FreeBird" */;

@@ -750,8 +750,8 @@ int deckCounter;
     NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?numberOfMoves=%d&user=1001", moves];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     [request setHTTPMethod:@"POST"];
-    //NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    //NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Your Data has been uploaded" message: [NSString stringWithFormat:@"Your number of moves: %d has been uploaded", moves] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     

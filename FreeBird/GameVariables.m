@@ -29,6 +29,8 @@ static GameVariables *sharedInstance = nil;
     
     if (self) {
         //do the init stuff here
+        numberOfCards = 36;
+        labelsShowing = 0;
     }
     
     return self;
