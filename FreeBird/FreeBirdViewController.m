@@ -166,6 +166,8 @@ int deckCounter;
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     [timer setText:timeString];
+    GameVariables* changeVariables = [GameVariables sharedInstance];
+    [changeVariables setTimeTaken:[NSString stringWithString:timeString]];
     [dateFormatter release];
 }
 
@@ -789,9 +791,9 @@ int deckCounter;
                 gameDone.opaque = YES;
                 [self.view addSubview:gameDone];
                 [self.view addSubview:button];
+                [self updateTimer];
                 [timeInSeconds invalidate];
                 timeInSeconds = nil;
-                [self updateTimer];
             }
         }
         return;        
@@ -868,11 +870,11 @@ int deckCounter;
     GameVariables* changeVariables = [GameVariables sharedInstance];
     int userID = [changeVariables userID];
     int studyNo = [changeVariables studyNumber];
+    NSLog(@"%@", [changeVariables timeTaken]);
     
     //other IVs and DVs to put in
     
-    NSLog(@"%@", time);
-    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?user=%d&numberOfMoves=%d&studyNum=%d&errors=%d&freeCells=%d", userID, moves, studyNo, errors, frees];
+    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?user=%d&numberOfMoves=%d&studyNum=%d&errors=%d&freeCells=%d&time=%@", userID, moves, studyNo, errors, frees, [changeVariables timeTaken]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     [request setHTTPMethod:@"POST"];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];

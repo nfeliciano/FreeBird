@@ -14,6 +14,7 @@
 @synthesize labelShowing;
 @synthesize userID;
 @synthesize studyNumber;
+@synthesize timeTaken;
 
 static GameVariables *sharedInstance = nil;
 

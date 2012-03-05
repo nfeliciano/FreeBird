@@ -13,12 +13,14 @@
     int labelsShowing;
     int userID;
     int studyNumber;
+    NSMutableString *timeTaken;
 }
 
 @property (nonatomic, assign) int numberOfCards;
 @property (nonatomic, assign) int labelShowing;
 @property (nonatomic, assign) int userID;
 @property (nonatomic, assign) int studyNumber;
+@property (nonatomic, assign) NSMutableString *timeTaken;
 
 + (id)sharedInstance;
 
