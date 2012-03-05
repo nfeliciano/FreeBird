@@ -11,10 +11,14 @@
 @interface GameVariables : NSObject {
     int numberOfCards;
     int labelsShowing;
+    int userID;
+    int studyNumber;
 }
 
 @property (nonatomic, assign) int numberOfCards;
 @property (nonatomic, assign) int labelShowing;
+@property (nonatomic, assign) int userID;
+@property (nonatomic, assign) int studyNumber;
 
 + (id)sharedInstance;
 

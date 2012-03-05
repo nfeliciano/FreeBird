@@ -117,6 +117,8 @@ int deckCounter;
         [columns addObject: [[Column alloc] initWithXPosition:xPos]];
         xPos += 170;    //was 160
     }
+    
+    
     /*for (int row  = 0; row < 4; row++) {
         [self addRowOfCards];
     }*/
@@ -266,28 +268,13 @@ int deckCounter;
     
     
                                                                 //info for the send stats button
-    CGRect buttonRect = CGRectMake(0, 0, 160, 200);
+    CGRect buttonRect = CGRectMake(0, 0, 215, 108);
     button = [[UIImageView alloc] initWithFrame:buttonRect];    //size
     button.userInteractionEnabled = YES;                        //enable interaction
-    [button setImage:[UIImage imageNamed:@"buttonPic2.png"]];   //set the image for the button
+    [button setImage:[UIImage imageNamed:@"sendToServer.png"]];   //set the image for the button
     button.opaque = NO;                                         //not opaque
     button.center = CGPointMake(512, 384);                      //center the button
     button.contentMode = UIViewContentModeScaleAspectFit;
-
-    /*for (int i = 0; i < 3; i++) {
-        deckGraphic[i] = [[UIImageView alloc] initWithFrame:deckImageRect];
-        deckGraphic[i].userInteractionEnabled = YES;
-        [deckGraphic[i] setImage:[UIImage imageNamed:@"cardBack.png"]];
-        deckGraphic[i].opaque = NO;
-        deckGraphic[i].center = CGPointMake(x, y);
-        deckGraphic[i].contentMode = UIViewContentModeScaleAspectFit;
-        CGRect temp = deckGraphic[i].frame;
-        temp.size.width = 90;
-        deckGraphic[i].frame = temp;
-        [self.view addSubview:deckGraphic[i]];
-        x += 20;
-        y += 30;
-    }*/
 }
 
 -(void)updateMoveCounter {
@@ -508,6 +495,13 @@ int deckCounter;
                         [backTo setIsFilled:YES];
                     }
                     cardToMove.center = start;
+                    return;
+                }
+                if ([cardToMove column] >= 10) {
+                    CGPoint start = [cardToMove getCardPosition];
+                    cardToMove.center = start;
+                    EmptyCell *backTo = [freeCells objectAtIndex:[cardToMove column]-10];
+                    [backTo setIsFilled:YES];
                     return;
                 }
                 cardToMove.center = [empty position];
@@ -731,7 +725,7 @@ int deckCounter;
                 gameDone.textAlignment = UITextAlignmentCenter;
                 gameDone.textColor = [UIColor whiteColor];
                 gameDone.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
-                [gameDone setText:[NSString stringWithFormat:@"GAME OVER. CONGRATULATIONS!"]];
+                [gameDone setText:[NSString stringWithFormat:@"GAME OVER"]];
                 gameDone.center = CGPointMake(512, 500);
                 gameDone.opaque = YES;
                 [self.view addSubview:gameDone];
@@ -807,9 +801,17 @@ int deckCounter;
 
 -(void)postToServer {
     int moves = numberOfMoves;
+    int errors = numberOfErrors;
+    int frees = freeCellsUsed;
+    int time = 0;
+    GameVariables* changeVariables = [GameVariables sharedInstance];
+    int userID = [changeVariables userID];
+    int studyNo = [changeVariables studyNumber];
+    
     //other IVs and DVs to put in
     
-    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?numberOfMoves=%d&user=1001", moves];
+    
+    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?user=%d&numberOfMoves=%d&studyNum=%d&errors=%d&freeCells=%d&time=%d", moves, userID, studyNo, errors, frees, time];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     [request setHTTPMethod:@"POST"];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];

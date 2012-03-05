@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5EBCCA571492C8A7002CEA5E /* buttonPic2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCCA561492C8A7002CEA5E /* buttonPic2.png */; };
 		B81AEF7A143EF9E90024F192 /* gameplayBackgroundOne.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */; };
 		B81AEF7C143EFAA20024F192 /* gameplayBackgroundTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */; };
 		B81AEF7F143EFF810024F192 /* cardFront.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7E143EFF810024F192 /* cardFront.png */; };
@@ -184,7 +183,6 @@
 		B8DCD8C51495F4C300E63CF4 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DCD8C41495F4C300E63CF4 /* appIcon.png */; };
 		B8E44E2014D4CE2A0002DE96 /* bottomLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1414D4CE2A0002DE96 /* bottomLabel.png */; };
 		B8E44E2114D4CE2A0002DE96 /* bottomLabelEmbossed.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1514D4CE2A0002DE96 /* bottomLabelEmbossed.png */; };
-		B8E44E2214D4CE2A0002DE96 /* difficultyScreenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1614D4CE2A0002DE96 /* difficultyScreenBG.png */; };
 		B8E44E2314D4CE2A0002DE96 /* fortyEightCards.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1714D4CE2A0002DE96 /* fortyEightCards.png */; };
 		B8E44E2414D4CE2A0002DE96 /* fortyEightCardsEmbossed.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1814D4CE2A0002DE96 /* fortyEightCardsEmbossed.png */; };
 		B8E44E2514D4CE2A0002DE96 /* noLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1914D4CE2A0002DE96 /* noLabel.png */; };
@@ -196,6 +194,11 @@
 		B8E44E2B14D4CE2A0002DE96 /* topLabelEmbossed.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1F14D4CE2A0002DE96 /* topLabelEmbossed.png */; };
 		B8E6AF871440FD4F0016771C /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6AF861440FD4F0016771C /* Column.m */; };
 		B8F353BA14312DF7004A9593 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F353B914312DF7004A9593 /* Card.m */; };
+		B8F3D5BA1504338E00A9095C /* fortyEightCardsEmbossed.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5B91504338E00A9095C /* fortyEightCardsEmbossed.png */; };
+		B8F3D5BC1504339C00A9095C /* difficultyScreenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5BB1504339C00A9095C /* difficultyScreenBG.png */; };
+		B8F3D5BE1504350A00A9095C /* participantTextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5BD1504350A00A9095C /* participantTextField.png */; };
+		B8F3D5C01504381A00A9095C /* studyNoTextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5BF1504381900A9095C /* studyNoTextField.png */; };
+		B8F3D5C215043DDE00A9095C /* sendToServer.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5C115043DDE00A9095C /* sendToServer.png */; };
 		B8FECA4C1473B9FF0099145F /* EmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FECA4B1473B9FF0099145F /* EmptyCell.m */; };
 /* End PBXBuildFile section */
 
@@ -210,7 +213,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5EBCCA561492C8A7002CEA5E /* buttonPic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonPic2.png; path = images/buttonPic2.png; sourceTree = "<group>"; };
 		B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundOne.png; path = images/gameplayBackgroundOne.png; sourceTree = "<group>"; };
 		B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundTwo.png; path = images/gameplayBackgroundTwo.png; sourceTree = "<group>"; };
 		B81AEF7E143EFF810024F192 /* cardFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardFront.png; path = images/cardFront.png; sourceTree = "<group>"; };
@@ -394,7 +396,6 @@
 		B8DCD8C41495F4C300E63CF4 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = ../appIcon.png; sourceTree = "<group>"; };
 		B8E44E1414D4CE2A0002DE96 /* bottomLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomLabel.png; sourceTree = "<group>"; };
 		B8E44E1514D4CE2A0002DE96 /* bottomLabelEmbossed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomLabelEmbossed.png; sourceTree = "<group>"; };
-		B8E44E1614D4CE2A0002DE96 /* difficultyScreenBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = difficultyScreenBG.png; sourceTree = "<group>"; };
 		B8E44E1714D4CE2A0002DE96 /* fortyEightCards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fortyEightCards.png; sourceTree = "<group>"; };
 		B8E44E1814D4CE2A0002DE96 /* fortyEightCardsEmbossed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fortyEightCardsEmbossed.png; sourceTree = "<group>"; };
 		B8E44E1914D4CE2A0002DE96 /* noLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noLabel.png; sourceTree = "<group>"; };
@@ -408,6 +409,11 @@
 		B8E6AF861440FD4F0016771C /* Column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Column.m; sourceTree = "<group>"; };
 		B8F353B814312DF7004A9593 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		B8F353B914312DF7004A9593 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		B8F3D5B91504338E00A9095C /* fortyEightCardsEmbossed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fortyEightCardsEmbossed.png; sourceTree = "<group>"; };
+		B8F3D5BB1504339C00A9095C /* difficultyScreenBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = difficultyScreenBG.png; sourceTree = "<group>"; };
+		B8F3D5BD1504350A00A9095C /* participantTextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = participantTextField.png; sourceTree = "<group>"; };
+		B8F3D5BF1504381900A9095C /* studyNoTextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studyNoTextField.png; sourceTree = "<group>"; };
+		B8F3D5C115043DDE00A9095C /* sendToServer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendToServer.png; path = images/sendToServer.png; sourceTree = "<group>"; };
 		B8FECA4A1473B9FF0099145F /* EmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyCell.h; sourceTree = "<group>"; };
 		B8FECA4B1473B9FF0099145F /* EmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -538,10 +544,10 @@
 			children = (
 				B8A12BF914D4062C00A77CAC /* GameVariables.h */,
 				B8A12BFA14D4062C00A77CAC /* GameVariables.m */,
-				B8A12C0214D4A89B00A77CAC /* DifficultySettingsViewController.h */,
-				B8A12C0314D4A89B00A77CAC /* DifficultySettingsViewController.m */,
 				B89C314C142759E400CCFF15 /* FreeBirdAppDelegate.h */,
 				B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */,
+				B8A12C0214D4A89B00A77CAC /* DifficultySettingsViewController.h */,
+				B8A12C0314D4A89B00A77CAC /* DifficultySettingsViewController.m */,
 				B89C3152142759E400CCFF15 /* FreeBirdViewController.h */,
 				B89C3153142759E400CCFF15 /* FreeBirdViewController.m */,
 				B8F353B814312DF7004A9593 /* Card.h */,
@@ -822,12 +828,15 @@
 			children = (
 				B8E44E1414D4CE2A0002DE96 /* bottomLabel.png */,
 				B8E44E1514D4CE2A0002DE96 /* bottomLabelEmbossed.png */,
-				B8E44E1614D4CE2A0002DE96 /* difficultyScreenBG.png */,
+				B8F3D5BB1504339C00A9095C /* difficultyScreenBG.png */,
+				B8F3D5B91504338E00A9095C /* fortyEightCardsEmbossed.png */,
 				B8E44E1714D4CE2A0002DE96 /* fortyEightCards.png */,
 				B8E44E1814D4CE2A0002DE96 /* fortyEightCardsEmbossed.png */,
 				B8E44E1914D4CE2A0002DE96 /* noLabel.png */,
 				B8E44E1A14D4CE2A0002DE96 /* noLabelsEmbossed.png */,
+				B8F3D5BD1504350A00A9095C /* participantTextField.png */,
 				B8E44E1B14D4CE2A0002DE96 /* startGameButton.png */,
+				B8F3D5BF1504381900A9095C /* studyNoTextField.png */,
 				B8E44E1C14D4CE2A0002DE96 /* thirtySixCards.png */,
 				B8E44E1D14D4CE2A0002DE96 /* thirtySixCardsEmbossed.png */,
 				B8E44E1E14D4CE2A0002DE96 /* topLabel.png */,
@@ -845,12 +854,12 @@
 				B8DCD8C41495F4C300E63CF4 /* appIcon.png */,
 				B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */,
 				B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */,
-				5EBCCA561492C8A7002CEA5E /* buttonPic2.png */,
 				B8CC307914803651008D33B4 /* gameplayBackgroundThree.png */,
 				B81AEF7E143EFF810024F192 /* cardFront.png */,
 				B8CC30771480341F008D33B4 /* cardFront2.png */,
 				B81AEFD1143F14330024F192 /* cardBack.png */,
 				B81AEFCF143F142B0024F192 /* freeCell.png */,
+				B8F3D5C115043DDE00A9095C /* sendToServer.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -1082,12 +1091,10 @@
 				B8CC30761480301E008D33B4 /* icteridaeYellowHeadedBlackbirdSetD.png in Resources */,
 				B8CC30781480341F008D33B4 /* cardFront2.png in Resources */,
 				B8CC307A14803651008D33B4 /* gameplayBackgroundThree.png in Resources */,
-				5EBCCA571492C8A7002CEA5E /* buttonPic2.png in Resources */,
 				B8DCD8C51495F4C300E63CF4 /* appIcon.png in Resources */,
 				B8A12C0614D4A89B00A77CAC /* DifficultySettingsViewController.xib in Resources */,
 				B8E44E2014D4CE2A0002DE96 /* bottomLabel.png in Resources */,
 				B8E44E2114D4CE2A0002DE96 /* bottomLabelEmbossed.png in Resources */,
-				B8E44E2214D4CE2A0002DE96 /* difficultyScreenBG.png in Resources */,
 				B8E44E2314D4CE2A0002DE96 /* fortyEightCards.png in Resources */,
 				B8E44E2414D4CE2A0002DE96 /* fortyEightCardsEmbossed.png in Resources */,
 				B8E44E2514D4CE2A0002DE96 /* noLabel.png in Resources */,
@@ -1097,6 +1104,11 @@
 				B8E44E2914D4CE2A0002DE96 /* thirtySixCardsEmbossed.png in Resources */,
 				B8E44E2A14D4CE2A0002DE96 /* topLabel.png in Resources */,
 				B8E44E2B14D4CE2A0002DE96 /* topLabelEmbossed.png in Resources */,
+				B8F3D5BA1504338E00A9095C /* fortyEightCardsEmbossed.png in Resources */,
+				B8F3D5BC1504339C00A9095C /* difficultyScreenBG.png in Resources */,
+				B8F3D5BE1504350A00A9095C /* participantTextField.png in Resources */,
+				B8F3D5C01504381A00A9095C /* studyNoTextField.png in Resources */,
+				B8F3D5C215043DDE00A9095C /* sendToServer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

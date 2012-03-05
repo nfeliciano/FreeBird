@@ -16,6 +16,10 @@
 @synthesize bottomLabelButton;
 @synthesize noLabelButton;
 @synthesize startButton;
+@synthesize participantField;
+@synthesize studyNoField;
+@synthesize participantID;
+@synthesize studyNumber;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -61,21 +65,21 @@
     topLabelButton.userInteractionEnabled = YES;
     [topLabelButton setImage:[UIImage imageNamed:@"topLabelEmbossed.png"]];
     topLabelButton.opaque = NO;
-    topLabelButton.center = CGPointMake(170, 500);
+    topLabelButton.center = CGPointMake(170, 410);
     [self.view addSubview:topLabelButton];
     
     bottomLabelButton = [[UIImageView alloc] initWithFrame:labelButtonsImageRect];
     bottomLabelButton.userInteractionEnabled = YES;
     [bottomLabelButton setImage:[UIImage imageNamed:@"bottomLabel.png"]];
     bottomLabelButton.opaque = NO;
-    bottomLabelButton.center = CGPointMake(511, 500);
+    bottomLabelButton.center = CGPointMake(511, 410);
     [self.view addSubview:bottomLabelButton];
     
     noLabelButton = [[UIImageView alloc] initWithFrame:labelButtonsImageRect];
     noLabelButton.userInteractionEnabled = YES;
     [noLabelButton setImage:[UIImage imageNamed:@"noLabel.png"]];
     noLabelButton.opaque = NO;
-    noLabelButton.center = CGPointMake(852, 500);
+    noLabelButton.center = CGPointMake(852, 410);
     [self.view addSubview:noLabelButton];
     
     CGRect numCardsButtonsImageRect = CGRectMake(0, 0, 453, 81);
@@ -84,31 +88,63 @@
     thirtySixCardsButton.userInteractionEnabled = YES;
     [thirtySixCardsButton setImage:[UIImage imageNamed:@"thirtySixCardsEmbossed.png"]];
     thirtySixCardsButton.opaque = NO;
-    thirtySixCardsButton.center = CGPointMake(256, 300);
+    thirtySixCardsButton.center = CGPointMake(256, 250);
     [self.view addSubview:thirtySixCardsButton];
     
     fortyEightCardsButton = [[UIImageView alloc] initWithFrame:numCardsButtonsImageRect];
     fortyEightCardsButton.userInteractionEnabled = YES;
     [fortyEightCardsButton setImage:[UIImage imageNamed:@"fortyEightCards.png"]];
     fortyEightCardsButton.opaque = NO;
-    fortyEightCardsButton.center = CGPointMake(768, 300);
+    fortyEightCardsButton.center = CGPointMake(768, 250);
     [self.view addSubview:fortyEightCardsButton];
     
-    /*CGRect deckImageRect = CGRectMake(0, 0, 120, 168);
-     x = 900;
-     y = 85;
-     deckNumberOne = [[UIImageView alloc] initWithFrame:deckImageRect];
-     deckNumberOne.userInteractionEnabled = YES;
-     [deckNumberOne setImage:[UIImage imageNamed:@"cardBack.png"]];
-     deckNumberOne.opaque = NO;
-     deckNumberOne.center = CGPointMake(x, y);
-     deckNumberOne.contentMode = UIViewContentModeScaleAspectFit;
-     CGRect temp = deckNumberOne.frame;
-     temp.size.height = 90;
-     deckNumberOne.frame = temp;
-     [self.view addSubview:deckNumberOne];
-     x += 20;
-     y += 30;*/
+    CGRect participantFieldRect = CGRectMake(0, 0, 611, 81);
+    participantField = [[UITextField alloc] initWithFrame:participantFieldRect];
+    [participantField setTextColor: [UIColor blackColor]];
+    [participantField setBorderStyle: UITextBorderStyleNone];
+    [participantField setPlaceholder:@"000000"];
+    [participantField setText:@"000000"];
+    [participantField setTextAlignment:UITextAlignmentCenter];
+    [participantField setBackground:[UIImage imageNamed:@"participantTextField.png"]];
+    [participantField setCenter:CGPointMake(330, 560)];
+    [participantField setAdjustsFontSizeToFitWidth:YES];
+    [participantField setFont: [UIFont systemFontOfSize:50.0]];
+    [participantField setAutocorrectionType:UITextAutocorrectionTypeNo];
+    [participantField setKeyboardType: UIKeyboardTypeNumberPad];
+    [participantField setClearButtonMode: UITextFieldViewModeWhileEditing];
+    [participantField setReturnKeyType:UIReturnKeyDone];
+    [participantField setDelegate: self];
+    [self.view addSubview:participantField];
+    
+    CGRect studyNumberRect = CGRectMake(0, 0, 303, 81);
+    studyNoField = [[UITextField alloc] initWithFrame:studyNumberRect];
+    [studyNoField setTextColor: [UIColor blackColor]];
+    [studyNoField setBorderStyle: UITextBorderStyleNone];
+    [studyNoField setText:@"0"];
+    [studyNoField setPlaceholder:@"0"];
+    [studyNoField setTextAlignment:UITextAlignmentCenter];
+    [studyNoField setBackground:[UIImage imageNamed:@"studyNoTextField.png"]];
+    [studyNoField setCenter:CGPointMake(852, 560)];
+    [studyNoField setAdjustsFontSizeToFitWidth:YES];
+    [studyNoField setFont: [UIFont systemFontOfSize:50.0]];
+    [studyNoField setAutocorrectionType:UITextAutocorrectionTypeNo];
+    [studyNoField setKeyboardType: UIKeyboardTypeNumberPad];
+    [studyNoField setClearButtonMode: UITextFieldViewModeWhileEditing];
+    [studyNoField setReturnKeyType:UIReturnKeyDone];
+    [studyNoField setDelegate: self];
+    [self.view addSubview:studyNoField];
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    participantID = participantField.text;
+    studyNumber = studyNoField.text;
+    GameVariables* changeVariables = [GameVariables sharedInstance];
+    [changeVariables setUserID:[participantID intValue]];
+    [changeVariables setStudyNumber:[studyNumber intValue]];
+    [participantField resignFirstResponder];
+    [studyNoField resignFirstResponder];
+    return YES;
 }
 
 - (void)viewDidUnload

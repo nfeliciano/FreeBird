@@ -12,6 +12,8 @@
 
 @synthesize numberOfCards;
 @synthesize labelShowing;
+@synthesize userID;
+@synthesize studyNumber;
 
 static GameVariables *sharedInstance = nil;
 

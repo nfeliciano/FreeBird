@@ -10,7 +10,7 @@
 #import "GameVariables.h"
 #import "FreeBirdViewController.h"
 
-@interface DifficultySettingsViewController : UIViewController {
+@interface DifficultySettingsViewController : UIViewController <UITextFieldDelegate> {
     
     UIImageView *thirtySixCardsButton;
     UIImageView *fortyEightCardsButton;
@@ -18,6 +18,10 @@
     UIImageView *bottomLabelButton;
     UIImageView *noLabelButton;
     UIImageView *startButton;
+    UITextField *participantField;
+    UITextField *studyNoField;
+    NSString *participantID;
+    NSString *studyNumber;
     
 }
 
@@ -27,5 +31,9 @@
 @property (nonatomic, assign) UIImageView *bottomLabelButton;
 @property (nonatomic, assign) UIImageView *noLabelButton;
 @property (nonatomic, assign) UIImageView *startButton;
+@property (nonatomic, assign) UITextField *participantField;
+@property (nonatomic, assign) UITextField *studyNoField;
+@property (nonatomic, assign) NSString *participantID;
+@property (nonatomic, assign) NSString *studyNumber;
 
 @end
