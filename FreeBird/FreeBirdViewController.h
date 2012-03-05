@@ -31,8 +31,11 @@
     UIImageView *deckNumberThree;
     int numberOfMoves;
     int numberOfErrors;
+    NSTimer *timeInSeconds;
+    NSDate *startDate;
     UILabel *moveCounter;
     UILabel *errorCounter;
+    UILabel *timer;
     int cardsFinished;
     UIImageView *button;
     NSString *difficultyLevel;
@@ -53,9 +56,11 @@
 @property (nonatomic, retain) UIImageView *deckNumberThree; 
 @property (nonatomic, assign) int numberOfMoves;
 @property (nonatomic, assign) int numberOfErrors;
+@property (nonatomic, assign) NSTimer *timeInSeconds;
+@property (nonatomic, assign) NSDate *startDate;
 @property (nonatomic, assign) UILabel *moveCounter;
 @property (nonatomic, assign) UILabel *errorCounter;
-@property (nonatomic, assign) UILabel *freeCellCounter;
+@property (nonatomic, assign) UILabel *timer;
 @property (nonatomic, assign) int freeCellsUsed;
 @property (nonatomic, assign) int cardsFinished;
 @property (nonatomic, assign) int touchStart;

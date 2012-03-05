@@ -31,10 +31,12 @@ int deckCounter;
 @synthesize deckNumberThree;
 @synthesize numberOfMoves;
 @synthesize numberOfErrors;
+@synthesize timeInSeconds;
+@synthesize startDate;
 @synthesize freeCellsUsed;
 @synthesize moveCounter;
 @synthesize errorCounter;
-@synthesize freeCellCounter;
+@synthesize timer;
 @synthesize cardsFinished;
 @synthesize difficultyLevel;
 
@@ -97,6 +99,19 @@ int deckCounter;
     errorCounter.opaque = YES;
     [self.view addSubview:errorCounter];
     
+    timer = [[UILabel alloc] initWithFrame:labelFrame1];
+    [timer setTextAlignment:UITextAlignmentCenter];
+    [timer setTextColor:[UIColor whiteColor]];
+    [timer setFont:[UIFont systemFontOfSize:32]];
+    [timer setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
+    [timer setText:[NSString stringWithFormat:@"0:00"]];
+    [timer setCenter:CGPointMake(512, 700)];
+    [timer setOpaque:YES];
+    [self.view addSubview:timer];
+    
+    startDate = [[NSDate date]retain];
+    timeInSeconds = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+    
     /*CGRect labelFrame2 = CGRectMake(0, 0, 300, 30);
     freeCellCounter = [[UILabel alloc] initWithFrame:labelFrame2];
     [freeCellCounter setFont:[UIFont systemFontOfSize:26]];
@@ -142,6 +157,18 @@ int deckCounter;
     
 }
 
+- (void)updateTimer {
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm:ss"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString = [dateFormatter stringFromDate:timerDate];
+    [timer setText:timeString];
+    [dateFormatter release];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -164,6 +191,7 @@ int deckCounter;
     [deckNumberOne release];
     [deckNumberTwo release];
     [deckNumberThree release];
+    [startDate release];
     [super dealloc];
 }
 
@@ -761,7 +789,9 @@ int deckCounter;
                 gameDone.opaque = YES;
                 [self.view addSubview:gameDone];
                 [self.view addSubview:button];
-                
+                [timeInSeconds invalidate];
+                timeInSeconds = nil;
+                [self updateTimer];
             }
         }
         return;        
@@ -834,15 +864,15 @@ int deckCounter;
     int moves = numberOfMoves;
     int errors = numberOfErrors;
     int frees = freeCellsUsed;
-    int time = 0;
+    //NSString *time = [NSString stringWithString:timeToPost];
     GameVariables* changeVariables = [GameVariables sharedInstance];
     int userID = [changeVariables userID];
     int studyNo = [changeVariables studyNumber];
     
     //other IVs and DVs to put in
     
-    
-    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?user=%d&numberOfMoves=%d&studyNum=%d&errors=%d&freeCells=%d&time=%d", moves, userID, studyNo, errors, frees, time];
+    NSLog(@"%@", time);
+    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?user=%d&numberOfMoves=%d&studyNum=%d&errors=%d&freeCells=%d", userID, moves, studyNo, errors, frees];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     [request setHTTPMethod:@"POST"];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];

@@ -114,6 +114,7 @@
     [participantField setClearButtonMode: UITextFieldViewModeWhileEditing];
     [participantField setReturnKeyType:UIReturnKeyDone];
     [participantField setDelegate: self];
+    [participantField setClearsOnBeginEditing:YES];
     [self.view addSubview:participantField];
     
     CGRect studyNumberRect = CGRectMake(0, 0, 303, 81);
@@ -132,6 +133,7 @@
     [studyNoField setClearButtonMode: UITextFieldViewModeWhileEditing];
     [studyNoField setReturnKeyType:UIReturnKeyDone];
     [studyNoField setDelegate: self];
+    [studyNoField setClearsOnBeginEditing:YES];
     [self.view addSubview:studyNoField];
     
 }

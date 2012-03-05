@@ -535,7 +535,6 @@
 		B89C312E142759E400CCFF15 = {
 			isa = PBXGroup;
 			children = (
-				5E746F501504509800C63D22 /* AudioToolbox.framework */,
 				B8B8EB1714275C1B00D81938 /* README.rtf */,
 				B89C3143142759E400CCFF15 /* FreeBird */,
 				B89C3165142759E400CCFF15 /* FreeBirdTests */,
@@ -556,6 +555,7 @@
 		B89C313C142759E400CCFF15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E746F501504509800C63D22 /* AudioToolbox.framework */,
 				B89C313D142759E400CCFF15 /* UIKit.framework */,
 				B89C313F142759E400CCFF15 /* Foundation.framework */,
 				B89C3141142759E400CCFF15 /* CoreGraphics.framework */,
