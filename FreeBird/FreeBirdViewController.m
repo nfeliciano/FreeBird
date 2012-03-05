@@ -159,6 +159,7 @@ int deckCounter;
     for (int i = 0; i < 6; i++) {
         [[columns objectAtIndex:i] release];
     }
+    AudioServicesDisposeSystemSoundID(audioEffect);
     [freeCells release];
     [deckNumberOne release];
     [deckNumberTwo release];
@@ -277,6 +278,20 @@ int deckCounter;
     button.contentMode = UIViewContentModeScaleAspectFit;
 }
 
+-(void) playSound : (NSString *) fName : (NSString *) ext
+{
+    NSString *path  = [[NSBundle mainBundle] pathForResource : fName ofType :ext];
+    if ([[NSFileManager defaultManager] fileExistsAtPath : path])
+    {
+        NSURL *pathURL = [NSURL fileURLWithPath : path];
+        AudioServicesCreateSystemSoundID((CFURLRef) pathURL, &audioEffect);
+        AudioServicesPlaySystemSound(audioEffect);
+    }
+    else
+    {
+        NSLog(@"error, file not found: %@", path);
+    }
+}
 -(void)updateMoveCounter {
     [moveCounter setText:[NSString stringWithFormat:@"Moves: %d", numberOfMoves]];
     [errorCounter setText:[NSString stringWithFormat:@"Errors: %d", numberOfErrors]];
@@ -308,6 +323,7 @@ int deckCounter;
                 if (deckCounter == 0) {
                     //NSLog(@"%d", deckCounter);
                     for (int j=0; j<4; j++) {
+                        [self playSound:@"twoCards" :@"caf"];
                         [self addRowOfCards];
                         for (int x=0;x<4;x++){
                             [self inARow:x];
@@ -316,6 +332,7 @@ int deckCounter;
                     [deckNumberThree removeFromSuperview];//temp for 36 cards
                     break;
                 } else if (deckCounter == 24) {
+                    [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     for (int x=0;x<4;x++){
                         [self inARow:x];
@@ -325,6 +342,7 @@ int deckCounter;
                     break;
                 } else if (deckCounter == 30) {
                     [deckNumberOne removeFromSuperview];//temp for 36
+                    [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     for (int x=0;x<4;x++){
                         [self inARow:x];
@@ -345,14 +363,15 @@ int deckCounter;
                 if (deckCounter == 0) {
                     //NSLog(@"%d", deckCounter);
                     for (int j=0; j<4; j++) {
+                        [self playSound:@"twoCards" :@"caf"];
                         [self addRowOfCards];
-                        
                     }
                     for (int x=0;x<4;x++){
                         [self inARow:x];
                     }
                     break;
                 } else if (deckCounter == 24) {
+                    [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     [deckNumberThree removeFromSuperview];
                     for (int x=0;x<4;x++){
@@ -360,13 +379,22 @@ int deckCounter;
                     }
                     break;
                 } else if (deckCounter == 30) {
+                    [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
+                    for (int x=0;x<4;x++){
+                        [self inARow:x];
+                    }
                     break;
                 } else if (deckCounter == 36) {
+                    [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     [deckNumberTwo removeFromSuperview];
+                    for (int x=0;x<4;x++){
+                        [self inARow:x];
+                    }
                     break;
                 } else if (deckCounter == 42) {
+                    [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     [deckNumberOne removeFromSuperview];
                     for (int x=0;x<4;x++){
@@ -385,6 +413,7 @@ int deckCounter;
         cardToMove = [freeCell freeCellIsFilledWith];
         if ([touch view] == cardToMove) {
             //NSLog(@"%@", [cardToMove speciesAsString]);
+            [self playSound:@"singleCard" :@"caf"];
             [freeCell setIsFilled:NO];
             return;
         }
@@ -402,6 +431,7 @@ int deckCounter;
             
             if ([touch view] == cardToMove) 
             {
+                [self playSound:@"singleCard" :@"caf"];
                 //NSLog(@"%@", [cardToMove speciesAsString]);
                 if ([cardToMove isABottomCard]) {
                     areWePeeking = NO;
@@ -477,7 +507,7 @@ int deckCounter;
     if (cardToMove ==  nil) {
         return;
     }
-    
+    [self playSound:@"singleCard" :@"caf"];
     
     //If we're only moving one card
     if (!areWePeeking && !speciesInARow) {
