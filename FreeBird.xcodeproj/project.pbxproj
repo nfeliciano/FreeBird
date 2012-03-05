@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E746F4B1504506600C63D22 /* multiDeal.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F471504506600C63D22 /* multiDeal.caf */; };
+		5E746F4C1504506600C63D22 /* shufle.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F481504506600C63D22 /* shufle.caf */; };
+		5E746F4D1504506600C63D22 /* singleCard.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F491504506600C63D22 /* singleCard.caf */; };
+		5E746F4E1504506600C63D22 /* twoCards.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F4A1504506600C63D22 /* twoCards.caf */; };
+		5E746F511504509800C63D22 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E746F501504509800C63D22 /* AudioToolbox.framework */; };
 		B81AEF7A143EF9E90024F192 /* gameplayBackgroundOne.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */; };
 		B81AEF7C143EFAA20024F192 /* gameplayBackgroundTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */; };
 		B81AEF7F143EFF810024F192 /* cardFront.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7E143EFF810024F192 /* cardFront.png */; };
@@ -213,6 +218,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E746F471504506600C63D22 /* multiDeal.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = multiDeal.caf; sourceTree = "<group>"; };
+		5E746F481504506600C63D22 /* shufle.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shufle.caf; sourceTree = "<group>"; };
+		5E746F491504506600C63D22 /* singleCard.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = singleCard.caf; sourceTree = "<group>"; };
+		5E746F4A1504506600C63D22 /* twoCards.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = twoCards.caf; sourceTree = "<group>"; };
+		5E746F501504509800C63D22 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundOne.png; path = images/gameplayBackgroundOne.png; sourceTree = "<group>"; };
 		B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundTwo.png; path = images/gameplayBackgroundTwo.png; sourceTree = "<group>"; };
 		B81AEF7E143EFF810024F192 /* cardFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardFront.png; path = images/cardFront.png; sourceTree = "<group>"; };
@@ -423,6 +433,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E746F511504509800C63D22 /* AudioToolbox.framework in Frameworks */,
 				B89C313E142759E400CCFF15 /* UIKit.framework in Frameworks */,
 				B89C3140142759E400CCFF15 /* Foundation.framework in Frameworks */,
 				B89C3142142759E400CCFF15 /* CoreGraphics.framework in Frameworks */,
@@ -443,6 +454,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E746F461504506600C63D22 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5E746F471504506600C63D22 /* multiDeal.caf */,
+				5E746F481504506600C63D22 /* shufle.caf */,
+				5E746F491504506600C63D22 /* singleCard.caf */,
+				5E746F4A1504506600C63D22 /* twoCards.caf */,
+			);
+			name = Sounds;
+			path = Resources/Sounds;
+			sourceTree = "<group>";
+		};
 		B81AEF7D143EFF140024F192 /* Temp Bird Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +515,7 @@
 		B826FFAA142EA2FA0013A3E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5E746F461504506600C63D22 /* Sounds */,
 				B8F353B414312D8B004A9593 /* images */,
 				B826FFAC142EA3150013A3E6 /* xib Files */,
 			);
@@ -511,6 +535,7 @@
 		B89C312E142759E400CCFF15 = {
 			isa = PBXGroup;
 			children = (
+				5E746F501504509800C63D22 /* AudioToolbox.framework */,
 				B8B8EB1714275C1B00D81938 /* README.rtf */,
 				B89C3143142759E400CCFF15 /* FreeBird */,
 				B89C3165142759E400CCFF15 /* FreeBirdTests */,
@@ -1109,6 +1134,10 @@
 				B8F3D5BE1504350A00A9095C /* participantTextField.png in Resources */,
 				B8F3D5C01504381A00A9095C /* studyNoTextField.png in Resources */,
 				B8F3D5C215043DDE00A9095C /* sendToServer.png in Resources */,
+				5E746F4B1504506600C63D22 /* multiDeal.caf in Resources */,
+				5E746F4C1504506600C63D22 /* shufle.caf in Resources */,
+				5E746F4D1504506600C63D22 /* singleCard.caf in Resources */,
+				5E746F4E1504506600C63D22 /* twoCards.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

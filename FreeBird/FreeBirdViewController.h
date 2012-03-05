@@ -13,6 +13,7 @@
 #import "Card.h"
 #import "Column.h"
 #import "EmptyCell.h"
+#import <AudioToolbox/AudioServices.h>
 
 @interface FreeBirdViewController : UIViewController {
     Card *aCard;
@@ -35,6 +36,7 @@
     int cardsFinished;
     UIImageView *button;
     NSString *difficultyLevel;
+    SystemSoundID audioEffect;
 }
 
 @property (nonatomic, retain) NSMutableArray *freeCells;
@@ -59,6 +61,7 @@
 @property (nonatomic, assign) int touchStart;
 @property (nonatomic, assign) NSString *difficultyLevel;
 
+-(void) playSound:(NSString *)fName:(NSString *)ext;
 -(void)addRowOfCards;
 -(void)setUpGameBoard;
 -(void)inARow:(int )clmn;
