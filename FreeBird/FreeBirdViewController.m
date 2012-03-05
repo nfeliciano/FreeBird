@@ -713,6 +713,7 @@ int deckCounter;
     int numberInARow = [self checkAbove:clmn];
     //NSLog(@"NUMBER IN A ROW %d", numberInARow);
     if (numberInARow == 4) {    //change back to 4, this and line below
+        //******ADD POOF HERE******//
         for(int i=0;i<4;i++){
             Card *tempCard = [[columns objectAtIndex:clmn] removeCardFromColumn];
             [tempCard removeFromSuperview];
