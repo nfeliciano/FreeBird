@@ -77,6 +77,4 @@
 -(BOOL)checkBelow:(int )clmn fromRow:(int )row;
 -(void)updateMoveCounter;
 -(void)postToServer;
--(void)sendStats;
-
 @end

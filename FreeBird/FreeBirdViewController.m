@@ -180,7 +180,7 @@ int deckCounter;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return YES;
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight || interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
 }
 
 -(void)dealloc {
@@ -358,7 +358,7 @@ int deckCounter;
                     for (int j=0; j<4; j++) {
                         [self playSound:@"twoCards" :@"caf"];
                         [self addRowOfCards];
-                        for (int x=0;x<4;x++){
+                        for (int x=0;x<6;x++){
                             [self inARow:x];
                         }
                     }
@@ -367,7 +367,7 @@ int deckCounter;
                 } else if (deckCounter == 24) {
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
-                    for (int x=0;x<4;x++){
+                    for (int x=0;x<6;x++){
                         [self inARow:x];
                     }
                     [deckNumberTwo removeFromSuperview];//temp for 36
@@ -377,7 +377,7 @@ int deckCounter;
                     [deckNumberOne removeFromSuperview];//temp for 36
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
-                    for (int x=0;x<4;x++){
+                    for (int x=0;x<6;x++){
                         [self inARow:x];
                     }
                     break;
@@ -399,7 +399,7 @@ int deckCounter;
                         [self playSound:@"twoCards" :@"caf"];
                         [self addRowOfCards];
                     }
-                    for (int x=0;x<4;x++){
+                    for (int x=0;x<6;x++){
                         [self inARow:x];
                     }
                     break;
@@ -407,14 +407,14 @@ int deckCounter;
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     [deckNumberThree removeFromSuperview];
-                    for (int x=0;x<4;x++){
+                    for (int x=0;x<6;x++){
                          [self inARow:x];
                     }
                     break;
                 } else if (deckCounter == 30) {
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
-                    for (int x=0;x<4;x++){
+                    for (int x=0;x<6;x++){
                         [self inARow:x];
                     }
                     break;
@@ -422,7 +422,7 @@ int deckCounter;
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     [deckNumberTwo removeFromSuperview];
-                    for (int x=0;x<4;x++){
+                    for (int x=0;x<6;x++){
                         [self inARow:x];
                     }
                     break;
@@ -430,7 +430,7 @@ int deckCounter;
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     [deckNumberOne removeFromSuperview];
-                    for (int x=0;x<4;x++){
+                    for (int x=0;x<6;x++){
                         [self inARow:x];
                     }
                     break;
@@ -585,6 +585,13 @@ int deckCounter;
         for (int col = 0; col<6; col++) {
             Card *tempCard = [[columns objectAtIndex:col] bottomCard];
             if (CGRectIntersectsRect([cardToMove frame], [tempCard frame])) {
+                //if moving to the same column
+                if ([cardToMove column] == col) {
+                    [[columns objectAtIndex:col] addCardToColumn:cardToMove];
+                    cardToMove.center = [cardToMove getCardPosition];
+                    cardToMove = nil;
+                    return;
+                }
                 //NSLog(@"%@", [cardToMove speciesAsString]);
                 if ([self compareFamiliesOfCardA:cardToMove andCardB:tempCard]) {
                     [cardToMove setColumn:col];
@@ -607,8 +614,8 @@ int deckCounter;
                     [backTo setIsFilled:YES];
                 }
                 cardToMove.center = start;
+                if ([cardToMove column] != col) numberOfErrors++;
                 cardToMove = nil;
-                numberOfErrors++;
                 [self updateMoveCounter];
                 return;
             }
@@ -644,7 +651,8 @@ int deckCounter;
         cardToMove.center = start;
         //resets cardToMove
         //cardToMove = nil;
-    } else if (!areWePeeking && speciesInARow) {
+    } else if (!areWePeeking && speciesInARow) {                //if multiple species in a row
+        
         //get the number that the card is on the column
         int row;
         Column *tempColumn = [columns objectAtIndex:[cardToMove column]];
@@ -737,6 +745,8 @@ int deckCounter;
             //NSLog(@"FROM %f TO %f", cardToMove.center.x, start.x);
             cardToMove.center = start;
         }
+        numberOfErrors++;
+        [self updateMoveCounter];
         speciesInARow = NO;
         cardToMove = nil;
         return;
@@ -928,13 +938,6 @@ int deckCounter;
     
     
     
-}
-
--(void)sendStats
-{
-    //NSLog(@"%@", @"there");
-    //[self postToServer];
-    //send stats from game to server
 }
 
 @end
