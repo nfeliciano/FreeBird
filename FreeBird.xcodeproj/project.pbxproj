@@ -210,6 +210,7 @@
 		B8F3D5BE1504350A00A9095C /* participantTextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5BD1504350A00A9095C /* participantTextField.png */; };
 		B8F3D5C01504381A00A9095C /* studyNoTextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5BF1504381900A9095C /* studyNoTextField.png */; };
 		B8F3D5C215043DDE00A9095C /* sendToServer.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5C115043DDE00A9095C /* sendToServer.png */; };
+		B8F3D5E11506DAED00A9095C /* poof.caf in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5E01506DAED00A9095C /* poof.caf */; };
 		B8FECA4C1473B9FF0099145F /* EmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FECA4B1473B9FF0099145F /* EmptyCell.m */; };
 /* End PBXBuildFile section */
 
@@ -436,6 +437,7 @@
 		B8F3D5BD1504350A00A9095C /* participantTextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = participantTextField.png; sourceTree = "<group>"; };
 		B8F3D5BF1504381900A9095C /* studyNoTextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studyNoTextField.png; sourceTree = "<group>"; };
 		B8F3D5C115043DDE00A9095C /* sendToServer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendToServer.png; path = images/sendToServer.png; sourceTree = "<group>"; };
+		B8F3D5E01506DAED00A9095C /* poof.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poof.caf; sourceTree = "<group>"; };
 		B8FECA4A1473B9FF0099145F /* EmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyCell.h; sourceTree = "<group>"; };
 		B8FECA4B1473B9FF0099145F /* EmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -484,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				5E746F471504506600C63D22 /* multiDeal.caf */,
+				B8F3D5E01506DAED00A9095C /* poof.caf */,
 				5E746F481504506600C63D22 /* shufle.caf */,
 				5E746F491504506600C63D22 /* singleCard.caf */,
 				5E746F4A1504506600C63D22 /* twoCards.caf */,
@@ -1180,6 +1183,7 @@
 			files = (
 				B89C316A142759E400CCFF15 /* InfoPlist.strings in Resources */,
 				B89C316C142759E400CCFF15 /* FreeBirdTests.h in Resources */,
+				B8F3D5E11506DAED00A9095C /* poof.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

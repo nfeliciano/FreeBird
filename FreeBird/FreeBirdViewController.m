@@ -782,6 +782,7 @@ int deckCounter;
     //NSLog(@"NUMBER IN A ROW %d", numberInARow);
     if (numberInARow == 4) {    //change back to 4, this and line below
         //******ADD POOF HERE******//
+        [self playSound:@"poof" :@"caf"];
         for(int i=0;i<4;i++){
             Card *tempCard = [[columns objectAtIndex:clmn] removeCardFromColumn];
             UIImage *image = [UIImage imageNamed:@"poofAnim1.png"];
