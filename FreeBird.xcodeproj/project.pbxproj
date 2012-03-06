@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AA97F4A15058EB500ABEE77 /* poofAnim1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4415058EB500ABEE77 /* poofAnim1.png */; };
+		4AA97F4B15058EB500ABEE77 /* poofAnim2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4515058EB500ABEE77 /* poofAnim2.png */; };
+		4AA97F4C15058EB500ABEE77 /* poofAnim3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4615058EB500ABEE77 /* poofAnim3.png */; };
+		4AA97F4D15058EB500ABEE77 /* poofAnim4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4715058EB500ABEE77 /* poofAnim4.png */; };
+		4AA97F4E15058EB500ABEE77 /* poofAnim5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4815058EB500ABEE77 /* poofAnim5.png */; };
+		4AA97F4F15058EB500ABEE77 /* poofAnim6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4915058EB500ABEE77 /* poofAnim6.png */; };
 		5E746F4B1504506600C63D22 /* multiDeal.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F471504506600C63D22 /* multiDeal.caf */; };
 		5E746F4C1504506600C63D22 /* shufle.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F481504506600C63D22 /* shufle.caf */; };
 		5E746F4D1504506600C63D22 /* singleCard.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F491504506600C63D22 /* singleCard.caf */; };
@@ -218,6 +224,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4AA97F4415058EB500ABEE77 /* poofAnim1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim1.png; sourceTree = "<group>"; };
+		4AA97F4515058EB500ABEE77 /* poofAnim2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim2.png; sourceTree = "<group>"; };
+		4AA97F4615058EB500ABEE77 /* poofAnim3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim3.png; sourceTree = "<group>"; };
+		4AA97F4715058EB500ABEE77 /* poofAnim4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim4.png; sourceTree = "<group>"; };
+		4AA97F4815058EB500ABEE77 /* poofAnim5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim5.png; sourceTree = "<group>"; };
+		4AA97F4915058EB500ABEE77 /* poofAnim6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim6.png; sourceTree = "<group>"; };
 		5E746F471504506600C63D22 /* multiDeal.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = multiDeal.caf; sourceTree = "<group>"; };
 		5E746F481504506600C63D22 /* shufle.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shufle.caf; sourceTree = "<group>"; };
 		5E746F491504506600C63D22 /* singleCard.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = singleCard.caf; sourceTree = "<group>"; };
@@ -454,6 +466,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AA97F4315058EB500ABEE77 /* poof */ = {
+			isa = PBXGroup;
+			children = (
+				4AA97F4415058EB500ABEE77 /* poofAnim1.png */,
+				4AA97F4515058EB500ABEE77 /* poofAnim2.png */,
+				4AA97F4615058EB500ABEE77 /* poofAnim3.png */,
+				4AA97F4715058EB500ABEE77 /* poofAnim4.png */,
+				4AA97F4815058EB500ABEE77 /* poofAnim5.png */,
+				4AA97F4915058EB500ABEE77 /* poofAnim6.png */,
+			);
+			name = poof;
+			path = images/poof;
+			sourceTree = "<group>";
+		};
 		5E746F461504506600C63D22 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -876,6 +902,7 @@
 			children = (
 				B8E44E1314D4CE2A0002DE96 /* Difficulty Screen */,
 				B81AEF7D143EFF140024F192 /* Temp Bird Images */,
+				4AA97F4315058EB500ABEE77 /* poof */,
 				B8DCD8C41495F4C300E63CF4 /* appIcon.png */,
 				B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */,
 				B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */,
@@ -1138,6 +1165,12 @@
 				5E746F4C1504506600C63D22 /* shufle.caf in Resources */,
 				5E746F4D1504506600C63D22 /* singleCard.caf in Resources */,
 				5E746F4E1504506600C63D22 /* twoCards.caf in Resources */,
+				4AA97F4A15058EB500ABEE77 /* poofAnim1.png in Resources */,
+				4AA97F4B15058EB500ABEE77 /* poofAnim2.png in Resources */,
+				4AA97F4C15058EB500ABEE77 /* poofAnim3.png in Resources */,
+				4AA97F4D15058EB500ABEE77 /* poofAnim4.png in Resources */,
+				4AA97F4E15058EB500ABEE77 /* poofAnim5.png in Resources */,
+				4AA97F4F15058EB500ABEE77 /* poofAnim6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

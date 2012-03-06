@@ -167,8 +167,6 @@ int deckCounter;
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     [timer setText:timeString];
-    GameVariables* changeVariables = [GameVariables sharedInstance];
-    [changeVariables setTimeTaken:[NSString stringWithString:timeString]];
     [dateFormatter release];
 }
 
@@ -781,7 +779,26 @@ int deckCounter;
         //******ADD POOF HERE******//
         for(int i=0;i<4;i++){
             Card *tempCard = [[columns objectAtIndex:clmn] removeCardFromColumn];
+            UIImage *image = [UIImage imageNamed:@"poofAnim1.png"];
+            CGRect frame = CGRectMake(0, 0, image.size.width / 4, image.size.height / 4);  
+            UIImageView *poof = [[UIImageView alloc] initWithFrame:frame];
+            [poof setAnimationImages:[NSArray arrayWithObjects:
+                                      [UIImage imageNamed:@"poofAnim1.png"], 
+                                      [UIImage imageNamed:@"poofAnim2.png"],
+                                      [UIImage imageNamed:@"poofAnim3.png"],
+                                      [UIImage imageNamed:@"poofAnim4.png"],
+                                      [UIImage imageNamed:@"poofAnim5.png"],
+                                      [UIImage imageNamed:@"poofAnim6.png"],
+                                      nil]
+             ];
+            [poof setAnimationDuration:0.5];
+            [poof setAnimationRepeatCount:1];
+            [poof startAnimating];
+            [poof setCenter:[tempCard center]];
+            [self.view addSubview:poof];
             [tempCard removeFromSuperview];
+            [image release];
+            [poof release];
             cardsFinished ++;
             //NSLog(@"CARDS DONE %d", cardsFinished);
             if (cardsFinished == numCards) {
@@ -871,15 +888,14 @@ int deckCounter;
     int moves = numberOfMoves;
     int errors = numberOfErrors;
     int frees = freeCellsUsed;
-    //NSString *time = [NSString stringWithString:timeToPost];
     GameVariables* changeVariables = [GameVariables sharedInstance];
     int userID = [changeVariables userID];
     int studyNo = [changeVariables studyNumber];
-    NSLog(@"%@", [changeVariables timeTaken]);
     
     //other IVs and DVs to put in
     
-    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?user=%d&numberOfMoves=%d&studyNum=%d&errors=%d&freeCells=%d&time=%@", userID, moves, studyNo, errors, frees, [changeVariables timeTaken]];
+    NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?user=%d&numberOfMoves=%d&studyNum=%d&errors=%d&freeCells=%d&time=%@", userID, moves, studyNo, errors, frees, [timer text]];
+    //NSString *phpUrl = [NSString stringWithFormat:@"http://www.noelfeliciano.com/freebird.php?user=%d&studyNum=%d", userID, studyNo];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:phpUrl]];
     [request setHTTPMethod:@"POST"];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
