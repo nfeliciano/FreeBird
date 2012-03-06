@@ -674,7 +674,7 @@ int deckCounter;
                         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
                         for (int i = row; i < numCardsInCol; i++) {
                             cardToMove = [tempColumnArray objectAtIndex:i];
-                            [tempArray insertObject:cardToMove atIndex:0];
+                            [tempArray addObject:cardToMove];
                         }
                         
                         for (int i = 0; i < [tempArray count]; i++) {
@@ -696,6 +696,9 @@ int deckCounter;
                         speciesInARow = NO;
                         cardToMove = nil;
                         return;
+                    }
+                    else {
+                        if ([cardToMove column] != col) numberOfErrors++;
                     }
                 }
             }
@@ -740,7 +743,6 @@ int deckCounter;
             //NSLog(@"FROM %f TO %f", cardToMove.center.x, start.x);
             cardToMove.center = start;
         }
-        numberOfErrors++;
         [self updateMoveCounter];
         speciesInARow = NO;
         cardToMove = nil;
