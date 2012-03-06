@@ -40,7 +40,6 @@
     UIImageView *button;
     NSString *difficultyLevel;
     SystemSoundID audioEffect;
-    BOOL areMoving;
 }
 
 @property (nonatomic, retain) NSMutableArray *freeCells;

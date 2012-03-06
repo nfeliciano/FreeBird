@@ -65,7 +65,8 @@ int deckCounter;
     
     [self setUpGameBoard];
     
-    areMoving = NO;
+    self.view.multipleTouchEnabled = NO;
+    self.view.exclusiveTouch = YES;
     cardToMove = nil;
     cardToMove0 = nil;
     cardToMove1 = nil;
@@ -338,11 +339,6 @@ int deckCounter;
     if ([touch view] != cardToMove && cardToMove != nil){
         return;
     }
-    if (areMoving){
-        CGPoint start = [cardToMove getCardPosition];
-        cardToMove.center = start;
-    }
-    areMoving = YES;
     GameVariables *difficultySettings = [GameVariables sharedInstance];
     int numCards = [difficultySettings numberOfCards];
     
@@ -489,7 +485,6 @@ int deckCounter;
     if (cardToMove == nil) {
         return;
     }
-    areMoving = NO;
     //checks to see if any objects were touched
     UITouch *touch = [touches anyObject];
     
