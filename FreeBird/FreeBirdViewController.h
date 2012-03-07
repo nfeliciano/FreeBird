@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GameVariables.h"
 #import "DifficultySettingsViewController.h"
+#import "SplashPageViewController.h"
 #import "Deck.h"
 #import "Card.h"
 #import "Column.h"
@@ -18,10 +19,6 @@
 @interface FreeBirdViewController : UIViewController {
     Card *aCard;
     Card *cardToMove;
-    Card *cardToMove0;
-    Card *cardToMove1;
-    Card *cardToMove2;
-    Card *cardToMove3;
     NSMutableArray *columns;
     NSMutableArray *cards;
     NSMutableArray *freeCells;
@@ -36,8 +33,10 @@
     UILabel *moveCounter;
     UILabel *errorCounter;
     UILabel *timer;
+    UILabel *gameDone;
     int cardsFinished;
     UIImageView *button;
+    UIImageView *button2;
     NSString *difficultyLevel;
     SystemSoundID audioEffect;
 }
@@ -47,10 +46,6 @@
 @property (nonatomic, retain) NSMutableArray *columns;
 @property (nonatomic, retain) NSMutableArray *cards;
 @property (nonatomic, retain) Card *cardToMove;
-@property (nonatomic, retain) Card *cardToMove0; 
-@property (nonatomic, retain) Card *cardToMove1; 
-@property (nonatomic, retain) Card *cardToMove2; 
-@property (nonatomic, retain) Card *cardToMove3; 
 @property (nonatomic, retain) UIImageView *deckNumberOne; 
 @property (nonatomic, retain) UIImageView *deckNumberTwo; 
 @property (nonatomic, retain) UIImageView *deckNumberThree; 
@@ -61,6 +56,7 @@
 @property (nonatomic, assign) UILabel *moveCounter;
 @property (nonatomic, assign) UILabel *errorCounter;
 @property (nonatomic, assign) UILabel *timer;
+@property (nonatomic, assign) UILabel *gameDone;
 @property (nonatomic, assign) int freeCellsUsed;
 @property (nonatomic, assign) int cardsFinished;
 @property (nonatomic, assign) int touchStart;

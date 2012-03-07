@@ -34,7 +34,7 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    DifficultySettingsViewController *diffSettVC = [[DifficultySettingsViewController alloc] init];
+    DifficultySettingsViewController *diffSettVC = [[[DifficultySettingsViewController alloc] init] autorelease];
     [self presentModalViewController:diffSettVC animated:YES];
 }
 

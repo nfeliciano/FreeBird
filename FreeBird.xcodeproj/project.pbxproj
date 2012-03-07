@@ -21,6 +21,7 @@
 		5E746F4D1504506600C63D22 /* singleCard.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F491504506600C63D22 /* singleCard.caf */; };
 		5E746F4E1504506600C63D22 /* twoCards.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E746F4A1504506600C63D22 /* twoCards.caf */; };
 		5E746F511504509800C63D22 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E746F501504509800C63D22 /* AudioToolbox.framework */; };
+		5E9645F0150705AE00707448 /* exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9645EF150705AE00707448 /* exit.png */; };
 		B81AEF7A143EF9E90024F192 /* gameplayBackgroundOne.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */; };
 		B81AEF7C143EFAA20024F192 /* gameplayBackgroundTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */; };
 		B81AEF7F143EFF810024F192 /* cardFront.png in Resources */ = {isa = PBXBuildFile; fileRef = B81AEF7E143EFF810024F192 /* cardFront.png */; };
@@ -242,6 +243,7 @@
 		5E746F491504506600C63D22 /* singleCard.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = singleCard.caf; sourceTree = "<group>"; };
 		5E746F4A1504506600C63D22 /* twoCards.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = twoCards.caf; sourceTree = "<group>"; };
 		5E746F501504509800C63D22 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5E9645EF150705AE00707448 /* exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exit.png; path = images/exit.png; sourceTree = "<group>"; };
 		B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundOne.png; path = images/gameplayBackgroundOne.png; sourceTree = "<group>"; };
 		B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundTwo.png; path = images/gameplayBackgroundTwo.png; sourceTree = "<group>"; };
 		B81AEF7E143EFF810024F192 /* cardFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardFront.png; path = images/cardFront.png; sourceTree = "<group>"; };
@@ -916,6 +918,7 @@
 				B81AEF7D143EFF140024F192 /* Temp Bird Images */,
 				4AA97F4315058EB500ABEE77 /* poof */,
 				B8DCD8C41495F4C300E63CF4 /* appIcon.png */,
+				5E9645EF150705AE00707448 /* exit.png */,
 				B81AEF79143EF9E90024F192 /* gameplayBackgroundOne.png */,
 				B81AEF7B143EFAA20024F192 /* gameplayBackgroundTwo.png */,
 				B8CC307914803651008D33B4 /* gameplayBackgroundThree.png */,
@@ -1186,6 +1189,7 @@
 				B8DA6A8F1506DF070052AD6E /* poof.caf in Resources */,
 				4A81C5EF1506EACD0077497F /* splash.png in Resources */,
 				4A81C5FB1506ED840077497F /* SplashPageViewController.xib in Resources */,
+				5E9645F0150705AE00707448 /* exit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

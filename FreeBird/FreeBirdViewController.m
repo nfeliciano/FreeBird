@@ -21,10 +21,6 @@ int deckCounter;
 @synthesize columns;
 @synthesize cards;
 @synthesize cardToMove;
-@synthesize cardToMove0;
-@synthesize cardToMove1;
-@synthesize cardToMove2;
-@synthesize cardToMove3;
 @synthesize touchStart;
 @synthesize deckNumberOne;
 @synthesize deckNumberTwo;
@@ -37,6 +33,7 @@ int deckCounter;
 @synthesize moveCounter;
 @synthesize errorCounter;
 @synthesize timer;
+@synthesize gameDone;
 @synthesize cardsFinished;
 @synthesize difficultyLevel;
 
@@ -68,10 +65,6 @@ int deckCounter;
     self.view.multipleTouchEnabled = NO;
     self.view.exclusiveTouch = YES;
     cardToMove = nil;
-    cardToMove0 = nil;
-    cardToMove1 = nil;
-    cardToMove2 = nil;
-    cardToMove3 = nil;
     touchStart = 0;
     deckCounter = 0;
     numberOfMoves = 0;
@@ -188,8 +181,27 @@ int deckCounter;
     for (int i = 0; i < 6; i++) {
         [[columns objectAtIndex:i] release];
     }
+    for (int i =0; i < 4;  i++) {
+        [[freeCells objectAtIndex:i] release];
+    }
+    for (int i =0; i < 6;  i++) {
+        [[emptyColumnCells objectAtIndex:i] release];
+    }
+    [Card dealloc];
+    [Deck dealloc];
+    [Column dealloc];
+    [EmptyCell dealloc];
     AudioServicesDisposeSystemSoundID(audioEffect);
+    [emptyColumnCells release];
+    [button release];
+    [button2 release];
+    [columns release];
+    [cards release];
     [freeCells release];
+    [moveCounter release];
+    [errorCounter release];
+    [gameDone release];
+    [timer release];
     [deckNumberOne release];
     [deckNumberTwo release];
     [deckNumberThree release];
@@ -304,8 +316,16 @@ int deckCounter;
     button.userInteractionEnabled = YES;                        //enable interaction
     [button setImage:[UIImage imageNamed:@"sendToServer.png"]];   //set the image for the button
     button.opaque = NO;                                         //not opaque
-    button.center = CGPointMake(512, 384);                      //center the button
+    button.center = CGPointMake(812, 384);                      //center the button
     button.contentMode = UIViewContentModeScaleAspectFit;
+    
+    CGRect buttonRect2 = CGRectMake(0, 0, 215, 108);
+    button2 = [[UIImageView alloc] initWithFrame:buttonRect2];    //size
+    button2.userInteractionEnabled = YES;                        //enable interaction
+    [button2 setImage:[UIImage imageNamed:@"exit.png"]];   //set the image for the button
+    button2.opaque = NO;                                         //not opaque
+    button2.center = CGPointMake(312, 384);                      //center the button
+    button2.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 -(void) playSound : (NSString *) fName : (NSString *) ext
@@ -331,10 +351,13 @@ int deckCounter;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    if ([touch view] == button)
-    {
+    if ([touch view] == button){
         [self postToServer];
         return;
+    }
+    if ([touch view] == button2){
+        SplashPageViewController *splashPageVC = [[[SplashPageViewController alloc] init] autorelease];
+        [self presentModalViewController:splashPageVC animated:YES];
     }
     if ([touch view] != cardToMove && cardToMove != nil){
         return;
@@ -824,7 +847,7 @@ int deckCounter;
             //NSLog(@"CARDS DONE %d", cardsFinished);
             if (cardsFinished == numCards) {
                 CGRect labelFrame = CGRectMake(0, 0, 800, 100);
-                UILabel *gameDone = [[UILabel alloc] initWithFrame:labelFrame];
+                gameDone = [[UILabel alloc] initWithFrame:labelFrame];
                 [gameDone setFont:[UIFont systemFontOfSize:42]];
                 gameDone.textAlignment = UITextAlignmentCenter;
                 gameDone.textColor = [UIColor whiteColor];
@@ -834,6 +857,7 @@ int deckCounter;
                 gameDone.opaque = YES;
                 [self.view addSubview:gameDone];
                 [self.view addSubview:button];
+                [self.view addSubview:button2];
                 [self updateTimer];
                 [timeInSeconds invalidate];
                 timeInSeconds = nil;
@@ -925,6 +949,7 @@ int deckCounter;
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Your Data has been uploaded" message: [NSString stringWithFormat:@"Your number of moves: %d has been uploaded", moves] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
     [alert show];
+    [get release];
     [alert release];
     
     //NSLog(@"You said: %@", get);

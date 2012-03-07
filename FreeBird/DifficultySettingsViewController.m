@@ -169,7 +169,7 @@
     UITouch *touch = [touches anyObject];
     if ([touch view] == startButton)
     {
-        FreeBirdViewController *freeBirdVC = [[FreeBirdViewController alloc] init];
+        FreeBirdViewController *freeBirdVC = [[[FreeBirdViewController alloc] init] autorelease];
         [self presentModalViewController:freeBirdVC animated:YES];
     } else if ([touch view] == topLabelButton) {
         [topLabelButton setImage:[UIImage imageNamed:@"topLabelEmbossed.png"]];
