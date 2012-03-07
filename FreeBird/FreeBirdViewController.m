@@ -465,6 +465,7 @@ int deckCounter;
         {
             //cardToMove is the card that has been touched
             cardToMove = [thisColumn objectAtIndex:j];
+            NSLog(@"%d", [cardToMove isABottomCard]);
             
             if ([touch view] == cardToMove) 
             {
@@ -577,7 +578,6 @@ int deckCounter;
                 [empty setFreeCellIsFilledWith:cardToMove];
                 numberOfMoves++;
                 freeCellsUsed++;
-                NSLog(@"%d", freeCellsUsed);
                 [self updateMoveCounter];
                 cardToMove = nil;
                 return;
