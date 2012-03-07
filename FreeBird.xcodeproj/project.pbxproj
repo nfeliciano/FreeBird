@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A81C5EB1506E9880077497F /* SplashPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A81C5E91506E9880077497F /* SplashPageViewController.m */; };
+		4A81C5EC1506E9880077497F /* SplashPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A81C5EA1506E9880077497F /* SplashPageViewController.xib */; };
+		4A81C5EF1506EACD0077497F /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A81C5EE1506EACD0077497F /* splash.png */; };
 		4AA97F4A15058EB500ABEE77 /* poofAnim1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4415058EB500ABEE77 /* poofAnim1.png */; };
 		4AA97F4B15058EB500ABEE77 /* poofAnim2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4515058EB500ABEE77 /* poofAnim2.png */; };
 		4AA97F4C15058EB500ABEE77 /* poofAnim3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AA97F4615058EB500ABEE77 /* poofAnim3.png */; };
@@ -224,6 +227,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A81C5E81506E9880077497F /* SplashPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashPageViewController.h; sourceTree = SOURCE_ROOT; };
+		4A81C5E91506E9880077497F /* SplashPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashPageViewController.m; sourceTree = SOURCE_ROOT; };
+		4A81C5EA1506E9880077497F /* SplashPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashPageViewController.xib; sourceTree = SOURCE_ROOT; };
+		4A81C5EE1506EACD0077497F /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = images/splash.png; sourceTree = "<group>"; };
 		4AA97F4415058EB500ABEE77 /* poofAnim1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim1.png; sourceTree = "<group>"; };
 		4AA97F4515058EB500ABEE77 /* poofAnim2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim2.png; sourceTree = "<group>"; };
 		4AA97F4615058EB500ABEE77 /* poofAnim3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poofAnim3.png; sourceTree = "<group>"; };
@@ -556,6 +563,7 @@
 				B89C314F142759E400CCFF15 /* MainWindow.xib */,
 				B89C3155142759E400CCFF15 /* FreeBirdViewController.xib */,
 				B8A12C0414D4A89B00A77CAC /* DifficultySettingsViewController.xib */,
+				4A81C5EA1506E9880077497F /* SplashPageViewController.xib */,
 			);
 			name = "xib Files";
 			sourceTree = "<group>";
@@ -599,6 +607,8 @@
 				B8A12BFA14D4062C00A77CAC /* GameVariables.m */,
 				B89C314C142759E400CCFF15 /* FreeBirdAppDelegate.h */,
 				B89C314D142759E400CCFF15 /* FreeBirdAppDelegate.m */,
+				4A81C5E81506E9880077497F /* SplashPageViewController.h */,
+				4A81C5E91506E9880077497F /* SplashPageViewController.m */,
 				B8A12C0214D4A89B00A77CAC /* DifficultySettingsViewController.h */,
 				B8A12C0314D4A89B00A77CAC /* DifficultySettingsViewController.m */,
 				B89C3152142759E400CCFF15 /* FreeBirdViewController.h */,
@@ -914,6 +924,7 @@
 				B81AEFD1143F14330024F192 /* cardBack.png */,
 				B81AEFCF143F142B0024F192 /* freeCell.png */,
 				B8F3D5C115043DDE00A9095C /* sendToServer.png */,
+				4A81C5EE1506EACD0077497F /* splash.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -1173,6 +1184,8 @@
 				4AA97F4E15058EB500ABEE77 /* poofAnim5.png in Resources */,
 				4AA97F4F15058EB500ABEE77 /* poofAnim6.png in Resources */,
 				B8DA6A8F1506DF070052AD6E /* poof.caf in Resources */,
+				4A81C5EC1506E9880077497F /* SplashPageViewController.xib in Resources */,
+				4A81C5EF1506EACD0077497F /* splash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,6 +1230,7 @@
 				B8FECA4C1473B9FF0099145F /* EmptyCell.m in Sources */,
 				B8A12BFB14D4062C00A77CAC /* GameVariables.m in Sources */,
 				B8A12C0514D4A89B00A77CAC /* DifficultySettingsViewController.m in Sources */,
+				4A81C5EB1506E9880077497F /* SplashPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

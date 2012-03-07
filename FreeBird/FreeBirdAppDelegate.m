@@ -8,7 +8,8 @@
 
 #import "FreeBirdAppDelegate.h"
 
-#import "DifficultySettingsViewController.h"
+#import "SplashPageViewController.h"
+//#import "DifficultySettingsViewController.h"
 //#import "FreeBirdViewController.h"
 
 @implementation FreeBirdAppDelegate
