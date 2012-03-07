@@ -191,6 +191,7 @@
 		B8CC30761480301E008D33B4 /* icteridaeYellowHeadedBlackbirdSetD.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC30461480301E008D33B4 /* icteridaeYellowHeadedBlackbirdSetD.png */; };
 		B8CC30781480341F008D33B4 /* cardFront2.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC30771480341F008D33B4 /* cardFront2.png */; };
 		B8CC307A14803651008D33B4 /* gameplayBackgroundThree.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CC307914803651008D33B4 /* gameplayBackgroundThree.png */; };
+		B8DA6A8F1506DF070052AD6E /* poof.caf in Resources */ = {isa = PBXBuildFile; fileRef = B8DA6A8E1506DF070052AD6E /* poof.caf */; };
 		B8DCD8C51495F4C300E63CF4 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DCD8C41495F4C300E63CF4 /* appIcon.png */; };
 		B8E44E2014D4CE2A0002DE96 /* bottomLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1414D4CE2A0002DE96 /* bottomLabel.png */; };
 		B8E44E2114D4CE2A0002DE96 /* bottomLabelEmbossed.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1514D4CE2A0002DE96 /* bottomLabelEmbossed.png */; };
@@ -205,12 +206,10 @@
 		B8E44E2B14D4CE2A0002DE96 /* topLabelEmbossed.png in Resources */ = {isa = PBXBuildFile; fileRef = B8E44E1F14D4CE2A0002DE96 /* topLabelEmbossed.png */; };
 		B8E6AF871440FD4F0016771C /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E6AF861440FD4F0016771C /* Column.m */; };
 		B8F353BA14312DF7004A9593 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F353B914312DF7004A9593 /* Card.m */; };
-		B8F3D5BA1504338E00A9095C /* fortyEightCardsEmbossed.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5B91504338E00A9095C /* fortyEightCardsEmbossed.png */; };
 		B8F3D5BC1504339C00A9095C /* difficultyScreenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5BB1504339C00A9095C /* difficultyScreenBG.png */; };
 		B8F3D5BE1504350A00A9095C /* participantTextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5BD1504350A00A9095C /* participantTextField.png */; };
 		B8F3D5C01504381A00A9095C /* studyNoTextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5BF1504381900A9095C /* studyNoTextField.png */; };
 		B8F3D5C215043DDE00A9095C /* sendToServer.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5C115043DDE00A9095C /* sendToServer.png */; };
-		B8F3D5E11506DAED00A9095C /* poof.caf in Resources */ = {isa = PBXBuildFile; fileRef = B8F3D5E01506DAED00A9095C /* poof.caf */; };
 		B8FECA4C1473B9FF0099145F /* EmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FECA4B1473B9FF0099145F /* EmptyCell.m */; };
 /* End PBXBuildFile section */
 
@@ -416,6 +415,7 @@
 		B8CC30461480301E008D33B4 /* icteridaeYellowHeadedBlackbirdSetD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icteridaeYellowHeadedBlackbirdSetD.png; sourceTree = "<group>"; };
 		B8CC30771480341F008D33B4 /* cardFront2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cardFront2.png; path = images/cardFront2.png; sourceTree = "<group>"; };
 		B8CC307914803651008D33B4 /* gameplayBackgroundThree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplayBackgroundThree.png; path = images/gameplayBackgroundThree.png; sourceTree = "<group>"; };
+		B8DA6A8E1506DF070052AD6E /* poof.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poof.caf; sourceTree = "<group>"; };
 		B8DCD8C41495F4C300E63CF4 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = ../appIcon.png; sourceTree = "<group>"; };
 		B8E44E1414D4CE2A0002DE96 /* bottomLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomLabel.png; sourceTree = "<group>"; };
 		B8E44E1514D4CE2A0002DE96 /* bottomLabelEmbossed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomLabelEmbossed.png; sourceTree = "<group>"; };
@@ -437,7 +437,6 @@
 		B8F3D5BD1504350A00A9095C /* participantTextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = participantTextField.png; sourceTree = "<group>"; };
 		B8F3D5BF1504381900A9095C /* studyNoTextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studyNoTextField.png; sourceTree = "<group>"; };
 		B8F3D5C115043DDE00A9095C /* sendToServer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sendToServer.png; path = images/sendToServer.png; sourceTree = "<group>"; };
-		B8F3D5E01506DAED00A9095C /* poof.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = poof.caf; sourceTree = "<group>"; };
 		B8FECA4A1473B9FF0099145F /* EmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyCell.h; sourceTree = "<group>"; };
 		B8FECA4B1473B9FF0099145F /* EmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -486,7 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				5E746F471504506600C63D22 /* multiDeal.caf */,
-				B8F3D5E01506DAED00A9095C /* poof.caf */,
+				B8DA6A8E1506DF070052AD6E /* poof.caf */,
 				5E746F481504506600C63D22 /* shufle.caf */,
 				5E746F491504506600C63D22 /* singleCard.caf */,
 				5E746F4A1504506600C63D22 /* twoCards.caf */,
@@ -1159,7 +1158,6 @@
 				B8E44E2914D4CE2A0002DE96 /* thirtySixCardsEmbossed.png in Resources */,
 				B8E44E2A14D4CE2A0002DE96 /* topLabel.png in Resources */,
 				B8E44E2B14D4CE2A0002DE96 /* topLabelEmbossed.png in Resources */,
-				B8F3D5BA1504338E00A9095C /* fortyEightCardsEmbossed.png in Resources */,
 				B8F3D5BC1504339C00A9095C /* difficultyScreenBG.png in Resources */,
 				B8F3D5BE1504350A00A9095C /* participantTextField.png in Resources */,
 				B8F3D5C01504381A00A9095C /* studyNoTextField.png in Resources */,
@@ -1174,6 +1172,7 @@
 				4AA97F4D15058EB500ABEE77 /* poofAnim4.png in Resources */,
 				4AA97F4E15058EB500ABEE77 /* poofAnim5.png in Resources */,
 				4AA97F4F15058EB500ABEE77 /* poofAnim6.png in Resources */,
+				B8DA6A8F1506DF070052AD6E /* poof.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1183,7 +1182,6 @@
 			files = (
 				B89C316A142759E400CCFF15 /* InfoPlist.strings in Resources */,
 				B89C316C142759E400CCFF15 /* FreeBirdTests.h in Resources */,
-				B8F3D5E11506DAED00A9095C /* poof.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

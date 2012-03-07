@@ -355,7 +355,8 @@ int deckCounter;
                         [self playSound:@"twoCards" :@"caf"];
                         [self addRowOfCards];
                         for (int x=0;x<6;x++){
-                            [self inARow:x];
+                            //[self inARow:x];
+                            [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:x] afterDelay:0.5];
                         }
                     }
                     [deckNumberThree removeFromSuperview];//temp for 36 cards
@@ -364,7 +365,8 @@ int deckCounter;
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     for (int x=0;x<6;x++){
-                        [self inARow:x];
+                        //[self inARow:x];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:x] afterDelay:0.5];
                     }
                     [deckNumberTwo removeFromSuperview];//temp for 36
                     //[deckNumberThree removeFromSuperview];
@@ -374,7 +376,8 @@ int deckCounter;
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     for (int x=0;x<6;x++){
-                        [self inARow:x];
+                        //[self inARow:x];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:x] afterDelay:0.5];
                     }
                     break;
                 } /*else if (deckCounter == 36) {
@@ -396,7 +399,8 @@ int deckCounter;
                         [self addRowOfCards];
                     }
                     for (int x=0;x<6;x++){
-                        [self inARow:x];
+                        //[self inARow:x];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:x] afterDelay:0.5];
                     }
                     break;
                 } else if (deckCounter == 24) {
@@ -404,14 +408,16 @@ int deckCounter;
                     [self addRowOfCards];
                     [deckNumberThree removeFromSuperview];
                     for (int x=0;x<6;x++){
-                         [self inARow:x];
+                         //[self inARow:x];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:x] afterDelay:0.5];
                     }
                     break;
                 } else if (deckCounter == 30) {
                     [self playSound:@"twoCards" :@"caf"];
                     [self addRowOfCards];
                     for (int x=0;x<6;x++){
-                        [self inARow:x];
+                        //[self inARow:x];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:x] afterDelay:0.5];
                     }
                     break;
                 } else if (deckCounter == 36) {
@@ -419,7 +425,8 @@ int deckCounter;
                     [self addRowOfCards];
                     [deckNumberTwo removeFromSuperview];
                     for (int x=0;x<6;x++){
-                        [self inARow:x];
+                        //[self inARow:x];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:x] afterDelay:0.5];
                     }
                     break;
                 } else if (deckCounter == 42) {
@@ -427,7 +434,8 @@ int deckCounter;
                     [self addRowOfCards];
                     [deckNumberOne removeFromSuperview];
                     for (int x=0;x<6;x++){
-                        [self inARow:x];
+                        //[self inARow:x];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:x] afterDelay:0.5];
                     }
                     break;
                 } else {
@@ -594,7 +602,8 @@ int deckCounter;
                     if (cardToMove != nil) {
                         [[columns objectAtIndex:col] addCardToColumn:cardToMove];
                         cardToMove.center = [cardToMove getCardPosition];
-                        [self inARow:col];
+                        //[self inARow:col];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:col] afterDelay:0.5];
                         numberOfMoves++;
                         [self updateMoveCounter];
                         cardToMove = nil;
@@ -626,7 +635,8 @@ int deckCounter;
                     if (cardToMove != nil) {
                         [[columns objectAtIndex:col] addCardToColumn:cardToMove];
                         cardToMove.center = [cardToMove getCardPosition];
-                        [self inARow:col];
+                        //[self inARow:col];
+                        [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:col] afterDelay:0.5];
                         numberOfMoves++;
                         [self updateMoveCounter];
                         cardToMove = nil;
@@ -685,7 +695,8 @@ int deckCounter;
                                 [[columns objectAtIndex:col] addCardToColumn:cardToMove];
                                 cardToMove.center = [cardToMove getCardPosition];
                                 [self.view bringSubviewToFront:cardToMove];
-                                [self inARow:col];
+                                //[self inARow:col];
+                                [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:col] afterDelay:0.5];
                             }
                         }
                         
@@ -722,7 +733,8 @@ int deckCounter;
                             [[columns objectAtIndex:col] addCardToColumn:cardToMove];
                             cardToMove.center = [cardToMove getCardPosition];
                             [self.view bringSubviewToFront:cardToMove];
-                            [self inARow:col];
+                            //[self inARow:col];
+                            [self performSelector:@selector(inARow:) withObject:[NSNumber numberWithInt:col] afterDelay:0.5];
                         }
                     }
                     
@@ -777,7 +789,8 @@ int deckCounter;
 
 
 
--(void)inARow:(int )clmn {
+-(void)inARow:(NSNumber *)column {
+    int clmn = [column integerValue];
     GameVariables *difficultySettings = [GameVariables sharedInstance];
     int numCards = [difficultySettings numberOfCards];
     int numberInARow = [self checkAbove:clmn];

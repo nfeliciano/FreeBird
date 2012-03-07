@@ -69,7 +69,7 @@
 -(void) playSound:(NSString *)fName:(NSString *)ext;
 -(void)addRowOfCards;
 -(void)setUpGameBoard;
--(void)inARow:(int )clmn;
+-(void)inARow:(NSNumber *)column;
 -(BOOL)compareSpeciesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(BOOL)compareFamiliesOfCardA:(Card *)aCardA andCardB:(Card *)aCardB;
 -(int)checkAbove:(int )clmn;
