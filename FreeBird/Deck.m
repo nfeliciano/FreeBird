@@ -8,11 +8,12 @@
 
 #import "Deck.h"
 
-NSDictionary *speciesArray[12];  //should be 12 with 48 cards
+//NSDictionary *speciesArray[12];  //should be 12 with 48 cards
 
 @implementation Deck
 
 @synthesize mainDictionary;
+@synthesize speciesArray;
 @synthesize cardsLeft;
 @synthesize cards;
 @synthesize arrayCounter;
@@ -31,6 +32,7 @@ NSDictionary *speciesArray[12];  //should be 12 with 48 cards
     self = [super init];
     if (self) {
         arrayCounter = 0;
+        speciesArray = [[NSMutableArray alloc] initWithCapacity:12];
         
         NSString *path = [[NSBundle mainBundle] bundlePath];
         NSString *dictPath = [path stringByAppendingPathComponent:@"BirdInfoPlist.plist"];
@@ -71,6 +73,7 @@ NSDictionary *speciesArray[12];  //should be 12 with 48 cards
 
 -(void) dealloc {
     [cards release];
+    [speciesArray release];
     [super dealloc];
 }
 
@@ -80,23 +83,68 @@ NSDictionary *speciesArray[12];  //should be 12 with 48 cards
     
     if ([difficultySettings numberOfCards] == 36) {
         for (int i = arrayCounter; i < arrayCounter + 3; i++) { //should be arrayCounter + 4 with 48 cards, 3 for 36
+            //NSLog(@"ARRAY COUNT: %d", [speciesArray count]);
             NSString *tempDictString = [tempArray objectAtIndex:(arc4random() % [tempArray count])];
             NSDictionary *tempDictionary = [familyDictionary objectForKey:tempDictString];
-            if ( (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+1]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+2]]) /*comment starts here for 36 && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+3]])*/ /*uncomment with 48*/ ){
-                speciesArray[i] = tempDictionary;
-            } else {
-                i--;
+            /*if ( (![tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter]]) && (![tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+1]]) && (![tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+2]]) comment starts here for 36 && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+3]])uncomment with 48 ){
+             [speciesArray addObject:tempDictionary];
+             } else {
+             i--;
+             }*/
+            if (i == arrayCounter) {
+                [speciesArray addObject:tempDictionary];
+            } else if (i == arrayCounter+1) {
+                if ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter]]) {
+                    i--;
+                } else {
+                    [speciesArray addObject:tempDictionary];
+                }
+            } else if (i == arrayCounter+2) {
+                if ( ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter]])
+                    || ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+1]])) {
+                    i--;
+                } else {
+                    [speciesArray addObject:tempDictionary];
+                }
             }
+            NSLog(@"FROM %d to %d WITH COUNT %d", i, arrayCounter, [speciesArray count]);
         }
         arrayCounter += 3;  //should be 4 with 48
     } else {
         for (int i = arrayCounter; i < arrayCounter + 4; i++) { //should be arrayCounter + 4 with 48 cards, 3 for 36
             NSString *tempDictString = [tempArray objectAtIndex:(arc4random() % [tempArray count])];
             NSDictionary *tempDictionary = [familyDictionary objectForKey:tempDictString];
-            if ( (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+1]]) && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+2]]) /*comment starts here for 36*/ && (![tempDictionary isEqualToDictionary:speciesArray[arrayCounter+3]]) /*uncomment with 48*/ ){
-                speciesArray[i] = tempDictionary;
+            /*if ( (![tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter]]) && (![tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+1]]) && (![tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+2]]) comment starts here for 36 && (![tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+3]]) uncomment with 48 ){
+                [speciesArray addObject:tempDictionary];
             } else {
                 i--;
+            }*/
+            
+            if (i == arrayCounter) {
+                 [speciesArray addObject:tempDictionary];
+            } else if (i == arrayCounter+1) {
+                if ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter]]) {
+                    i--;
+                } else {
+                    [speciesArray addObject:tempDictionary];
+                }
+            } else if (i == arrayCounter+2) {
+                if ( ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter]])
+                    || ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+1]])) {
+                    i--;
+                } else {
+                    [speciesArray addObject:tempDictionary];
+                }
+            } else if (i == arrayCounter+3) {
+                if ( ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter]])
+                    ||
+                    ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+1]])
+                    || 
+                    ([tempDictionary isEqualToDictionary:[speciesArray objectAtIndex:arrayCounter+2]])) {
+                    i--;
+                } else {
+                    [speciesArray addObject:tempDictionary];
+                }
             }
         }
         arrayCounter += 4;  //should be 4 with 48
@@ -113,7 +161,7 @@ NSDictionary *speciesArray[12];  //should be 12 with 48 cards
     
     if ([difficultySettings numberOfCards] == 36) {
         for (int i = 0; i < 9; i++) {       //should be 12 for 48
-            NSDictionary *thisBird = speciesArray[i];
+            NSDictionary *thisBird = [speciesArray objectAtIndex:i];
             NSArray *pose = [thisBird objectForKey:@"imagePath"];
             
             for (int j = 0; j < 4; j++) {
@@ -125,7 +173,7 @@ NSDictionary *speciesArray[12];  //should be 12 with 48 cards
         }
     } else {
         for (int i = 0; i < 12; i++) {       //should be 12 for 48
-            NSDictionary *thisBird = speciesArray[i];
+            NSDictionary *thisBird = [speciesArray objectAtIndex:i];
             NSArray *pose = [thisBird objectForKey:@"imagePath"];
             
             for (int j = 0; j < 4; j++) {

@@ -243,6 +243,7 @@ typedef enum {
 @interface Deck : NSObject {
     
     NSDictionary *mainDictionary;
+    NSMutableArray *speciesArray;
     int cardsLeft;
     NSMutableArray *cards;
     int arrayCounter;
@@ -250,6 +251,7 @@ typedef enum {
 }
 
 @property (nonatomic, assign) NSDictionary *mainDictionary;
+@property (nonatomic, assign) NSMutableArray *speciesArray;
 @property (nonatomic, assign) int cardsLeft;
 @property (nonatomic, retain) NSMutableArray *cards;
 @property (nonatomic, assign) int arrayCounter;
