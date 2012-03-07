@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GameVariables.h"
 #import "DifficultySettingsViewController.h"
+#import "SplashPageViewController.h"
 #import "Deck.h"
 #import "Card.h"
 #import "Column.h"
@@ -32,8 +33,10 @@
     UILabel *moveCounter;
     UILabel *errorCounter;
     UILabel *timer;
+    UILabel *gameDone;
     int cardsFinished;
     UIImageView *button;
+    UIImageView *button2;
     NSString *difficultyLevel;
     SystemSoundID audioEffect;
 }
@@ -53,6 +56,7 @@
 @property (nonatomic, assign) UILabel *moveCounter;
 @property (nonatomic, assign) UILabel *errorCounter;
 @property (nonatomic, assign) UILabel *timer;
+@property (nonatomic, assign) UILabel *gameDone;
 @property (nonatomic, assign) int freeCellsUsed;
 @property (nonatomic, assign) int cardsFinished;
 @property (nonatomic, assign) int touchStart;
