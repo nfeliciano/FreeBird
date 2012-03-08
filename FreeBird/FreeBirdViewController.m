@@ -317,7 +317,7 @@ int deckCounter;
     button.userInteractionEnabled = YES;                        //enable interaction
     [button setImage:[UIImage imageNamed:@"sendToServer.png"]];   //set the image for the button
     button.opaque = NO;                                         //not opaque
-    button.center = CGPointMake(812, 384);                      //center the button
+    button.center = CGPointMake(662, 384);                      //center the button
     button.contentMode = UIViewContentModeScaleAspectFit;
     
     CGRect buttonRect2 = CGRectMake(0, 0, 215, 108);
@@ -325,7 +325,7 @@ int deckCounter;
     button2.userInteractionEnabled = YES;                        //enable interaction
     [button2 setImage:[UIImage imageNamed:@"exit.png"]];   //set the image for the button
     button2.opaque = NO;                                         //not opaque
-    button2.center = CGPointMake(312, 384);                      //center the button
+    button2.center = CGPointMake(362, 384);                      //center the button
     button2.contentMode = UIViewContentModeScaleAspectFit;
 }
 
