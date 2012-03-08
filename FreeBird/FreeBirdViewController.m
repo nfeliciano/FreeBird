@@ -489,10 +489,10 @@ int deckCounter;
         {
             //cardToMove is the card that has been touched
             cardToMove = [thisColumn objectAtIndex:j];
-            NSLog(@"%d", [cardToMove isABottomCard]);
             
             if ([touch view] == cardToMove) 
             {
+                //NSLog(@"%d FROM COLUMN OF LENGTH %d", [cardToMove isABottomCard], columnLength);
                 [self playSound:@"singleCard" :@"caf"];
                 //NSLog(@"%@", [cardToMove speciesAsString]);
                 if ([cardToMove isABottomCard]) {
@@ -746,7 +746,7 @@ int deckCounter;
                     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
                     for (int i = row; i < numCardsInCol; i++) {
                         cardToMove = [tempColumnArray objectAtIndex:i];
-                        [tempArray insertObject:cardToMove atIndex:0];
+                        [tempArray addObject:cardToMove];
                     }
                     
                     for (int i = 0; i < [tempArray count]; i++) {

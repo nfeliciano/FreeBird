@@ -107,7 +107,7 @@
                     [speciesArray addObject:tempDictionary];
                 }
             }
-            NSLog(@"FROM %d to %d WITH COUNT %d", i, arrayCounter, [speciesArray count]);
+            //NSLog(@"FROM %d to %d WITH COUNT %d", i, arrayCounter, [speciesArray count]);
         }
         arrayCounter += 3;  //should be 4 with 48
     } else {
