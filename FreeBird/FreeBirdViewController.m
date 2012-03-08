@@ -361,12 +361,13 @@ int deckCounter;
         [self presentModalViewController:splashPageVC animated:YES];
     }
     if ([touch view] != cardToMove && cardToMove != nil){
+        NSLog(@"this shouldn't happen");
         return;
     }
     GameVariables *difficultySettings = [GameVariables sharedInstance];
     int numCards = [difficultySettings numberOfCards];
     
-    if (cardsFinished == numCards) {      //change for 48!!
+    if (cardsFinished == numCards) { 
         return;
     }
     
@@ -472,10 +473,11 @@ int deckCounter;
     for (int i=0; i<4; i++) {
         EmptyCell *freeCell = [freeCells objectAtIndex:i];
         cardToMove = [freeCell freeCellIsFilledWith];
-        if ([touch view] == cardToMove) {
-            //NSLog(@"%@", [cardToMove speciesAsString]);
+        if ([touch view] == cardToMove && [freeCell isFilled] == YES ) {
+            NSLog(@"%@", [cardToMove speciesAsString]);
             [self playSound:@"singleCard" :@"caf"];
             [freeCell setIsFilled:NO];
+            NSLog(@"%d", [freeCell isFilled]);
             return;
         }
     }
@@ -494,7 +496,7 @@ int deckCounter;
             {
                 //NSLog(@"%d FROM COLUMN OF LENGTH %d", [cardToMove isABottomCard], columnLength);
                 [self playSound:@"singleCard" :@"caf"];
-                //NSLog(@"%@", [cardToMove speciesAsString]);
+                NSLog(@"%d", [cardToMove isABottomCard]);
                 if ([cardToMove isABottomCard]) {
                     areWePeeking = NO;
                     speciesInARow = NO;
@@ -573,7 +575,6 @@ int deckCounter;
     //If we're only moving one card
     if (!areWePeeking && !speciesInARow) {
         if ([cardToMove column] < 10) [[columns objectAtIndex:[cardToMove column]] removeCardFromColumn];       //not in a freecell
-        
         //add card to free cell if in contact with it
         for (int i = 0; i < 4; i++) {
             EmptyCell *empty = [freeCells objectAtIndex:i];
@@ -603,6 +604,7 @@ int deckCounter;
                 numberOfMoves++;
                 freeCellsUsed++;
                 [self updateMoveCounter];
+                speciesInARow = NO;
                 cardToMove = nil;
                 return;
             }
@@ -708,7 +710,7 @@ int deckCounter;
                         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
                         for (int i = row; i < numCardsInCol; i++) {
                             cardToMove = [tempColumnArray objectAtIndex:i];
-                            [tempArray addObject:cardToMove];
+                            [tempArray insertObject:cardToMove atIndex:0];
                         }
                         
                         for (int i = 0; i < [tempArray count]; i++) {
@@ -746,7 +748,7 @@ int deckCounter;
                     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
                     for (int i = row; i < numCardsInCol; i++) {
                         cardToMove = [tempColumnArray objectAtIndex:i];
-                        [tempArray addObject:cardToMove];
+                        [tempArray insertObject:cardToMove atIndex:0];
                     }
                     
                     for (int i = 0; i < [tempArray count]; i++) {
@@ -920,11 +922,11 @@ int deckCounter;
         nextCard = [NSMutableString stringWithString:[tempCard speciesAsString]];
         if (![currentCard isEqualToString:nextCard]) {
             areInARow = FALSE;
-            //NSLog(@"NOPE FALSE RETURN");
+            NSLog(@"NOPE FALSE RETURN");
             return areInARow;
         }
     }
-    //NSLog(@"THIS RETURNED TRUE");
+    NSLog(@"THIS RETURNED TRUE");
     areInARow = TRUE;
     return areInARow;
 }
